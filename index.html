@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NutriBatch S26 Ultra — Batch Cooking & Promos Belgique</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <meta name="theme-color" content="#0B0F19" />
@@ -13,22 +13,47 @@
   <link rel="manifest" href="manifest.json" />
   <style>
     :root {
-      --background: #0B0F19;
-      --card: #131B2E;
-      --foreground: #F8FAFC;
-      --muted-foreground: #94A3B8;
-      --border: #1E293B;
+      --background: #0F1412;
+      --card: #171F1C;
+      --foreground: #F4F7F5;
+      --muted-foreground: #A3B3AC;
+      --border: #25332D;
     }
     @media (prefers-color-scheme: light) {
       :root {
-        --background: #F1F5F9;
+        --background: #F6F5F0;
         --card: #FFFFFF;
-        --foreground: #0F172A;
-        --muted-foreground: #64748B;
-        --border: #E2E8F0;
+        --foreground: #141A17;
+        --muted-foreground: #4E5E56;
+        --border: #E2E0D8;
       }
     }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-variant-numeric: tabular-nums; }
+    .font-serif-editorial { font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
+    .touch-target-44 { min-height: 44px; min-width: 44px; }
+    .liquid-glass-bar {
+      background-color: rgba(23, 31, 28, 0.82);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+    }
+    @media (prefers-color-scheme: light) {
+      .liquid-glass-bar {
+        background-color: rgba(255, 255, 255, 0.85);
+      }
+    }
+    @media (prefers-reduced-transparency: reduce) {
+      .liquid-glass-bar {
+        background-color: var(--card);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   
     *, ::before, ::after { box-sizing: border-box; }
     body { margin: 0; background-color: var(--background); color: var(--foreground); -webkit-font-smoothing: antialiased; }
@@ -196,7 +221,7 @@
           <span class="inline-flex items-center justify-center w-10 h-10 rounded-2xl bg-emerald-500/15 text-emerald-500 font-bold text-lg">🥗</span>
           <div>
             <div class="flex items-center gap-2">
-              <h1 class="font-bold text-lg tracking-tight text-[var(--foreground)]">NutriBatch • S26 Ultra</h1>
+              <h1 class="font-serif-editorial font-bold text-xl tracking-tight text-[var(--foreground)]">NutriBatch • S26 Ultra</h1>
               <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-500">Sans Porc • 0% Alcool</span>
               <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-500">☁️ Cloud Auto</span>
             </div>
@@ -204,11 +229,14 @@
           </div>
         </div>
         <div class="flex items-center gap-2">
-          <button id="installAppBtn" class="hidden text-xs font-bold px-3.5 py-2 rounded-xl bg-emerald-600 text-white shadow-xs hover:bg-emerald-500 transition">
-            📲 Installer l'appli sur le GSM
+          <button id="installAppBtn" class="hidden touch-target-44 text-xs font-bold px-3.5 py-2 rounded-xl bg-emerald-600 text-white shadow-xs hover:bg-emerald-500 transition">
+            📲 Installer l'appli
           </button>
-          <button id="resetBtn" class="text-xs font-medium px-3 py-1.5 rounded-xl border border-[var(--border)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">
-            Réinitialiser
+          <button id="undoResetBtn" class="hidden touch-target-44 text-xs font-bold px-3 py-2 rounded-xl bg-amber-500/15 border border-amber-500/40 text-amber-500 transition">
+            ↩ Annuler la remise à zéro
+          </button>
+          <button id="resetBtn" class="touch-target-44 text-xs font-medium px-3 py-2 rounded-xl border border-[var(--border)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">
+            Tout décocher
           </button>
         </div>
       </div>
@@ -396,28 +424,28 @@
 
   </div>
 
-  <!-- Samsung One UI Bottom Navigation Bar (Thumb Zone Optimized) -->
-  <nav class="fixed bottom-0 left-0 right-0 bg-[var(--card)]/95 backdrop-blur-md border-t border-[var(--border)] px-2 py-2 z-50">
+  <!-- Samsung One UI + Apple HIG Liquid Glass Bottom Navigation Bar (44x44pt Touch Targets) -->
+  <nav aria-label="Navigation principale" class="fixed bottom-0 left-0 right-0 liquid-glass-bar border-t border-[var(--border)] px-2 py-1.5 z-50">
     <div class="max-w-3xl mx-auto grid grid-cols-5 gap-1">
-      <button data-tab="tab-meals" class="nav-tab-btn flex flex-col items-center justify-center py-2 px-1 rounded-2xl text-xs font-semibold transition">
-        <span class="text-base mb-0.5">🍽️</span>
+      <button data-tab="tab-meals" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-2xl text-xs font-semibold transition">
+        <span class="text-base mb-0.5" aria-hidden="true">🍽️</span>
         <span>Menu</span>
       </button>
-      <button data-tab="tab-express" class="nav-tab-btn flex flex-col items-center justify-center py-2 px-1 rounded-2xl text-xs font-semibold transition">
-        <span class="text-base mb-0.5">⚡</span>
-        <span>Express 48h</span>
+      <button data-tab="tab-express" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-2xl text-xs font-semibold transition">
+        <span class="text-base mb-0.5" aria-hidden="true">⚡</span>
+        <span>Express</span>
       </button>
-      <button data-tab="tab-shopping" class="nav-tab-btn flex flex-col items-center justify-center py-2 px-1 rounded-2xl text-xs font-semibold transition">
-        <span class="text-base mb-0.5">🛒</span>
+      <button data-tab="tab-shopping" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-2xl text-xs font-semibold transition">
+        <span class="text-base mb-0.5" aria-hidden="true">🛒</span>
         <span>Panier (<span id="navCartPrice">68,69€</span>)</span>
       </button>
-      <button data-tab="tab-extras" class="nav-tab-btn flex flex-col items-center justify-center py-2 px-1 rounded-2xl text-xs font-semibold transition">
-        <span class="text-base mb-0.5">🍫</span>
+      <button data-tab="tab-extras" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-2xl text-xs font-semibold transition">
+        <span class="text-base mb-0.5" aria-hidden="true">🍫</span>
         <span>Promos</span>
       </button>
-      <button data-tab="tab-cook" class="nav-tab-btn flex flex-col items-center justify-center py-2 px-1 rounded-2xl text-xs font-semibold transition">
-        <span class="text-base mb-0.5">⏱️</span>
-        <span>Batch 1h</span>
+      <button data-tab="tab-cook" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-2xl text-xs font-semibold transition">
+        <span class="text-base mb-0.5" aria-hidden="true">⏱️</span>
+        <span>Cuisine</span>
       </button>
     </div>
   </nav>
@@ -861,12 +889,13 @@
       for (let d = 1; d <= 7; d++) {
         const active = state.daysCount === d;
         const btn = document.createElement("button");
-        btn.className = `py-2 rounded-xl text-xs font-bold border transition ${
+        btn.className = `touch-target-44 py-2 rounded-xl text-xs font-bold border transition ${
           active
             ? "bg-emerald-600 text-white border-emerald-600 shadow-xs"
             : "bg-[var(--card)] text-[var(--foreground)] border-[var(--border)] hover:border-emerald-500/50"
         }`;
         btn.textContent = `${d}j`;
+        btn.setAttribute("aria-label", `${d} jour${d > 1 ? "s" : ""}`);
         btn.onclick = () => {
           state.daysCount = d;
           saveState();
@@ -886,7 +915,7 @@
       document.querySelectorAll(".meal-mode-btn").forEach(btn => {
         const m = btn.getAttribute("data-mode");
         const active = state.mealMode === m;
-        btn.className = `meal-mode-btn py-2 px-2 rounded-xl text-xs font-semibold border transition ${
+        btn.className = `meal-mode-btn touch-target-44 py-2 px-2 rounded-xl text-xs font-semibold border transition ${
           active
             ? "bg-blue-600 text-white border-blue-600 shadow-xs"
             : "bg-[var(--card)] text-[var(--foreground)] border-[var(--border)] hover:border-blue-500/50"
@@ -980,11 +1009,11 @@
               <span class="text-xs font-bold uppercase px-2.5 py-1 rounded-lg ${badgeClass}">${m.slot}</span>
               ${isSwapped ? '<span class="text-xs font-semibold px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-500">Variante activée</span>' : ''}
             </div>
-            <button data-swap="${key}" class="swap-meal-btn text-xs font-semibold px-3 py-1.5 rounded-xl bg-[var(--background)] border border-[var(--border)] hover:border-emerald-500/60 transition">
+            <button data-swap="${key}" class="swap-meal-btn touch-target-44 text-xs font-semibold px-3 py-1.5 rounded-xl bg-[var(--background)] border border-[var(--border)] hover:border-emerald-500/60 transition">
               🔄 Varier ce plat
             </button>
           </div>
-          <h3 class="font-bold text-sm sm:text-base text-[var(--foreground)] mb-2.5">${data.title}</h3>
+          <h3 class="font-serif-editorial font-bold text-base sm:text-lg text-[var(--foreground)] mb-2.5">${data.title}</h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
             <div class="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
               <span class="font-bold text-emerald-500">🟢 50% Légumes :</span>
@@ -1051,7 +1080,7 @@
 
         row.innerHTML = `
           <div class="flex items-start gap-3 min-w-0 flex-1">
-            <button data-check="${it.id}" class="check-essential-btn mt-0.5 w-6 h-6 rounded-lg border flex items-center justify-center text-xs font-bold shrink-0 transition ${
+            <button data-check="${it.id}" aria-label="${checked ? 'Décocher' : 'Cocher'} ${it.name}" aria-pressed="${checked}" class="check-essential-btn touch-target-44 w-11 h-11 rounded-xl border flex items-center justify-center text-sm font-bold shrink-0 transition ${
               checked ? "bg-emerald-600 border-emerald-600 text-white" : "border-[var(--border)] bg-[var(--background)]"
             }">
               ${checked ? "✓" : ""}
@@ -1301,7 +1330,7 @@
             checked ? 'bg-[var(--background)]/60 border-[var(--border)] opacity-60' : 'bg-[var(--background)] border-[var(--border)]'
           }">
             <div class="flex items-start gap-3 min-w-0 flex-1">
-              <button data-exp-check="${it.id}" class="check-express-btn mt-0.5 w-6 h-6 rounded-lg border flex items-center justify-center text-xs font-bold shrink-0 transition ${
+              <button data-exp-check="${it.id}" aria-label="${checked ? 'Décocher' : 'Cocher'} ${it.name}" aria-pressed="${checked}" class="check-express-btn touch-target-44 w-11 h-11 rounded-xl border flex items-center justify-center text-sm font-bold shrink-0 transition ${
                 checked ? 'bg-emerald-600 border-emerald-600 text-white' : 'border-[var(--border)] bg-[var(--card)]'
               }">
                 ${checked ? '✓' : ''}
@@ -1388,7 +1417,18 @@
       renderTabs();
     }
 
+    let previousSnapshot = null;
+    const undoBtn = document.getElementById("undoResetBtn");
+
     document.getElementById("resetBtn").onclick = () => {
+      previousSnapshot = JSON.parse(JSON.stringify({
+        daysCount: state.daysCount,
+        mealMode: state.mealMode,
+        swappedMeals: state.swappedMeals,
+        checkedEssential: state.checkedEssential,
+        selectedExtras: state.selectedExtras,
+        checkedExpress: state.checkedExpress
+      }));
       state.daysCount = 7;
       state.mealMode = "both";
       state.swappedMeals = {};
@@ -1397,7 +1437,24 @@
       state.checkedExpress = {};
       saveState();
       renderAll();
+      if (undoBtn) undoBtn.classList.remove("hidden");
     };
+
+    if (undoBtn) {
+      undoBtn.onclick = () => {
+        if (!previousSnapshot) return;
+        state.daysCount = previousSnapshot.daysCount;
+        state.mealMode = previousSnapshot.mealMode;
+        state.swappedMeals = previousSnapshot.swappedMeals || {};
+        state.checkedEssential = previousSnapshot.checkedEssential || {};
+        state.selectedExtras = previousSnapshot.selectedExtras || {};
+        state.checkedExpress = previousSnapshot.checkedExpress || {};
+        previousSnapshot = null;
+        undoBtn.classList.add("hidden");
+        saveState();
+        renderAll();
+      };
+    }
 
     // Native PWA Install Prompt Handler for Samsung S26 Ultra
     let deferredInstallPrompt = null;
