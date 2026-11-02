@@ -1,7 +1,9 @@
 {
-  "name": "NutriBatch S26 Ultra — Batch Cooking & Promos",
+  "id": "/nutribatch-s26/cloud-v2",
+  "name": "NutriBatch Cloud — S26 Ultra",
   "short_name": "NutriBatch",
-  "start_url": "./index.html",
+  "start_url": "/nutribatch-s26/",
+  "scope": "/nutribatch-s26/",
   "display": "standalone",
   "background_color": "#0B0F19",
   "theme_color": "#10B981",
