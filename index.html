@@ -8,6 +8,8 @@
   <meta name="theme-color" content="#0B0F19" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
   <link rel="manifest" href="manifest.json" />
   <style>
     :root {
@@ -201,9 +203,23 @@
             <p id="weekHeaderLabel" class="text-xs text-[var(--muted-foreground)]">Semaine du 31 Oct. au 6 Nov. 2026 • Couple (Madame Sportive & Monsieur 35 ans)</p>
           </div>
         </div>
-        <button id="resetBtn" class="text-xs font-medium px-3 py-1.5 rounded-xl border border-[var(--border)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">
-          Réinitialiser
-        </button>
+        <div class="flex items-center gap-2">
+          <button id="installAppBtn" class="hidden text-xs font-bold px-3.5 py-2 rounded-xl bg-emerald-600 text-white shadow-xs hover:bg-emerald-500 transition">
+            📲 Installer l'appli sur le GSM
+          </button>
+          <button id="resetBtn" class="text-xs font-medium px-3 py-1.5 rounded-xl border border-[var(--border)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">
+            Réinitialiser
+          </button>
+        </div>
+      </div>
+
+      <!-- Native App Install Banner for Samsung S26 Ultra -->
+      <div id="installHelpBanner" class="mb-3 p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex flex-wrap items-center justify-between gap-2">
+        <div class="text-xs">
+          <span class="font-bold text-emerald-500">📱 Pour l'avoir comme vraie application sur votre S26 Ultra :</span>
+          <span class="text-[var(--foreground)] ml-1">Appuyez sur le bouton vert « 📲 Installer » ou sur le menu <strong>⋮</strong> en haut à droite → <strong>Ajouter à l'écran d'accueil</strong> → <strong>Installer</strong>.</span>
+        </div>
+        <button id="closeInstallBanner" class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-[var(--background)] border border-[var(--border)] text-[var(--muted-foreground)]">Masquer</button>
       </div>
 
       <!-- Dynamic Controls: Number of Days (1-7) & Meals per Day (1 or 2) -->
@@ -343,7 +359,7 @@
     <!-- TAB 4: BATCH COOKING 60 MIN & TIMERS -->
     <section id="tab-cook" class="tab-panel hidden space-y-3">
       <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4">
-        <h2 class="text-base font-bold">Session Batch Cooking Express (60 min)</h2>
+        <h2 class="text-base font-bold">Session Batch Cooking Hebdo (60 min)</h2>
         <p class="text-xs text-[var(--muted-foreground)] mt-0.5">
           Lancez les minuteurs directement sur votre Samsung S26 Ultra pendant que vous cuisinez le dimanche.
         </p>
@@ -351,26 +367,57 @@
       <div id="timelineContainer" class="space-y-2.5"></div>
     </section>
 
+    <!-- TAB 5: BATCH EXPRESS 48H (JOUR MÊME + LENDEMAIN POUR 2 PERSONNES) -->
+    <section id="tab-express" class="tab-panel hidden space-y-3">
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+          <div>
+            <div class="flex items-center gap-2">
+              <h2 class="text-base font-bold">⚡ Batch Express 48h (Aujourd'hui + Demain)</h2>
+              <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-500">4 Assiettes (2 Pers. × 2 Jours)</span>
+            </div>
+            <p class="text-xs text-[var(--muted-foreground)] mt-1">
+              Envie de faire les courses maintenant et de cuisiner en <strong>20 minutes chrono</strong> pour manger ce soir ET réchauffer demain (midi ou soir) pour 2 personnes ? Choisissez votre kit ci-dessous :
+            </p>
+          </div>
+          <div class="text-right">
+            <div class="text-xs text-[var(--muted-foreground)]">Reste à payer (Kit Express) :</div>
+            <div id="expressRemainingPrice" class="text-lg font-bold text-emerald-500">0,00 €</div>
+          </div>
+        </div>
+
+        <!-- Express Kit Selector Buttons -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3" id="expressKitBtnGroup"></div>
+      </div>
+
+      <!-- Active Express Kit Details (Menu + Mini-Basket + 20-min Recipe & Reheat Tip) -->
+      <div id="expressDetailContainer" class="space-y-3"></div>
+    </section>
+
   </div>
 
   <!-- Samsung One UI Bottom Navigation Bar (Thumb Zone Optimized) -->
-  <nav class="fixed bottom-0 left-0 right-0 bg-[var(--card)]/95 backdrop-blur-md border-t border-[var(--border)] px-3 py-2 z-50">
-    <div class="max-w-3xl mx-auto grid grid-cols-4 gap-1.5">
-      <button data-tab="tab-meals" class="nav-tab-btn flex flex-col items-center justify-center py-2 px-2 rounded-2xl text-xs font-semibold transition">
+  <nav class="fixed bottom-0 left-0 right-0 bg-[var(--card)]/95 backdrop-blur-md border-t border-[var(--border)] px-2 py-2 z-50">
+    <div class="max-w-3xl mx-auto grid grid-cols-5 gap-1">
+      <button data-tab="tab-meals" class="nav-tab-btn flex flex-col items-center justify-center py-2 px-1 rounded-2xl text-xs font-semibold transition">
         <span class="text-base mb-0.5">🍽️</span>
-        <span>Menu & Jours</span>
+        <span>Menu</span>
       </button>
-      <button data-tab="tab-shopping" class="nav-tab-btn flex flex-col items-center justify-center py-2 px-2 rounded-2xl text-xs font-semibold transition">
+      <button data-tab="tab-express" class="nav-tab-btn flex flex-col items-center justify-center py-2 px-1 rounded-2xl text-xs font-semibold transition">
+        <span class="text-base mb-0.5">⚡</span>
+        <span>Express 48h</span>
+      </button>
+      <button data-tab="tab-shopping" class="nav-tab-btn flex flex-col items-center justify-center py-2 px-1 rounded-2xl text-xs font-semibold transition">
         <span class="text-base mb-0.5">🛒</span>
         <span>Panier (<span id="navCartPrice">68,69€</span>)</span>
       </button>
-      <button data-tab="tab-extras" class="nav-tab-btn flex flex-col items-center justify-center py-2 px-2 rounded-2xl text-xs font-semibold transition">
+      <button data-tab="tab-extras" class="nav-tab-btn flex flex-col items-center justify-center py-2 px-1 rounded-2xl text-xs font-semibold transition">
         <span class="text-base mb-0.5">🍫</span>
-        <span>Autres Promos</span>
+        <span>Promos</span>
       </button>
-      <button data-tab="tab-cook" class="nav-tab-btn flex flex-col items-center justify-center py-2 px-2 rounded-2xl text-xs font-semibold transition">
+      <button data-tab="tab-cook" class="nav-tab-btn flex flex-col items-center justify-center py-2 px-1 rounded-2xl text-xs font-semibold transition">
         <span class="text-base mb-0.5">⏱️</span>
-        <span>Batch 60 min</span>
+        <span>Batch 1h</span>
       </button>
     </div>
   </nav>
@@ -656,6 +703,98 @@
     ];
 
     // =========================================================================
+    // 4 EXPRESS 48H KITS (SAME DAY + NEXT DAY REHEAT FOR 2 PEOPLE = 4 PLATES)
+    // =========================================================================
+    const EXPRESS_KITS = [
+      {
+        id: "kit_poulet",
+        badge: "🔥 20 min • 100% Aldi",
+        title: "Kit 1 : Wok Poulet Citron-Skyr, Riz Basmati & Brocoli-Poivrons",
+        prepTime: "20 min chrono",
+        portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. à réchauffer demain)",
+        todayMeal: "Émincé de poulet doré minute au citron & origan, riz basmati vapeur et poêlée croquante de brocoli & poivrons tricolores + 1 Banane.",
+        tomorrowReheat: "Réchauffez 2 min 30 au micro-ondes (avec 1 c.à.s de Skyr 0% ajoutée après réchauffage pour un moelleux parfait) ou 4 min à la poêle.",
+        steps: [
+          "00:00 → 00:05 : Lancez 320 g de riz basmati dans l'eau bouillante salée (11 min). Coupez 650 g de filet de poulet en lanières.",
+          "00:05 → 00:15 : Saisissez le poulet à la poêle vive 6 min avec paprika, origan et ail. Ajoutez le sachet de poivrons (500 g) et le brocoli en fleurettes (600 g) avec un fond d'eau, couvrez 7 min.",
+          "00:15 → 00:20 : Hors du feu, liez avec 3 c.à.s de Skyr 0% et du jus de citron. Servez 2 assiettes (50% légumes / 25% riz / 25% poulet) et mettez immédiatement les 2 autres portions en boîte hermétique au frigo pour demain !"
+        ],
+        items: [
+          { id: "ex_p1", store: "ALDI", name: "Filets de poitrine de poulet XXL (1 kg — utilisez 650g)", qty: "1 barquette (1 kg)", price: 8.99, url: "https://www.aldi.be/fr/product/filet-de-poitrine-de-poulet-xxl-3007574.html" },
+          { id: "ex_p2", store: "ALDI", name: "Brocoli en fleurettes (1 kg)", qty: "1 sachet (1 kg)", price: 1.79, url: "https://www.aldi.be/fr/product/brocoli-6255.html" },
+          { id: "ex_p3", store: "ALDI", name: "Mélange de poivrons tricolores (500 g)", qty: "1 sachet (500 g)", price: 1.99, url: "https://www.aldi.be/fr/product/melange-de-poivrons-6212.html" },
+          { id: "ex_p4", store: "ALDI", name: "Riz Basmati (1 kg)", qty: "1 boîte (1 kg)", price: 1.89, url: "https://www.aldi.be/fr/product/riz-basmati-3011332.html" },
+          { id: "ex_p5", store: "ALDI", name: "Milsani Skyr Nature 0 % MG (500 g)", qty: "1 pot (500 g)", price: 1.49, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" },
+          { id: "ex_p6", store: "ALDI", name: "Bananes fraîches (1 kg)", qty: "1 régime (1 kg)", price: 1.59, url: "https://www.aldi.be/fr/product/bananes-8272.html" }
+        ]
+      },
+      {
+        id: "kit_pates_thon",
+        badge: "⚡ 15 min • Ultra-Rapide",
+        title: "Kit 2 : One-Pot Penne Complètes au Thon, Courgettes, Épinards & Tomate",
+        prepTime: "15 min chrono",
+        portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. demain midi ou soir)",
+        todayMeal: "Penne complètes fondantes à la passata de tomates, courgettes sautées à l'ail, jeunes pousses d'épinards et thon au naturel + 1 Pomme.",
+        tomorrowReheat: "Encore meilleur réchauffé le lendemain ! Ajoutez 1 filet d'eau avant de passer 2 min au micro-ondes à couvert : la sauce tomate reste ultra-onctueuse.",
+        steps: [
+          "00:00 → 00:05 : Mettez 350 g de penne complètes à cuire (10 min). Coupez les 2 courgettes (600 g) en demi-rondelles.",
+          "00:05 → 00:12 : Faites dorer les courgettes 5 min à la poêle, versez la brique de passata (500 g) et le sachet d'épinards frais (400 g) qui fond en 2 minutes.",
+          "00:12 → 00:15 : Ajoutez les 3 boîtes de thon égouttées et les pâtes. Mélangez : servez 2 assiettes ce soir et mettez 2 boîtes au frais pour demain !"
+        ],
+        items: [
+          { id: "ex_t1", store: "ALDI", name: "Thon au naturel (3 boîtes × 150 g)", qty: "3 boîtes (450 g)", price: 4.17, url: "https://www.aldi.be/fr/product/thon-au-naturel-3013183.html" },
+          { id: "ex_t2", store: "ALDI", name: "Penne Complet / Blé Dur (500 g)", qty: "1 paquet (500 g)", price: 0.79, url: "https://www.aldi.be/fr/product/penne-complet-3010902.html" },
+          { id: "ex_t3", store: "ALDI", name: "Courgettes fraîches (600 g)", qty: "2 pièces (600 g)", price: 1.39, url: "https://www.aldi.be/fr/product/courgettes-3005491.html" },
+          { id: "ex_t4", store: "ALDI", name: "Épinards frais en branches (400 g)", qty: "1 sachet (400 g)", price: 1.29, url: "https://www.aldi.be/fr/product/epinards-7996.html" },
+          { id: "ex_t5", store: "ALDI", name: "Passata de tomates (500 g)", qty: "1 brique (500 g)", price: 0.69, url: "https://www.aldi.be/fr/product/passata-de-tomates-3010209.html" },
+          { id: "ex_t6", store: "ALDI", name: "Pommes Jonagold belges (1,5 kg)", qty: "1 sachet (1,5 kg)", price: 1.99, url: "https://www.aldi.be/fr/product/pommes-jonagold-8134.html" }
+        ]
+      },
+      {
+        id: "kit_cabillaud",
+        badge: "🐟 20 min • Four Sans Effort",
+        title: "Kit 3 : Papillote / Plaque de Cabillaud, Haricots Verts & Pommes de Terre",
+        prepTime: "20 min chrono",
+        portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. demain)",
+        todayMeal: "Filets de cabillaud rôtis au citron, haricots verts extra-fins aillés et pommes de terre vapeur + 1 Poire Conférence.",
+        tomorrowReheat: "Réchauffez à puissance moyenne (600W pendant 2 min) avec une cuillère de sauce Skyr-citron pour garder le poisson bien tendre.",
+        steps: [
+          "00:00 → 00:05 : Coupez 800 g de pommes de terre en petits cubes pour une cuisson express (12 min à l'eau bouillante avec les haricots verts).",
+          "00:05 → 00:18 : Enfournez les 4 filets de cabillaud (600 g) à 200 °C pendant 12-14 min avec citron, herbes et un filet d'huile d'olive.",
+          "00:18 → 00:20 : Dressez 2 assiettes pour aujourd'hui et préparez vos 2 boîtes (poisson + haricots verts + pommes de terre) pour demain !"
+        ],
+        items: [
+          { id: "ex_c1", store: "ALDI", name: "Filets de cabillaud (600 g — 4 filets)", qty: "1 sachet (600 g)", price: 5.49, url: "https://www.aldi.be/fr/product/filets-de-cabillaud-5392.html" },
+          { id: "ex_c2", store: "ALDI", name: "Haricots verts extra-fins (1 kg)", qty: "1 sachet (1 kg)", price: 1.39, url: "https://www.aldi.be/fr/product/haricots-verts-6245.html" },
+          { id: "ex_c3", store: "ALDI", name: "Pommes de terre à chair très ferme (2,5 kg)", qty: "1 filet (2,5 kg)", price: 2.99, url: "https://www.aldi.be/fr/product/pommes-de-terre-a-chair-tres-ferme-6148.html" },
+          { id: "ex_c4", store: "ALDI", name: "Milsani Skyr Nature 0 % MG (500 g)", qty: "1 pot (500 g)", price: 1.49, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" },
+          { id: "ex_c5", store: "ALDI", name: "Poires Conférence belges (1 kg)", qty: "1 barquette (1 kg)", price: 1.59, url: "https://www.aldi.be/fr/product/poires-conference-8144.html" }
+        ]
+      },
+      {
+        id: "kit_boeuf",
+        badge: "🥩 25 min • Promo Colruyt",
+        title: "Kit 4 : Poêlée Minute de Bœuf Maigre aux Champignons, Carottes & PDT",
+        prepTime: "25 min chrono",
+        portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. demain)",
+        todayMeal: "Émincé de bœuf maigre belge sauté aux champignons frais, carottes fondantes à la tomate et pommes de terre dorées.",
+        tomorrowReheat: "Les plats en sauce tomate-champignons sont encore plus savoureux réchauffés le lendemain (2 min 30 au micro-ondes ou 5 min à feu doux).",
+        steps: [
+          "00:00 → 00:07 : Émincez finement les 700 g de bœuf maigre Colruyt (en lamelles fines, il cuit en quelques minutes !) et coupez les carottes en fines rondelles.",
+          "00:07 → 00:20 : Saisissez le bœuf 4 min à feu vif, réservez. Dans la même poêle, faites revenir les champignons (500 g) et carottes avec la passata (500 g) pendant 12 min à couvert pendant que les pommes de terre cuisent.",
+          "00:20 → 00:25 : Remettez le bœuf dans la sauce : 2 portions pour aujourd'hui + 2 boîtes prêtes à réchauffer demain pour 2 personnes !"
+        ],
+        items: [
+          { id: "ex_b1", store: "COLRUYT", name: "Bœuf maigre belge (Promo Prix Rouge — 700 g)", qty: "1 barquette (700 g)", price: 8.95, url: "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/19?offer=201c1f58-0755-4242-99b9-edfea16779fd" },
+          { id: "ex_b2", store: "ALDI", name: "Champignons frais (500 g)", qty: "1 barquette (500 g)", price: 1.89, url: "https://www.aldi.be/fr/product/champignons-6226.html" },
+          { id: "ex_b3", store: "ALDI", name: "Carottes belges fraîches (2 kg)", qty: "1 sachet (2 kg)", price: 1.79, url: "https://www.aldi.be/fr/product/carottes-8275.html" },
+          { id: "ex_b4", store: "ALDI", name: "Passata de tomates (500 g)", qty: "1 brique (500 g)", price: 0.69, url: "https://www.aldi.be/fr/product/passata-de-tomates-3010209.html" },
+          { id: "ex_b5", store: "ALDI", name: "Pommes de terre à chair très ferme (2,5 kg)", qty: "1 filet (2,5 kg)", price: 2.99, url: "https://www.aldi.be/fr/product/pommes-de-terre-a-chair-tres-ferme-6148.html" }
+        ]
+      }
+    ];
+
+    // =========================================================================
     // APPLICATION STATE
     // =========================================================================
     let state = {
@@ -664,6 +803,8 @@
       swappedMeals: {},       // index -> boolean
       checkedEssential: {},   // id -> boolean
       selectedExtras: {},     // id -> boolean
+      activeExpressKit: "kit_poulet",
+      checkedExpress: {},     // id -> boolean
       storeFilter: "ALL",
       extraCatFilter: "ALL",
       activeTab: "tab-meals",
@@ -1107,6 +1248,135 @@
       });
     }
 
+    function renderExpress() {
+      const btnGroup = document.getElementById("expressKitBtnGroup");
+      const detailContainer = document.getElementById("expressDetailContainer");
+      if (!btnGroup || !detailContainer) return;
+
+      btnGroup.innerHTML = "";
+      const kit = EXPRESS_KITS.find(k => k.id === state.activeExpressKit) || EXPRESS_KITS[0];
+
+      EXPRESS_KITS.forEach(k => {
+        const active = k.id === kit.id;
+        const kitTotal = k.items.reduce((acc, it) => acc + it.price, 0);
+        const btn = document.createElement("button");
+        btn.className = `text-left p-3 rounded-2xl border transition flex flex-col justify-between ${
+          active
+            ? "bg-amber-500/15 border-amber-500 text-[var(--foreground)] shadow-xs"
+            : "bg-[var(--background)] border-[var(--border)] text-[var(--muted-foreground)] hover:border-amber-500/40"
+        }`;
+        btn.innerHTML = `
+          <div class="flex items-center justify-between gap-2 w-full mb-1">
+            <span class="text-[11px] font-bold px-2 py-0.5 rounded-md ${active ? 'bg-amber-500 text-white' : 'bg-[var(--card)] text-amber-500'}">${k.badge}</span>
+            <span class="text-xs font-bold text-emerald-500">${formatEuro(kitTotal)} (4 repas)</span>
+          </div>
+          <div class="font-bold text-xs text-[var(--foreground)]">${k.title}</div>
+        `;
+        btn.onclick = () => {
+          state.activeExpressKit = k.id;
+          saveState();
+          renderExpress();
+        };
+        btnGroup.appendChild(btn);
+      });
+
+      let totalKit = 0;
+      let checkedKit = 0;
+      kit.items.forEach(it => {
+        totalKit += it.price;
+        if (state.checkedExpress && state.checkedExpress[it.id]) {
+          checkedKit += it.price;
+        }
+      });
+      const remainingKit = Math.max(0, totalKit - checkedKit);
+      const remPriceEl = document.getElementById("expressRemainingPrice");
+      if (remPriceEl) {
+        remPriceEl.textContent = `${formatEuro(remainingKit)} ${checkedKit > 0 ? `(−${formatEuro(checkedKit)} coché)` : `(sur ${formatEuro(totalKit)})`}`;
+      }
+
+      const itemsHtml = kit.items.map(it => {
+        const checked = !!(state.checkedExpress && state.checkedExpress[it.id]);
+        return `
+          <div class="flex items-center justify-between gap-3 p-3 rounded-xl border transition ${
+            checked ? 'bg-[var(--background)]/60 border-[var(--border)] opacity-60' : 'bg-[var(--background)] border-[var(--border)]'
+          }">
+            <div class="flex items-start gap-3 min-w-0 flex-1">
+              <button data-exp-check="${it.id}" class="check-express-btn mt-0.5 w-6 h-6 rounded-lg border flex items-center justify-center text-xs font-bold shrink-0 transition ${
+                checked ? 'bg-emerald-600 border-emerald-600 text-white' : 'border-[var(--border)] bg-[var(--card)]'
+              }">
+                ${checked ? '✓' : ''}
+              </button>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 mb-0.5">
+                  <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-[var(--card)] border border-[var(--border)]">${it.store}</span>
+                  <span class="text-xs text-[var(--muted-foreground)]">${it.qty}</span>
+                </div>
+                <a href="${it.url}" target="_blank" rel="noopener noreferrer" class="font-bold text-sm text-blue-500 hover:underline block truncate ${checked ? 'line-through' : ''}">
+                  ${it.name}
+                </a>
+                <a href="${it.url}" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-emerald-500 hover:underline">
+                  🔗 Ouvrir l'article exact →
+                </a>
+              </div>
+            </div>
+            <div class="text-right shrink-0">
+              <div class="text-sm font-bold ${checked ? 'line-through text-[var(--muted-foreground)]' : 'text-[var(--foreground)]'}">${formatEuro(it.price)}</div>
+              ${checked ? '<div class="text-[10px] font-bold text-emerald-500">−' + formatEuro(it.price) + ' déduit</div>' : ''}
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      const stepsHtml = kit.steps.map(s => `
+        <li class="text-xs text-[var(--foreground)] leading-relaxed p-2.5 rounded-xl bg-[var(--background)] border border-[var(--border)]">
+          ${s}
+        </li>
+      `).join("");
+
+      detailContainer.innerHTML = `
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-bold text-base text-[var(--foreground)]">${kit.title}</h3>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-500">⏱️ ${kit.prepTime} • ${formatEuro(totalKit / 4)} / assiette</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+            <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+              <div class="font-bold text-emerald-500 mb-1">🍽️ Jour 1 (Aujourd'hui — 2 personnes) :</div>
+              <div class="text-[var(--foreground)]">${kit.todayMeal}</div>
+            </div>
+            <div class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
+              <div class="font-bold text-amber-500 mb-1">🍱 Jour 2 (À réchauffer demain — 2 personnes) :</div>
+              <div class="text-[var(--foreground)]">${kit.tomorrowReheat}</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-bold text-sm">🛒 Mini-Liste de Courses sur le moment (${kit.items.length} articles)</h4>
+              <span class="text-xs text-[var(--muted-foreground)]">Cochez en rayon pour déduire le prix</span>
+            </div>
+            <div class="space-y-2">${itemsHtml}</div>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-sm mb-2">👩‍🍳 Préparation Express en 3 étapes (4 portions d'un coup)</h4>
+            <ul class="space-y-2">${stepsHtml}</ul>
+          </div>
+        </div>
+      `;
+
+      detailContainer.querySelectorAll(".check-express-btn").forEach(btn => {
+        btn.onclick = () => {
+          const id = btn.getAttribute("data-exp-check");
+          if (!state.checkedExpress) state.checkedExpress = {};
+          state.checkedExpress[id] = !state.checkedExpress[id];
+          saveState();
+          renderExpress();
+        };
+      });
+    }
+
     function renderAll() {
       renderControls();
       renderKPIs();
@@ -1114,6 +1384,7 @@
       renderShoppingList();
       renderExtras();
       renderTimeline();
+      renderExpress();
       renderTabs();
     }
 
@@ -1123,11 +1394,48 @@
       state.swappedMeals = {};
       state.checkedEssential = {};
       state.selectedExtras = {};
+      state.checkedExpress = {};
       saveState();
       renderAll();
     };
 
+    // Native PWA Install Prompt Handler for Samsung S26 Ultra
+    let deferredInstallPrompt = null;
+    const installBtn = document.getElementById("installAppBtn");
+    const installBanner = document.getElementById("installHelpBanner");
+    const closeBannerBtn = document.getElementById("closeInstallBanner");
+
+    if (window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true) {
+      if (installBanner) installBanner.classList.add("hidden");
+    }
+
+    if (closeBannerBtn && installBanner) {
+      closeBannerBtn.onclick = () => installBanner.classList.add("hidden");
+    }
+
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredInstallPrompt = e;
+      if (installBtn) {
+        installBtn.classList.remove("hidden");
+        installBtn.onclick = async () => {
+          if (!deferredInstallPrompt) return;
+          deferredInstallPrompt.prompt();
+          const { outcome } = await deferredInstallPrompt.userChoice;
+          if (outcome === "accepted") {
+            installBtn.classList.add("hidden");
+            if (installBanner) installBanner.classList.add("hidden");
+          }
+          deferredInstallPrompt = null;
+        };
+      }
+    });
+
     renderAll();
+
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    }
 
     // Cloud Auto-Update Loader (populated every Saturday at 09:00 by GitHub Actions)
     fetch("weekly_data.json?t=" + Date.now())

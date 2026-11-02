@@ -1,11 +1,26 @@
 {
-  "id": "/nutribatch-s26/cloud-v2",
-  "name": "NutriBatch Cloud — S26 Ultra",
+  "id": "/nutribatch-s26/app-v3",
+  "name": "NutriBatch — S26 Ultra",
   "short_name": "NutriBatch",
+  "description": "Batch Cooking & Promos Belgique (50/25/25, Sans Porc, 0% Alcool)",
   "start_url": "/nutribatch-s26/",
   "scope": "/nutribatch-s26/",
   "display": "standalone",
   "background_color": "#0B0F19",
-  "theme_color": "#10B981",
-  "orientation": "portrait"
+  "theme_color": "#0B0F19",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }
