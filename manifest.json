@@ -1,0 +1,9 @@
+{
+  "name": "NutriBatch S26 Ultra — Batch Cooking & Promos",
+  "short_name": "NutriBatch",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0B0F19",
+  "theme_color": "#10B981",
+  "orientation": "portrait"
+}
