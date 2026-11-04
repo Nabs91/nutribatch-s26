@@ -13,36 +13,52 @@
   <link rel="manifest" href="manifest.json" />
   <style>
     :root {
-      --background: #0F1412;
-      --card: #171F1C;
-      --foreground: #F4F7F5;
-      --muted-foreground: #A3B3AC;
-      --border: #25332D;
+      --background: #F6F4EE;
+      --card: #FFFFFF;
+      --surface-subtle: #EFECE3;
+      --foreground: #181C18;
+      --muted-foreground: #525B54;
+      --border: #E2DEC9;
+      --accent: #1B5E3A;
+      --terracotta: #C84B31;
     }
-    @media (prefers-color-scheme: light) {
+    @media (prefers-color-scheme: dark) {
       :root {
-        --background: #F6F5F0;
-        --card: #FFFFFF;
-        --foreground: #141A17;
-        --muted-foreground: #4E5E56;
-        --border: #E2E0D8;
+        --background: #111512;
+        --card: #1A201C;
+        --surface-subtle: #222A25;
+        --foreground: #F4F2EB;
+        --muted-foreground: #9BA69E;
+        --border: #2C3630;
+        --accent: #2ECC71;
+        --terracotta: #E06D53;
       }
     }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-variant-numeric: tabular-nums; }
-    .font-serif-editorial { font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
-    .touch-target-44 { min-height: 44px; min-width: 44px; }
-    .liquid-glass-bar {
-      background-color: rgba(23, 31, 28, 0.82);
-      backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      font-variant-numeric: tabular-nums;
+      background-color: var(--background);
+      color: var(--foreground);
     }
-    @media (prefers-color-scheme: light) {
-      .liquid-glass-bar {
-        background-color: rgba(255, 255, 255, 0.85);
+    .font-serif-editorial {
+      font-family: "New York", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      letter-spacing: -0.015em;
+    }
+    .touch-target-44 { min-height: 44px; min-width: 44px; }
+    .liquid-glass-pill {
+      background-color: rgba(255, 255, 255, 0.84);
+      backdrop-filter: saturate(190%) blur(24px);
+      -webkit-backdrop-filter: saturate(190%) blur(24px);
+      box-shadow: 0 12px 32px -8px rgba(24, 28, 24, 0.18), 0 0 0 1px rgba(226, 222, 201, 0.8);
+    }
+    @media (prefers-color-scheme: dark) {
+      .liquid-glass-pill {
+        background-color: rgba(26, 32, 28, 0.84);
+        box-shadow: 0 14px 36px -8px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.12);
       }
     }
     @media (prefers-reduced-transparency: reduce) {
-      .liquid-glass-bar {
+      .liquid-glass-pill {
         background-color: var(--card);
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
@@ -53,6 +69,11 @@
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
       }
+    }
+    .ios-segmented {
+      background-color: var(--surface-subtle);
+      padding: 4px;
+      border-radius: 14px;
     }
   
     *, ::before, ::after { box-sizing: border-box; }
@@ -214,107 +235,98 @@
   <!-- Samsung S26 Ultra Adaptive Container (Works full-width or mobile viewport) -->
   <div class="max-w-3xl mx-auto pb-28 px-4 pt-4">
 
-    <!-- Top Status & Header Banner (One UI 8 Inspired) -->
-    <header class="bg-[var(--card)] border border-[var(--border)] rounded-3xl p-5 shadow-sm mb-4">
-      <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
-        <div class="flex items-center gap-2.5">
-          <span class="inline-flex items-center justify-center w-10 h-10 rounded-2xl bg-emerald-500/15 text-emerald-500 font-bold text-lg">🥗</span>
-          <div>
-            <div class="flex items-center gap-2">
-              <h1 class="font-serif-editorial font-bold text-xl tracking-tight text-[var(--foreground)]">NutriBatch • S26 Ultra</h1>
-              <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-500">Sans Porc • 0% Alcool</span>
-              <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-500">☁️ Cloud Auto</span>
-            </div>
-            <p id="weekHeaderLabel" class="text-xs text-[var(--muted-foreground)]">Semaine du 31 Oct. au 6 Nov. 2026 • Couple (Madame Sportive & Monsieur 35 ans)</p>
+    <!-- Apple HIG Editorial Header + Signature 50/25/25 Culinary Gauge (No 4-Box Dashboard Clutter) -->
+    <header class="bg-[var(--card)] border border-[var(--border)] rounded-3xl p-5 shadow-xs mb-5">
+      <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-1">
+            <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-600">Apple HIG Edition</span>
+            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[var(--background)] border border-[var(--border)] text-[var(--muted-foreground)]">Sans Porc • 0% Alcool</span>
           </div>
+          <h1 class="font-serif-editorial font-bold text-2xl sm:text-3xl text-[var(--foreground)]">L’Atelier Batch & Promos</h1>
+          <p id="weekHeaderLabel" class="text-xs text-[var(--muted-foreground)] mt-0.5">Semaine du 31 Oct. au 6 Nov. 2026 • Couple (Madame Sportive & Monsieur 35 ans)</p>
         </div>
+
         <div class="flex items-center gap-2">
           <button id="installAppBtn" class="hidden touch-target-44 text-xs font-bold px-3.5 py-2 rounded-xl bg-emerald-600 text-white shadow-xs hover:bg-emerald-500 transition">
             📲 Installer l'appli
           </button>
           <button id="undoResetBtn" class="hidden touch-target-44 text-xs font-bold px-3 py-2 rounded-xl bg-amber-500/15 border border-amber-500/40 text-amber-500 transition">
-            ↩ Annuler la remise à zéro
+            ↩ Annuler
           </button>
-          <button id="resetBtn" class="touch-target-44 text-xs font-medium px-3 py-2 rounded-xl border border-[var(--border)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">
+          <button id="resetBtn" class="touch-target-44 text-xs font-semibold px-3 py-2 rounded-xl border border-[var(--border)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">
             Tout décocher
           </button>
         </div>
       </div>
 
       <!-- Native App Install Banner for Samsung S26 Ultra -->
-      <div id="installHelpBanner" class="mb-3 p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex flex-wrap items-center justify-between gap-2">
+      <div id="installHelpBanner" class="mb-4 p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex flex-wrap items-center justify-between gap-2">
         <div class="text-xs">
-          <span class="font-bold text-emerald-500">📱 Pour l'avoir comme vraie application sur votre S26 Ultra :</span>
-          <span class="text-[var(--foreground)] ml-1">Appuyez sur le bouton vert « 📲 Installer » ou sur le menu <strong>⋮</strong> en haut à droite → <strong>Ajouter à l'écran d'accueil</strong> → <strong>Installer</strong>.</span>
+          <span class="font-bold text-emerald-500">📱 Application Plein Écran S26 Ultra :</span>
+          <span class="text-[var(--foreground)] ml-1">Appuyez sur <strong>⋮</strong> en haut à droite → <strong>Ajouter à l'écran d'accueil</strong> → <strong>Installer</strong>.</span>
         </div>
         <button id="closeInstallBanner" class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-[var(--background)] border border-[var(--border)] text-[var(--muted-foreground)]">Masquer</button>
       </div>
 
-      <!-- Dynamic Controls: Number of Days (1-7) & Meals per Day (1 or 2) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-[var(--border)]">
-        <!-- Days Selector -->
-        <div class="bg-[var(--background)] border border-[var(--border)] rounded-2xl p-3.5">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">📅 Nombre de jours</span>
-            <span id="daysLabel" class="text-sm font-bold text-emerald-500">7 jours</span>
+      <!-- SIGNATURE ELEMENT (Apple Craft Lens): Unified Culinary Balance & Live Cart Ticket -->
+      <div class="p-4 rounded-2xl bg-[var(--background)] border border-[var(--border)] mb-4">
+        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-[var(--muted-foreground)]">Reste à payer en caisse</span>
+            <div class="flex items-baseline gap-2 mt-0.5">
+              <span id="kpiEssentialTotal" class="font-serif-editorial text-3xl font-bold text-emerald-500">68,69 €</span>
+              <span id="kpiRemaining" class="text-xs font-semibold text-[var(--muted-foreground)]">sur 68,69 € (Plafond 70 €)</span>
+            </div>
           </div>
-          <div class="grid grid-cols-7 gap-1.5" id="daysBtnGroup">
-            <!-- Populated by JS: 1 to 7 -->
+          <div class="text-right">
+            <div id="kpiPlatesCount" class="text-sm font-bold text-[var(--foreground)]">28 assiettes équilibrées</div>
+            <div class="text-xs text-[var(--muted-foreground)]">
+              <span id="kpiMealsSub">14 plats × 2 pers.</span> • <span id="kpiProduceWeight" class="font-semibold text-emerald-500">11,7 kg</span> F&L
+              • Extras : <span id="kpiExtrasTotal" class="font-semibold text-rose-500">0,00 €</span> (<span id="kpiExtrasCount">0</span>)
+            </div>
           </div>
         </div>
 
-        <!-- Meals per Day Selector -->
-        <div class="bg-[var(--background)] border border-[var(--border)] rounded-2xl p-3.5">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">🍽️ Plats par jour (2 pers.)</span>
-            <span id="mealsPerDayLabel" class="text-sm font-bold text-blue-500">2 plats (Midi & Soir)</span>
+        <!-- Live Budget Depletion Bar -->
+        <div class="w-full bg-[var(--border)] h-2 rounded-full overflow-hidden mb-3">
+          <div id="budgetBar" class="bg-emerald-600 h-full rounded-full transition-all duration-300" style="width: 98%"></div>
+        </div>
+
+        <!-- Signature 50 / 25 / 25 Visual Plate Proportion -->
+        <div class="grid grid-cols-4 gap-1.5 text-center text-xs font-semibold">
+          <div class="col-span-2 py-2 px-2 rounded-xl bg-emerald-500/15 text-emerald-500 border border-emerald-500/20">
+            🥗 50 % Légumes (~260g/assiette)
           </div>
-          <div class="grid grid-cols-3 gap-1.5">
-            <button data-mode="both" class="meal-mode-btn py-2 px-2 rounded-xl text-xs font-semibold border transition">Midi & Soir (2)</button>
-            <button data-mode="midi" class="meal-mode-btn py-2 px-2 rounded-xl text-xs font-semibold border transition">Midi seul (1)</button>
-            <button data-mode="soir" class="meal-mode-btn py-2 px-2 rounded-xl text-xs font-semibold border transition">Soir seul (1)</button>
+          <div class="py-2 px-1.5 rounded-xl bg-amber-500/15 text-amber-500 border border-amber-500/20 truncate">
+            🌾 25 % Féculents
+          </div>
+          <div class="py-2 px-1.5 rounded-xl bg-blue-500/15 text-blue-500 border border-blue-500/20 truncate">
+            🍗 25 % Protéines
           </div>
         </div>
       </div>
 
-      <!-- KPI Summary Bar -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-3">
-        <div class="rounded-2xl p-3 bg-emerald-500/10 border border-emerald-500/20">
-          <div class="text-xs font-medium text-[var(--muted-foreground)]">Reste à payer (Panier)</div>
-          <div class="flex items-baseline gap-1.5 mt-0.5">
-            <span id="kpiEssentialTotal" class="text-xl font-bold text-emerald-500">68,69 €</span>
-            <span id="kpiRemaining" class="text-xs font-medium text-[var(--muted-foreground)]">sur 68,69 €</span>
+      <!-- Apple HIG Segmented Controls (pickers.md / segmented-controls.md): Days (1-7) & Meals per Day -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <div class="flex items-center justify-between mb-1.5 px-1">
+            <span class="text-xs font-semibold text-[var(--muted-foreground)]">Durée du menu</span>
+            <span id="daysLabel" class="text-xs font-bold text-emerald-500">7 jours</span>
           </div>
-          <div class="w-full bg-[var(--border)] h-1.5 rounded-full mt-2 overflow-hidden">
-            <div id="budgetBar" class="bg-emerald-500 h-full rounded-full transition-all duration-300" style="width: 98%"></div>
+          <div class="ios-segmented grid grid-cols-7 gap-1" id="daysBtnGroup"></div>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between mb-1.5 px-1">
+            <span class="text-xs font-semibold text-[var(--muted-foreground)]">Cadence des repas (2 pers.)</span>
+            <span id="mealsPerDayLabel" class="text-xs font-bold text-blue-500">2 plats/j</span>
           </div>
-        </div>
-
-        <div class="rounded-2xl p-3 bg-blue-500/10 border border-blue-500/20">
-          <div class="text-xs font-medium text-[var(--muted-foreground)]">Assiettes Générées</div>
-          <div id="kpiPlatesCount" class="text-xl font-bold text-blue-500 mt-0.5">28 assiettes</div>
-          <div id="kpiMealsSub" class="text-xs text-[var(--muted-foreground)] mt-1">14 plats × 2 personnes</div>
-        </div>
-
-        <div class="rounded-2xl p-3 bg-amber-500/10 border border-amber-500/20">
-          <div class="text-xs font-medium text-[var(--muted-foreground)]">Fruits & Légumes</div>
-          <div id="kpiProduceWeight" class="text-xl font-bold text-amber-500 mt-0.5">11,7 kg</div>
-          <div class="text-xs text-[var(--muted-foreground)] mt-1">50% Légumes • 2-3 Fruits/j</div>
-        </div>
-
-        <div class="rounded-2xl p-3 bg-rose-500/10 border border-rose-500/20">
-          <div class="text-xs font-medium text-[var(--muted-foreground)]">Extras & Plaisirs (Opt.)</div>
-          <div id="kpiExtrasTotal" class="text-xl font-bold text-rose-500 mt-0.5">0,00 €</div>
-          <div id="kpiExtrasCount" class="text-xs text-[var(--muted-foreground)] mt-1">0 article optionnel coché</div>
-        </div>
-      </div>
-
-      <!-- Visual 50% / 25% / 25% Plate Proportion Bar -->
-      <div class="mt-3">
-        <div class="flex rounded-xl overflow-hidden text-xs font-bold text-white shadow-xs">
-          <div class="w-1/2 bg-emerald-600 py-1.5 px-3 text-center truncate">🥗 50 % Légumes (~260g)</div>
-          <div class="w-1/4 bg-amber-600 py-1.5 px-2 text-center truncate">🌾 25 % Féculents</div>
-          <div class="w-1/4 bg-blue-600 py-1.5 px-2 text-center truncate">🍗 25 % Protéines</div>
+          <div class="ios-segmented grid grid-cols-3 gap-1">
+            <button data-mode="both" class="meal-mode-btn touch-target-44 py-1.5 px-2 rounded-xl text-xs font-semibold transition">Midi & Soir</button>
+            <button data-mode="midi" class="meal-mode-btn touch-target-44 py-1.5 px-2 rounded-xl text-xs font-semibold transition">Midi seul</button>
+            <button data-mode="soir" class="meal-mode-btn touch-target-44 py-1.5 px-2 rounded-xl text-xs font-semibold transition">Soir seul</button>
+          </div>
         </div>
       </div>
     </header>
@@ -424,27 +436,27 @@
 
   </div>
 
-  <!-- Samsung One UI + Apple HIG Liquid Glass Bottom Navigation Bar (44x44pt Touch Targets) -->
-  <nav aria-label="Navigation principale" class="fixed bottom-0 left-0 right-0 liquid-glass-bar border-t border-[var(--border)] px-2 py-1.5 z-50">
-    <div class="max-w-3xl mx-auto grid grid-cols-5 gap-1">
-      <button data-tab="tab-meals" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-2xl text-xs font-semibold transition">
-        <span class="text-base mb-0.5" aria-hidden="true">🍽️</span>
+  <!-- Apple HIG Floating Liquid Glass Pill Tab Bar (liquid-glass.md + tab-bars.md) -->
+  <nav aria-label="Navigation principale" class="fixed bottom-3 left-3 right-3 z-50">
+    <div class="max-w-xl mx-auto liquid-glass-pill rounded-full px-2 py-1.5 grid grid-cols-5 gap-1">
+      <button data-tab="tab-meals" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1 px-1 rounded-full text-xs font-semibold transition">
+        <span class="text-base leading-none mb-0.5" aria-hidden="true">🍽️</span>
         <span>Menu</span>
       </button>
-      <button data-tab="tab-express" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-2xl text-xs font-semibold transition">
-        <span class="text-base mb-0.5" aria-hidden="true">⚡</span>
+      <button data-tab="tab-express" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1 px-1 rounded-full text-xs font-semibold transition">
+        <span class="text-base leading-none mb-0.5" aria-hidden="true">⚡</span>
         <span>Express</span>
       </button>
-      <button data-tab="tab-shopping" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-2xl text-xs font-semibold transition">
-        <span class="text-base mb-0.5" aria-hidden="true">🛒</span>
-        <span>Panier (<span id="navCartPrice">68,69€</span>)</span>
+      <button data-tab="tab-shopping" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1 px-1 rounded-full text-xs font-semibold transition">
+        <span class="text-base leading-none mb-0.5" aria-hidden="true">🛒</span>
+        <span><span id="navCartPrice">68,69€</span></span>
       </button>
-      <button data-tab="tab-extras" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-2xl text-xs font-semibold transition">
-        <span class="text-base mb-0.5" aria-hidden="true">🍫</span>
+      <button data-tab="tab-extras" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1 px-1 rounded-full text-xs font-semibold transition">
+        <span class="text-base leading-none mb-0.5" aria-hidden="true">🍫</span>
         <span>Promos</span>
       </button>
-      <button data-tab="tab-cook" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-2xl text-xs font-semibold transition">
-        <span class="text-base mb-0.5" aria-hidden="true">⏱️</span>
+      <button data-tab="tab-cook" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1 px-1 rounded-full text-xs font-semibold transition">
+        <span class="text-base leading-none mb-0.5" aria-hidden="true">⏱️</span>
         <span>Cuisine</span>
       </button>
     </div>
@@ -701,11 +713,10 @@
     ];
 
     // =========================================================================
-    // 16 OPTIONAL PROMOTIONS (SNACKS, BISCUITS, CHOCOLATES, CHIPS, HOUSEHOLD)
+    // 14 ACTIVE OPTIONAL PROMOTIONS (2 expired promos automatically pruned on 04/11/2026)
     // All verified 200 OK direct links, zero pork, zero alcohol!
     // =========================================================================
     let EXTRA_PROMOS = [
-      { id: "x1", cat: "CHOCO_BISCUITS", store: "COLRUYT", title: "Côte d'Or — Toutes les Tablettes Chocolat Praliné", promoBadge: "PROMO XTRA", price: 3.29, oldPrice: 4.39, desc: "Tablettes Côte d'Or praliné fondant (sans alcool).", url: "https://www.myshopi.com/fr/colruyt-folder/5ebb2f7d-27cd-4cb7-a270-c6d0f7ea9161/20?offer=190ceb9f-a9ef-4e28-8b66-c763bf9e1150" },
       { id: "x2", cat: "CHOCO_BISCUITS", store: "CARREFOUR MARKET", title: "Chocolats & Biscuits de Saint-Nicolas", promoBadge: "-50% (1+1 GRATUIT)", price: 3.49, oldPrice: 6.98, desc: "Sélection de figurines en chocolat et spéculoos.", url: "https://www.myshopi.com/nl/carrefour-market-folder/0a6d7aa0-9c5c-4f86-802f-bd735470db39/16?offer=d5b02a5d-44e9-4a25-b4eb-ab7c999031f1" },
       { id: "x3", cat: "CHOCO_BISCUITS", store: "ALDI", title: "Biscuits ABC / Petits Beurres Lettres", promoBadge: "PRIX CHOC", price: 3.49, oldPrice: null, desc: "Grand format familial de biscuits croquants.", url: "https://www.myshopi.com/fr/aldi-folder/07b1b88c-475b-40fe-82d7-70c163745a7c/26?offer=3516ccfc-12bb-4781-85de-0fe596d14f75" },
       { id: "x4", cat: "CHOCO_BISCUITS", store: "ALDI", title: "Figurines en Chocolat au Lait", promoBadge: "SPÉCIAL FÊTES", price: 2.49, oldPrice: null, desc: "Chocolat au lait belge certifié.", url: "https://www.myshopi.com/fr/aldi-folder/07b1b88c-475b-40fe-82d7-70c163745a7c/25?offer=fba8a992-ffbf-4bf4-a8de-e9f5192b57b2" },
@@ -715,7 +726,6 @@
       { id: "x8", cat: "CHIPS_SNACKS", store: "ALDI", title: "Mangue Fraîche Prête à Manger", promoBadge: "-44% PROMO", price: 1.00, oldPrice: 1.79, desc: "Idéal en encas fruité ou smoothie post-sport.", url: "https://www.myshopi.com/fr/aldi-folder/17cebc52-738a-4060-b53f-791e39e0de51/31?offer=3c1b48e0-b28a-41ef-a135-82b532fcf936" },
       { id: "x9", cat: "CHIPS_SNACKS", store: "ALDI", title: "Chocomel Lait Chocolaté (Pack)", promoBadge: "-25% PROMO", price: 3.87, oldPrice: 5.16, desc: "Boisson lactée cacaotée gourmande.", url: "https://www.myshopi.com/fr/aldi-folder/17cebc52-738a-4060-b53f-791e39e0de51/30?offer=8bcb4d7c-4bca-42e9-8a5f-099fa13c2e8b" },
       { id: "x10", cat: "CHIPS_SNACKS", store: "DELHAIZE", title: "Céréales Croustillantes Petit-Déjeuner", promoBadge: "-25% SUPERPLUS", price: 7.19, oldPrice: 9.59, desc: "Lot de céréales pour le petit-déjeuner ou encas.", url: "https://www.myshopi.com/fr/delhaize-folder/37fa7a0d-015c-4b46-80b7-0cf2d5614f40/48?offer=afc91759-57f1-4b95-9913-3e05b715899e" },
-      { id: "x11", cat: "CHIPS_SNACKS", store: "INTERMARCHÉ", title: "Pack Boissons Fraîches Sans Alcool (Frisdrank)", promoBadge: "-25% PROMO", price: 10.67, oldPrice: 14.22, desc: "Sodas et boissons rafraîchissantes 0% alcool.", url: "https://www.myshopi.com/fr/intermarche-folder/3e3ad9be-698d-4637-81a2-52f3a6251cad/13?offer=6d9431d4-5b92-4d67-83ae-2336d73df514" },
       { id: "x12", cat: "CHIPS_SNACKS", store: "DELHAIZE", title: "Sauce Tomate Artisanale THINK TOMATO", promoBadge: "-30% PROMO", price: 4.17, oldPrice: 5.95, desc: "Sauce tomate belge ultra-parfumée prête à servir.", url: "https://www.myshopi.com/nl/delhaize-folder/f9afbd45-ef98-4b6f-b93a-8abea09a8012/49?offer=6e2b3006-9495-44d8-ba75-eea3326b0d4f" },
       { id: "x13", cat: "MAISON", store: "DELHAIZE", title: "Lessive Dash Platinum (Maxi Format)", promoBadge: "-60% CHOC", price: 35.98, oldPrice: 89.95, desc: "Économie massive de 53,97 € sur la lessive.", url: "https://www.myshopi.com/fr/delhaize-folder/37fa7a0d-015c-4b46-80b7-0cf2d5614f40/43?offer=c102f73c-bd41-4bdd-9439-a92c78f68a6a" },
       { id: "x14", cat: "MAISON", store: "DELHAIZE", title: "Tablettes Lave-Vaisselle Sun Ultra Power", promoBadge: "-60% CHOC", price: 25.98, oldPrice: 64.95, desc: "Pack XXL de tablettes lave-vaisselle à -60%.", url: "https://www.myshopi.com/nl/delhaize-folder/f9afbd45-ef98-4b6f-b93a-8abea09a8012/44?offer=7a19c4d5-89b1-4330-bcb2-2ca04f39417d" },
@@ -1123,6 +1133,9 @@
     function renderExtras() {
       document.querySelectorAll(".extra-cat-btn").forEach(btn => {
         const c = btn.getAttribute("data-cat");
+        if (c === "ALL") {
+          btn.textContent = `Tout voir (${EXTRA_PROMOS.length})`;
+        }
         const active = state.extraCatFilter === c;
         btn.className = `extra-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition ${
           active
@@ -1264,9 +1277,9 @@
       document.querySelectorAll(".nav-tab-btn").forEach(btn => {
         const target = btn.getAttribute("data-tab");
         const active = state.activeTab === target;
-        btn.className = `nav-tab-btn flex flex-col items-center justify-center py-2 px-2 rounded-2xl text-xs font-semibold transition ${
+        btn.className = `nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1 px-1 rounded-full text-xs font-semibold transition ${
           active
-            ? "bg-emerald-500/15 text-emerald-500 font-bold"
+            ? "bg-emerald-600 text-white font-bold shadow-xs"
             : "text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
         }`;
         btn.onclick = () => {
@@ -1494,24 +1507,26 @@
       navigator.serviceWorker.register("sw.js").catch(() => {});
     }
 
-    // Cloud Auto-Update Loader (populated every Saturday at 09:00 by GitHub Actions)
-    fetch("weekly_data.json?t=" + Date.now())
-      .then(r => r.ok ? r.json() : null)
-      .then(data => {
-        if (!data) return;
-        if (data.weekLabel) {
-          const wl = document.getElementById("weekHeaderLabel");
-          if (wl) wl.textContent = data.weekLabel + " • Couple (Madame Sportive & Monsieur 35 ans)";
-        }
-        if (Array.isArray(data.essentialItems) && data.essentialItems.length > 0) {
-          ESSENTIAL_ITEMS = data.essentialItems;
-        }
-        if (Array.isArray(data.extraPromos) && data.extraPromos.length > 0) {
-          EXTRA_PROMOS = data.extraPromos;
-        }
-        renderAll();
-      })
-      .catch(() => {});
+      // Cloud Auto-Update Loader (populated every day by GitHub Actions, with automatic expired promo removal)
+      fetch("weekly_data.json?t=" + Date.now())
+        .then(r => r.ok ? r.json() : null)
+        .then(data => {
+          if (!data) return;
+          const todayIso = new Date().toISOString().slice(0, 10);
+          if (data.weekLabel) {
+            const wl = document.getElementById("weekHeaderLabel");
+            const syncBadge = data.lastDailyCheck ? ` • Vérifié le ${data.lastDailyCheck}` : "";
+            if (wl) wl.textContent = data.weekLabel + syncBadge + " • Couple (Madame Sportive & Monsieur 35 ans)";
+          }
+          if (Array.isArray(data.essentialItems) && data.essentialItems.length > 0) {
+            ESSENTIAL_ITEMS = data.essentialItems.filter(it => !it.expired && (!it.validUntil || it.validUntil >= todayIso));
+          }
+          if (Array.isArray(data.extraPromos)) {
+            EXTRA_PROMOS = data.extraPromos.filter(ex => !ex.expired && (!ex.validUntil || ex.validUntil >= todayIso));
+          }
+          renderAll();
+        })
+        .catch(() => {});
   </script>
 </body>
 </html>

@@ -1,9 +1,9 @@
-name: Hebdo Promos & Batch Cooking Auto-Update
+name: Daily & Weekly Promos Auto-Update & Expired Promo Pruner
 
 on:
   schedule:
-    # Runs every Saturday at 08:00 UTC (09:00 CET / 10:00 CEST in Brussels)
-    - cron: '0 8 * * 6'
+    # Runs EVERY DAY at 06:30 UTC (07:30 CET / 08:30 CEST in Brussels) to prune expired promos and update daily offers
+    - cron: '30 6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run Weekly Belgian Supermarket Promos Updater & QA Suite
+      - name: Run Daily Belgian Supermarket Promos Updater, Pruner & QA Suite
         run: python3 scripts/update_weekly_promos.py
 
       - name: Commit & Push updated weekly_data.json
@@ -31,5 +31,5 @@ jobs:
           git config user.name "NutriBatch Cloud Bot"
           git config user.email "bot@nutribatch.local"
           git add weekly_data.json index.html
-          git diff --staged --quiet || git commit -m "chore(hebdo): mise à jour automatique des promos et du batch cooking"
+          git diff --staged --quiet || git commit -m "chore(daily-promos): vérification quotidienne et retrait des promotions expirées"
           git push
