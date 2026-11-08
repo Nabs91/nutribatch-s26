@@ -1,5 +1,5 @@
-// Network-first Service Worker (v6 - Per-Meal Ingredient Scaling & Express Cart Sync)
-const CACHE_NAME = "nutribatch-hig-v6";
+// Network-first Service Worker (v7 - 100% Exact Shelf Prices & Whole Package Scaling)
+const CACHE_NAME = "nutribatch-hig-v7";
 self.addEventListener("install", e => self.skipWaiting());
 self.addEventListener("activate", e => {
   e.waitUntil(

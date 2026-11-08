@@ -41,24 +41,31 @@ EXPIRED_MARKERS = [
 ]
 
 
-def is_offer_live_and_valid(url: str, valid_until: str | None, today_iso: str) -> bool:
+def is_offer_live_and_valid(url: str, valid_until: str | None, today_iso: str) -> tuple[bool, float | None]:
     if valid_until and valid_until < today_iso:
-        return False
+        return False, None
     try:
         req = urllib.request.Request(url, headers=HEADERS, method="GET")
         with urllib.request.urlopen(req, timeout=12) as resp:
             if resp.status != 200:
-                return False
+                return False, None
             final_url = resp.geturl().lower()
             # If redirected to generic store homepage without offer/product, treat as expired
             if "myshopi.com" in url and "offer=" in url and "offer=" not in final_url and "folder" not in final_url:
-                return False
-            body = resp.read(32768).decode("utf-8", errors="ignore").lower()
+                return False, None
+            raw_body = resp.read(250000).decode("utf-8", errors="ignore")
+            body = raw_body.lower()
             if any(marker in body for marker in EXPIRED_MARKERS):
-                return False
-            return True
+                return False, None
+            live_price = None
+            if "aldi.be" in url:
+                unescaped = raw_body.replace('\\"', '"')
+                m = re.search(r'"currentPrice":\{"priceValue":([0-9.]+)', unescaped)
+                if m:
+                    live_price = float(m.group(1))
+            return True, live_price
     except Exception:
-        return False
+        return False, None
 
 
 def fetch_aldi_sitemap_urls() -> list[str]:
@@ -103,7 +110,12 @@ def main():
 
         url = item.get("url", "")
         valid_until = item.get("validUntil")
-        if is_offer_live_and_valid(url, valid_until, today_iso):
+        ok, live_price = is_offer_live_and_valid(url, valid_until, today_iso)
+        if ok:
+            if live_price is not None:
+                max_units = int(item.get("maxUnits", 1))
+                item["unitPrice"] = round(live_price, 2)
+                item["basePrice"] = round(live_price * max_units, 2)
             item["lastVerified"] = today_iso
             if not item.get("validUntil"):
                 item["validUntil"] = default_valid_until
@@ -115,9 +127,14 @@ def main():
                 slug_words = [w for w in re.split(r"\W+", name_lower) if len(w) > 3]
                 for candidate in aldi_urls:
                     if any(w in candidate for w in slug_words):
-                        if is_offer_live_and_valid(candidate, None, today_iso):
+                        cand_ok, cand_price = is_offer_live_and_valid(candidate, None, today_iso)
+                        if cand_ok:
                             item["url"] = candidate
                             item["store"] = "ALDI"
+                            if cand_price is not None:
+                                max_units = int(item.get("maxUnits", 1))
+                                item["unitPrice"] = round(cand_price, 2)
+                                item["basePrice"] = round(cand_price * max_units, 2)
                             item["lastVerified"] = today_iso
                             item["validUntil"] = default_valid_until
                             active_essentials.append(item)
@@ -140,7 +157,8 @@ def main():
 
         url = ex.get("url", "")
         valid_until = ex.get("validUntil")
-        if is_offer_live_and_valid(url, valid_until, today_iso):
+        ex_ok, _ = is_offer_live_and_valid(url, valid_until, today_iso)
+        if ex_ok:
             ex["lastVerified"] = today_iso
             if not ex.get("validUntil"):
                 ex["validUntil"] = default_valid_until

@@ -723,34 +723,36 @@
     ];
 
     // =========================================================================
-    // 25 ESSENTIAL SHOPPING LIST ARTICLES (7-Day / 14-Meal Baseline = 68,69 €)
+    // 25 ESSENTIAL SHOPPING LIST ARTICLES (7-Day / 14-Meal Baseline = 68,43 €)
+    // 100% EXACT SHELF PRICES verified directly on Aldi.be & MyShopi product pages!
+    // Every item uses whole packages (unitPrice × units) — NEVER fake fractional cents!
     // =========================================================================
     let ESSENTIAL_ITEMS = [
-      { id: "e1", store: "COLRUYT", name: "Bœuf maigre à mijoter belge (Promo Prix Rouge)", baseQty: 700, unit: "g (1 barquette)", cat: "🔵 Protéines 25%", basePrice: 8.95, scaleWithMeals: true, url: "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/19?offer=201c1f58-0755-4242-99b9-edfea16779fd" },
-      { id: "e2", store: "COLRUYT", name: "Pesto Rosso à la tomate (Promo Xtra)", baseQty: 190, unit: "g (1 pot)", cat: "🍅 Sauce Santé", basePrice: 2.19, scaleWithMeals: false, url: "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/21?offer=0d877920-9d1a-4de5-abf0-00414bcca0cd" },
-      { id: "e3", store: "CARREFOUR MARKET", name: "Tortillas Blé & Salsa Old El Paso (Promo 1+1 GRATUIT)", baseQty: 650, unit: "g (2 paquets = 16 wraps)", cat: "🟡 Féculents 25%", basePrice: 4.42, scaleWithMeals: false, url: "https://www.myshopi.com/nl/carrefour-market-folder/0a6d7aa0-9c5c-4f86-802f-bd735470db39/17?offer=509e5023-7e97-4a9e-bbdd-89d44d77a30d" },
-      { id: "e4", store: "CARREFOUR MARKET", name: "Compotes de pommes sans sucres ajoutés (Promo -20%)", baseQty: 800, unit: "g (2 packs de 4 pots)", cat: "🟠 Fruits", basePrice: 2.08, scaleWithMeals: true, url: "https://www.myshopi.com/nl/carrefour-market-folder/0a6d7aa0-9c5c-4f86-802f-bd735470db39/17?offer=9d1874af-bdbc-4d3d-9198-e408bab966f2" },
-      { id: "e5", store: "DELHAIZE", name: "Pain multicéréales Bio (Promo -25%)", baseQty: 600, unit: "g (1 grand pain tranché)", cat: "🟡 Féculents 25%", basePrice: 2.39, scaleWithMeals: false, url: "https://www.myshopi.com/nl/delhaize-folder/f9afbd45-ef98-4b6f-b93a-8abea09a8012/46?offer=3164a090-db6d-4a2b-b5ff-7505a78e0da5" },
-      { id: "e6", store: "ALDI", name: "Filets de poitrine de poulet XXL (Format familial)", baseQty: 1000, unit: "g (1 barquette 1 kg)", cat: "🔵 Protéines 25%", basePrice: 8.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/filet-de-poitrine-de-poulet-xxl-3007574.html" },
-      { id: "e7", store: "ALDI", name: "Filets de cabillaud (Surgelé)", baseQty: 600, unit: "g (sachet de 4 filets)", cat: "🔵 Protéines 25%", basePrice: 5.49, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/filets-de-cabillaud-5392.html" },
-      { id: "e8", store: "ALDI", name: "Thon au naturel en boîte", baseQty: 450, unit: "g (3 boîtes de 150 g)", cat: "🔵 Protéines 25%", basePrice: 4.17, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/thon-au-naturel-3013183.html" },
-      { id: "e9", store: "ALDI", name: "Œufs de poules élevées au sol (Calibre M)", baseQty: 12, unit: "œufs (1 boîte)", cat: "🔵 Protéines 25%", basePrice: 2.69, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/oeufs-de-poules-elevees-au-sol-3002727.html" },
-      { id: "e10", store: "ALDI", name: "Milsani Skyr Nature 0 % MG (Riche en protéines)", baseQty: 1000, unit: "g (2 pots de 500 g)", cat: "🔵 Protéines 25%", basePrice: 2.98, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" },
-      { id: "e11", store: "ALDI", name: "Carottes belges fraîches", baseQty: 2000, unit: "g (1 sachet de 2 kg)", cat: "🟢 Légumes 50%", basePrice: 1.79, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/carottes-8275.html" },
-      { id: "e12", store: "ALDI", name: "Mélange de poivrons tricolores", baseQty: 500, unit: "g (1 sachet)", cat: "🟢 Légumes 50%", basePrice: 1.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/melange-de-poivrons-6212.html" },
-      { id: "e13", store: "ALDI", name: "Courgettes fraîches", baseQty: 600, unit: "g (2 pièces)", cat: "🟢 Légumes 50%", basePrice: 1.39, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/courgettes-3005491.html" },
-      { id: "e14", store: "ALDI", name: "Haricots verts extra-fins", baseQty: 1000, unit: "g (1 sachet de 1 kg)", cat: "🟢 Légumes 50%", basePrice: 1.39, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/haricots-verts-6245.html" },
-      { id: "e15", store: "ALDI", name: "Brocoli en fleurettes", baseQty: 1000, unit: "g (1 sachet de 1 kg)", cat: "🟢 Légumes 50%", basePrice: 1.79, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/brocoli-6255.html" },
-      { id: "e16", store: "ALDI", name: "Champignons frais", baseQty: 500, unit: "g (1 barquette)", cat: "🟢 Légumes 50%", basePrice: 1.89, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/champignons-6226.html" },
-      { id: "e17", store: "ALDI", name: "Passata de tomates (Purée de tomates)", baseQty: 1000, unit: "g (2 briques de 500 g)", cat: "🟢 Légumes 50%", basePrice: 1.38, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/passata-de-tomates-3010209.html" },
-      { id: "e18", store: "ALDI", name: "Épinards frais en branches", baseQty: 400, unit: "g (1 sachet)", cat: "🟢 Légumes 50%", basePrice: 1.29, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/epinards-7996.html" },
-      { id: "e19", store: "ALDI", name: "Concombre frais", baseQty: 400, unit: "g (1 pièce)", cat: "🟢 Légumes 50%", basePrice: 0.59, scaleWithMeals: false, url: "https://www.aldi.be/fr/product/concombre-6211.html" },
-      { id: "e20", store: "ALDI", name: "Pommes de terre à chair très ferme", baseQty: 2500, unit: "g (1 filet de 2,5 kg)", cat: "🟡 Féculents 25%", basePrice: 2.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/pommes-de-terre-a-chair-tres-ferme-6148.html" },
-      { id: "e21", store: "ALDI", name: "Riz Basmati", baseQty: 1000, unit: "g (1 boîte de 1 kg)", cat: "🟡 Féculents 25%", basePrice: 1.89, scaleWithMeals: false, url: "https://www.aldi.be/fr/product/riz-basmati-3011332.html" },
-      { id: "e22", store: "ALDI", name: "Penne Complet / Blé Dur", baseQty: 500, unit: "g (1 paquet)", cat: "🟡 Féculents 25%", basePrice: 0.79, scaleWithMeals: false, url: "https://www.aldi.be/fr/product/penne-complet-3010902.html" },
-      { id: "e23", store: "ALDI", name: "Pommes Jonagold belges", baseQty: 1500, unit: "g (1 sachet de 1,5 kg)", cat: "🟠 Fruits", basePrice: 1.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/pommes-jonagold-8134.html" },
-      { id: "e24", store: "ALDI", name: "Bananes fraîches", baseQty: 1000, unit: "g (1 régime de 1 kg)", cat: "🟠 Fruits", basePrice: 1.59, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/bananes-8272.html" },
-      { id: "e25", store: "ALDI", name: "Poires Conférence belges", baseQty: 1000, unit: "g (1 barquette de 1 kg)", cat: "🟠 Fruits", basePrice: 1.59, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/poires-conference-8144.html" }
+      { id: "e1", store: "COLRUYT", name: "Bœuf maigre à mijoter belge (Promo Prix Rouge)", baseQty: 700, unit: "g (1 barquette)", unitLabel: "barquette (700 g)", maxUnits: 1, unitPrice: 8.95, cat: "🔵 Protéines 25%", basePrice: 8.95, scaleWithMeals: true, url: "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/19?offer=201c1f58-0755-4242-99b9-edfea16779fd", smallVariant: { name: "Lanières de bœuf maigre pour wok (400 g)", qtyText: "1 barquette (400 g — prix exact Aldi)", price: 6.79, store: "ALDI", url: "https://www.aldi.be/fr/product/lanieres-de-boeuf-pour-wok-facon-orientale-3007532.html" } },
+      { id: "e2", store: "COLRUYT", name: "Pesto Rosso à la tomate (Promo Xtra)", baseQty: 190, unit: "g (1 pot)", unitLabel: "pot (190 g)", maxUnits: 1, unitPrice: 2.19, cat: "🍅 Sauce Santé", basePrice: 2.19, scaleWithMeals: false, url: "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/21?offer=0d877920-9d1a-4de5-abf0-00414bcca0cd" },
+      { id: "e3", store: "CARREFOUR MARKET", name: "Tortillas Blé & Salsa Old El Paso (Promo 1+1 GRATUIT)", baseQty: 650, unit: "g (2 paquets = 16 wraps)", unitLabel: "lot 1+1 (2 paquets)", maxUnits: 1, unitPrice: 4.42, cat: "🟡 Féculents 25%", basePrice: 4.42, scaleWithMeals: false, url: "https://www.myshopi.com/nl/carrefour-market-folder/0a6d7aa0-9c5c-4f86-802f-bd735470db39/17?offer=509e5023-7e97-4a9e-bbdd-89d44d77a30d" },
+      { id: "e4", store: "ALDI", name: "Mousseline / Compote de pommes (710 g — 0,69 €/pot)", baseQty: 1420, unit: "g (2 bocaux de 710 g à 0,69 €)", unitLabel: "bocal de 710 g (0,69 €/pc)", maxUnits: 2, unitPrice: 0.69, cat: "🟠 Fruits", basePrice: 1.38, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/mousseline-de-pommes-4105.html" },
+      { id: "e5", store: "DELHAIZE", name: "Pain multicéréales Bio (Promo -25%)", baseQty: 600, unit: "g (1 grand pain tranché)", unitLabel: "grand pain tranché (600 g)", maxUnits: 1, unitPrice: 2.39, cat: "🟡 Féculents 25%", basePrice: 2.39, scaleWithMeals: false, url: "https://www.myshopi.com/nl/delhaize-folder/f9afbd45-ef98-4b6f-b93a-8abea09a8012/46?offer=3164a090-db6d-4a2b-b5ff-7505a78e0da5" },
+      { id: "e6", store: "ALDI", name: "Lamelles de filet de poulet frais (1 kg)", baseQty: 1000, unit: "g (1 barquette de 1 kg)", unitLabel: "barquette (1 kg)", maxUnits: 1, unitPrice: 8.99, cat: "🔵 Protéines 25%", basePrice: 8.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/lamelles-de-poulet-3003149.html", smallVariant: { name: "Aiguillettes de filet de poulet frais (500 g)", qtyText: "1 barquette (500 g — prix exact Aldi)", price: 5.79, store: "ALDI", url: "https://www.aldi.be/fr/product/aiguillettes-de-poulet-0288.html" } },
+      { id: "e7", store: "ALDI", name: "Filets de cabillaud (4 × 100 g)", baseQty: 400, unit: "g (1 paquet de 4 filets)", unitLabel: "paquet de 4 filets (400 g)", maxUnits: 1, unitPrice: 6.49, cat: "🔵 Protéines 25%", basePrice: 6.49, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/cabillaud-3015779.html" },
+      { id: "e8", store: "ALDI", name: "Thon au naturel en boîte (150 g — 1,25 €/boîte)", baseQty: 450, unit: "g (3 boîtes de 150 g à 1,25 €)", unitLabel: "boîte de 150 g (1,25 €/pc)", maxUnits: 3, unitPrice: 1.25, cat: "🔵 Protéines 25%", basePrice: 3.75, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/thon-au-naturel-3007721.html" },
+      { id: "e9", store: "ALDI", name: "Œufs de poules élevées au sol (12 pcs)", baseQty: 12, unit: "œufs (1 boîte de 12 pcs)", unitLabel: "boîte de 12 œufs", maxUnits: 1, unitPrice: 2.59, cat: "🔵 Protéines 25%", basePrice: 2.59, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/oeufs-de-poules-elevees-au-sol-3002728.html", smallVariant: { name: "Œufs de poules élevées au sol (6 pcs)", qtyText: "1 boîte de 6 œufs (prix exact Aldi)", price: 1.99, store: "ALDI", url: "https://www.aldi.be/fr/product/oeufs-de-poules-elevees-au-sol-3002727.html" } },
+      { id: "e10", store: "ALDI", name: "Milsani Skyr Nature 0 % MG (500 g — 1,39 €/pot)", baseQty: 1000, unit: "g (2 pots de 500 g à 1,39 €)", unitLabel: "pot de 500 g (1,39 €/pc)", maxUnits: 2, unitPrice: 1.39, cat: "🔵 Protéines 25%", basePrice: 2.78, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" },
+      { id: "e11", store: "ALDI", name: "Carottes belges fraîches (1 kg — 1,25 €/sachet)", baseQty: 2000, unit: "g (2 sachets de 1 kg à 1,25 €)", unitLabel: "sachet de 1 kg (1,25 €/pc)", maxUnits: 2, unitPrice: 1.25, cat: "🟢 Légumes 50%", basePrice: 2.50, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/carottes-3002376.html" },
+      { id: "e12", store: "ALDI", name: "Lanières de poivrons tricolores (600 g)", baseQty: 600, unit: "g (1 sachet de 600 g)", unitLabel: "sachet (600 g)", maxUnits: 1, unitPrice: 1.99, cat: "🟢 Légumes 50%", basePrice: 1.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/lanieres-de-poivron-6486.html" },
+      { id: "e13", store: "ALDI", name: "Carottes râpées / Crudités fraîches (400 g)", baseQty: 400, unit: "g (1 sachet de 400 g)", unitLabel: "sachet (400 g)", maxUnits: 1, unitPrice: 0.99, cat: "🟢 Légumes 50%", basePrice: 0.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/carottes-rapees-ou-chou-blanc-rape-0473.html" },
+      { id: "e14", store: "ALDI", name: "Haricots verts très fins (1 kg)", baseQty: 1000, unit: "g (1 sachet de 1 kg)", unitLabel: "sachet (1 kg)", maxUnits: 1, unitPrice: 1.65, cat: "🟢 Légumes 50%", basePrice: 1.65, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/haricots-verts-3002382.html" },
+      { id: "e15", store: "ALDI", name: "Brocoli en fleurettes (500 g — 1,00 €/sachet)", baseQty: 1000, unit: "g (2 sachets de 500 g à 1,00 €)", unitLabel: "sachet de 500 g (1,00 €/pc)", maxUnits: 2, unitPrice: 1.00, cat: "🟢 Légumes 50%", basePrice: 2.00, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/brocoli-6255.html" },
+      { id: "e16", store: "ALDI", name: "Champignons fins (250 g — 0,99 €/barquette)", baseQty: 500, unit: "g (2 barquettes de 250 g à 0,99 €)", unitLabel: "barquette de 250 g (0,99 €/pc)", maxUnits: 2, unitPrice: 0.99, cat: "🟢 Légumes 50%", basePrice: 1.98, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/champignons-fins-6260.html" },
+      { id: "e17", store: "ALDI", name: "Passata de tomates (1 kg)", baseQty: 1000, unit: "g (1 pack de 1 kg)", unitLabel: "pack (1 kg)", maxUnits: 1, unitPrice: 1.18, cat: "🟢 Légumes 50%", basePrice: 1.18, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/passata-de-tomates-3010209.html", smallVariant: { name: "Dés de tomates (400 g)", qtyText: "1 boîte de 400 g (prix exact Aldi)", price: 0.60, store: "ALDI", url: "https://www.aldi.be/fr/product/des-de-tomates-1897.html" } },
+      { id: "e18", store: "ALDI", name: "Épinards en branches (1 kg)", baseQty: 1000, unit: "g (1 sachet de 1 kg)", unitLabel: "sachet (1 kg)", maxUnits: 1, unitPrice: 1.09, cat: "🟢 Légumes 50%", basePrice: 1.09, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/epinards-en-branches-3002378.html" },
+      { id: "e19", store: "ALDI", name: "Salade gourmande croquante (150 g)", baseQty: 150, unit: "g (1 sachet de 150 g)", unitLabel: "sachet (150 g)", maxUnits: 1, unitPrice: 1.29, cat: "🟢 Légumes 50%", basePrice: 1.29, scaleWithMeals: false, url: "https://www.aldi.be/fr/product/salade-gourmande-2388.html" },
+      { id: "e20", store: "ALDI", name: "Pommes de terre belges (2,5 kg)", baseQty: 2500, unit: "g (1 filet de 2,5 kg)", unitLabel: "filet (2,5 kg)", maxUnits: 1, unitPrice: 2.47, cat: "🟡 Féculents 25%", basePrice: 2.47, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/pommes-de-terre-a-puree-2817.html", smallVariant: { name: "Petites pommes de terre (500 g)", qtyText: "1 sachet de 500 g (prix exact Aldi)", price: 0.90, store: "ALDI", url: "https://www.aldi.be/fr/product/petites-pommes-de-terre-cuites-6627.html" } },
+      { id: "e21", store: "ALDI", name: "Riz Basmati (1 kg)", baseQty: 1000, unit: "g (1 boîte de 1 kg)", unitLabel: "boîte (1 kg)", maxUnits: 1, unitPrice: 1.79, cat: "🟡 Féculents 25%", basePrice: 1.79, scaleWithMeals: false, url: "https://www.aldi.be/fr/product/riz-basmati-3011332.html" },
+      { id: "e22", store: "ALDI", name: "Penne Complet / Blé Dur (500 g)", baseQty: 500, unit: "g (1 paquet de 500 g)", unitLabel: "paquet (500 g)", maxUnits: 1, unitPrice: 0.99, cat: "🟡 Féculents 25%", basePrice: 0.99, scaleWithMeals: false, url: "https://www.aldi.be/fr/product/penne-complet-3010902.html" },
+      { id: "e23", store: "ALDI", name: "Pommes Boskoop belges (2 kg)", baseQty: 2000, unit: "g (1 sachet de 2 kg)", unitLabel: "sachet (2 kg)", maxUnits: 1, unitPrice: 2.09, cat: "🟠 Fruits", basePrice: 2.09, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/pommes-boskoop-6179.html" },
+      { id: "e24", store: "ALDI", name: "Bananes fraîches (1 kg)", baseQty: 1000, unit: "g (1 kg)", unitLabel: "régime (1 kg)", maxUnits: 1, unitPrice: 0.99, cat: "🟠 Fruits", basePrice: 0.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/bananes-8272.html" },
+      { id: "e25", store: "ALDI", name: "Poires Conférence belges (1 kg)", baseQty: 1000, unit: "g (1 kg)", unitLabel: "barquette (1 kg)", maxUnits: 1, unitPrice: 1.50, cat: "🟠 Fruits", basePrice: 1.50, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/poires-conference-8144.html" }
     ];
 
     // =========================================================================
@@ -782,7 +784,8 @@
     ];
 
     // =========================================================================
-    // 4 EXPRESS KITS (PORTIONS ADAPTÉES : 1 REPAS [2 ASSIETTES] OU 48H [4 ASSIETTES])
+    // 4 EXPRESS KITS — 100% PRIX EXACTS EN CAISSE (Zéro division fictive !)
+    // Chaque article affiche exactement le prix officiel de la fiche Aldi / Colruyt.
     // =========================================================================
     const EXPRESS_KITS = [
       {
@@ -791,81 +794,81 @@
         title: "Kit 1 : Wok Poulet Citron-Skyr, Riz Basmati & Brocoli-Poivrons",
         prepTime: "20 min chrono",
         portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. à réchauffer demain)",
-        todayMeal: "Émincé de poulet doré minute au citron & origan, riz basmati vapeur et poêlée croquante de brocoli & poivrons tricolores.",
+        todayMeal: "Aiguillettes de filet de poulet dorées minute au citron & origan, riz basmati vapeur et poêlée croquante de brocoli & poivrons tricolores.",
         tomorrowReheat: "Réchauffez 2 min 30 au micro-ondes (avec 1 c.à.s de Skyr 0% ajoutée après réchauffage pour un moelleux parfait) ou 4 min à la poêle.",
         steps: [
-          "00:00 → 00:05 : Lancez le riz basmati dans l'eau bouillante salée (11 min). Coupez le filet de poulet en lanières.",
-          "00:05 → 00:15 : Saisissez le poulet à la poêle vive 6 min avec paprika, origan et ail. Ajoutez les poivrons et le brocoli en fleurettes avec un fond d'eau, couvrez 7 min.",
-          "00:15 → 00:20 : Hors du feu, liez avec le Skyr 0% et du jus de citron. Servez 2 assiettes (50% légumes / 25% riz / 25% poulet) et mettez les 2 autres portions au frigo si vous avez choisi le format 48h !"
+          "00:00 → 00:05 : Lancez 320 g de riz basmati dans l'eau bouillante salée (11 min). Le reste de la boîte de 1 kg (680 g) reste dans votre placard.",
+          "00:05 → 00:15 : Saisissez la barquette de 500 g d'aiguillettes de poulet à la poêle vive 6 min. Ajoutez les lanières de poivrons (600 g) et le brocoli (500 g) avec un fond d'eau, couvrez 7 min.",
+          "00:15 → 00:20 : Hors du feu, liez avec 3 c.à.s de Skyr 0% (le reste du pot de 500 g vous sert de dessert protéiné !)."
         ],
         items: [
-          { id: "ex_p1", store: "ALDI", cat: "🔵 Protéines 25%", name: "Filets de poitrine de poulet (Portion juste)", qty: "500 g (4 assiettes)", qty1Meal: "250 g (2 assiettes)", price: 4.49, price1Meal: 2.25, url: "https://www.aldi.be/fr/product/filet-de-poitrine-de-poulet-xxl-3007574.html" },
-          { id: "ex_p2", store: "ALDI", cat: "🟢 Légumes 50%", name: "Brocoli en fleurettes", qty: "500 g (4 assiettes)", qty1Meal: "300 g (2 assiettes)", price: 0.99, price1Meal: 0.55, url: "https://www.aldi.be/fr/product/brocoli-6255.html" },
-          { id: "ex_p3", store: "ALDI", cat: "🟢 Légumes 50%", name: "Mélange de poivrons tricolores", qty: "1 sachet (500 g)", qty1Meal: "250 g (1/2 sachet)", price: 1.99, price1Meal: 1.00, url: "https://www.aldi.be/fr/product/melange-de-poivrons-6212.html" },
-          { id: "ex_p4", store: "ALDI", cat: "🟡 Féculents 25%", name: "Riz Basmati (Portion repas)", qty: "320 g (4 assiettes)", qty1Meal: "160 g (2 assiettes)", price: 0.65, price1Meal: 0.35, url: "https://www.aldi.be/fr/product/riz-basmati-3011332.html" },
-          { id: "ex_p5", store: "ALDI", cat: "🔵 Sauce Protéinée", name: "Milsani Skyr Nature 0 % MG", qty: "250 g (1/2 pot)", qty1Meal: "125 g (Sauce)", price: 0.75, price1Meal: 0.40, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" }
+          { id: "ex_p1", store: "ALDI", cat: "🔵 Protéines 25%", name: "Aiguillettes de filet de poulet (500 g)", qty: "1 barquette de 500 g (Prix exact Aldi)", qty1Meal: "1 barquette de 500 g (Prix exact Aldi)", price: 5.79, price1Meal: 5.79, url: "https://www.aldi.be/fr/product/aiguillettes-de-poulet-0288.html" },
+          { id: "ex_p2", store: "ALDI", cat: "🟢 Légumes 50%", name: "Brocoli en fleurettes (500 g)", qty: "1 sachet de 500 g (Prix exact Aldi)", qty1Meal: "1 sachet de 500 g (Prix exact Aldi)", price: 1.00, price1Meal: 1.00, url: "https://www.aldi.be/fr/product/brocoli-6255.html" },
+          { id: "ex_p3", store: "ALDI", cat: "🟢 Légumes 50%", name: "Lanières de poivrons tricolores (600 g)", qty: "1 sachet de 600 g (Prix exact Aldi)", qty1Meal: "1 sachet de 600 g (Prix exact Aldi)", price: 1.99, price1Meal: 1.99, url: "https://www.aldi.be/fr/product/lanieres-de-poivron-6486.html" },
+          { id: "ex_p4", store: "ALDI", cat: "🟡 Féculents 25%", name: "Riz Basmati (Boîte de 1 kg)", qty: "1 boîte de 1 kg (Prix exact Aldi)", qty1Meal: "1 boîte de 1 kg (Prix exact Aldi)", price: 1.79, price1Meal: 1.79, url: "https://www.aldi.be/fr/product/riz-basmati-3011332.html" },
+          { id: "ex_p5", store: "ALDI", cat: "🔵 Sauce & Dessert", name: "Milsani Skyr Nature 0 % MG (500 g)", qty: "1 pot de 500 g (Prix exact Aldi)", qty1Meal: "1 pot de 500 g (Prix exact Aldi)", price: 1.39, price1Meal: 1.39, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" }
         ]
       },
       {
         id: "kit_pates_thon",
-        badge: "⚡ 15 min • Ultra-Économique",
-        title: "Kit 2 : One-Pot Penne Complètes au Thon, Courgettes, Épinards & Tomate",
+        badge: "⚡ 15 min • 6,17 € en caisse !",
+        title: "Kit 2 : One-Pot Penne Complètes au Thon, Champignons, Épinards & Tomate",
         prepTime: "15 min chrono",
         portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. demain midi ou soir)",
-        todayMeal: "Penne complètes fondantes à la passata de tomates, courgettes sautées à l'ail, jeunes pousses d'épinards et thon au naturel.",
+        todayMeal: "Penne complètes fondantes aux dés de tomates, champignons fins sautés à l'ail, épinards en branches et thon au naturel.",
         tomorrowReheat: "Encore meilleur réchauffé le lendemain ! Ajoutez 1 filet d'eau avant de passer 2 min au micro-ondes à couvert : la sauce tomate reste ultra-onctueuse.",
         steps: [
-          "00:00 → 00:05 : Mettez les penne complètes à cuire (10 min). Coupez les courgettes en demi-rondelles.",
-          "00:05 → 00:12 : Faites dorer les courgettes 5 min à la poêle, versez la passata et les épinards frais qui fondent en 2 minutes.",
-          "00:12 → 00:15 : Ajoutez le thon égoutté et les pâtes. Mélangez : c'est prêt !"
+          "00:00 → 00:05 : Mettez les penne complètes à cuire (10 min).",
+          "00:05 → 00:12 : Faites dorer la barquette de champignons fins (250 g) 4 min à la poêle, versez les dés de tomates (400 g) et les épinards en branches.",
+          "00:12 → 00:15 : Ajoutez le thon au naturel égoutté (1,25 € la boîte) et les pâtes. Mélangez : c'est prêt !"
         ],
         items: [
-          { id: "ex_t1", store: "ALDI", cat: "🔵 Protéines 25%", name: "Thon au naturel en boîte", qty: "2 boîtes (300 g)", qty1Meal: "1 boîte (150 g)", price: 2.78, price1Meal: 1.39, url: "https://www.aldi.be/fr/product/thon-au-naturel-3013183.html" },
-          { id: "ex_t2", store: "ALDI", cat: "🟡 Féculents 25%", name: "Penne Complet / Blé Dur", qty: "1 paquet (500 g)", qty1Meal: "200 g (2 assiettes)", price: 0.79, price1Meal: 0.40, url: "https://www.aldi.be/fr/product/penne-complet-3010902.html" },
-          { id: "ex_t3", store: "ALDI", cat: "🟢 Légumes 50%", name: "Courgettes fraîches", qty: "2 pièces (600 g)", qty1Meal: "1 pièce (300 g)", price: 1.39, price1Meal: 0.70, url: "https://www.aldi.be/fr/product/courgettes-3005491.html" },
-          { id: "ex_t4", store: "ALDI", cat: "🟢 Légumes 50%", name: "Épinards frais en branches", qty: "1 sachet (400 g)", qty1Meal: "200 g (1/2 sachet)", price: 1.29, price1Meal: 0.65, url: "https://www.aldi.be/fr/product/epinards-7996.html" },
-          { id: "ex_t5", store: "ALDI", cat: "🟢 Légumes 50%", name: "Passata de tomates", qty: "1 brique (500 g)", qty1Meal: "250 g (1/2 brique)", price: 0.69, price1Meal: 0.35, url: "https://www.aldi.be/fr/product/passata-de-tomates-3010209.html" }
+          { id: "ex_t1", store: "ALDI", cat: "🔵 Protéines 25%", name: "Thon au naturel (150 g — 1,25 €/boîte)", qty: "2 boîtes × 1,25 € (Prix exact Aldi)", qty1Meal: "1 boîte de 150 g (Prix exact Aldi)", price: 2.50, price1Meal: 1.25, url: "https://www.aldi.be/fr/product/thon-au-naturel-3007721.html" },
+          { id: "ex_t2", store: "ALDI", cat: "🟡 Féculents 25%", name: "Penne Complet / Blé Dur (500 g)", qty: "1 paquet de 500 g (Prix exact Aldi)", qty1Meal: "1 paquet de 500 g (Prix exact Aldi)", price: 0.99, price1Meal: 0.99, url: "https://www.aldi.be/fr/product/penne-complet-3010902.html" },
+          { id: "ex_t3", store: "ALDI", cat: "🟢 Légumes 50%", name: "Champignons fins (250 g)", qty: "1 barquette de 250 g (Prix exact Aldi)", qty1Meal: "1 barquette de 250 g (Prix exact Aldi)", price: 0.99, price1Meal: 0.99, url: "https://www.aldi.be/fr/product/champignons-fins-6260.html" },
+          { id: "ex_t4", store: "ALDI", cat: "🟢 Légumes 50%", name: "Épinards en branches (1 kg)", qty: "1 sachet de 1 kg (Prix exact Aldi)", qty1Meal: "1 sachet de 1 kg (Prix exact Aldi)", price: 1.09, price1Meal: 1.09, url: "https://www.aldi.be/fr/product/epinards-en-branches-3002378.html" },
+          { id: "ex_t5", store: "ALDI", cat: "🟢 Légumes 50%", name: "Dés de tomates (400 g)", qty: "1 boîte de 400 g (Prix exact Aldi)", qty1Meal: "1 boîte de 400 g (Prix exact Aldi)", price: 0.60, price1Meal: 0.60, url: "https://www.aldi.be/fr/product/des-de-tomates-1897.html" }
         ]
       },
       {
         id: "kit_cabillaud",
         badge: "🐟 20 min • Four Sans Effort",
-        title: "Kit 3 : Papillote de Cabillaud, Haricots Verts & Pommes de Terre",
+        title: "Kit 3 : Papillote de Cabillaud, Haricots Verts & Petites Pommes de Terre",
         prepTime: "20 min chrono",
         portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. demain)",
-        todayMeal: "Filets de cabillaud rôtis au citron, haricots verts extra-fins aillés et pommes de terre vapeur.",
+        todayMeal: "Filets de cabillaud rôtis au citron, haricots verts très fins aillés et petites pommes de terre dorées.",
         tomorrowReheat: "Réchauffez à puissance moyenne (600W pendant 2 min) avec une cuillère de sauce Skyr-citron pour garder le poisson bien tendre.",
         steps: [
-          "00:00 → 00:05 : Coupez les pommes de terre en petits cubes pour une cuisson express (12 min à l'eau bouillante avec les haricots verts).",
-          "00:05 → 00:18 : Enfournez les filets de cabillaud à 200 °C pendant 12-14 min avec citron et herbes.",
-          "00:18 → 00:20 : Dressez vos assiettes équilibrées 50% haricots verts / 25% pommes de terre / 25% cabillaud !"
+          "00:00 → 00:05 : Faites cuire les haricots verts et réchauffez/dorez les petites pommes de terre (10 min).",
+          "00:05 → 00:18 : Enfournez les 4 filets de cabillaud à 200 °C pendant 12-14 min avec citron et herbes.",
+          "00:18 → 00:20 : Dressez vos assiettes équilibrées 50% haricots verts / 25% pommes de terre / 25% cabillaud + sauce Skyr !"
         ],
         items: [
-          { id: "ex_c1", store: "ALDI", cat: "🔵 Protéines 25%", name: "Filets de cabillaud", qty: "4 filets (600 g)", qty1Meal: "2 filets (300 g)", price: 5.49, price1Meal: 2.75, url: "https://www.aldi.be/fr/product/filets-de-cabillaud-5392.html" },
-          { id: "ex_c2", store: "ALDI", cat: "🟢 Légumes 50%", name: "Haricots verts extra-fins", qty: "1 sachet (1 kg)", qty1Meal: "500 g (2 assiettes)", price: 1.39, price1Meal: 0.70, url: "https://www.aldi.be/fr/product/haricots-verts-6245.html" },
-          { id: "ex_c3", store: "ALDI", cat: "🟡 Féculents 25%", name: "Pommes de terre à chair très ferme", qty: "800 g (4 assiettes)", qty1Meal: "400 g (2 assiettes)", price: 0.96, price1Meal: 0.48, url: "https://www.aldi.be/fr/product/pommes-de-terre-a-chair-tres-ferme-6148.html" },
-          { id: "ex_c4", store: "ALDI", cat: "🔵 Sauce Protéinée", name: "Milsani Skyr Nature 0 % MG", qty: "250 g (Sauce citron)", qty1Meal: "125 g (Sauce)", price: 0.75, price1Meal: 0.40, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" }
+          { id: "ex_c1", store: "ALDI", cat: "🔵 Protéines 25%", name: "Filets de cabillaud (4 × 100 g)", qty: "1 paquet de 4 filets (Prix exact Aldi)", qty1Meal: "1 paquet de 4 filets (Prix exact Aldi)", price: 6.49, price1Meal: 6.49, url: "https://www.aldi.be/fr/product/cabillaud-3015779.html" },
+          { id: "ex_c2", store: "ALDI", cat: "🟢 Légumes 50%", name: "Haricots verts très fins (1 kg)", qty: "1 sachet de 1 kg (Prix exact Aldi)", qty1Meal: "1 sachet de 1 kg (Prix exact Aldi)", price: 1.65, price1Meal: 1.65, url: "https://www.aldi.be/fr/product/haricots-verts-3002382.html" },
+          { id: "ex_c3", store: "ALDI", cat: "🟡 Féculents 25%", name: "Petites pommes de terre (500 g)", qty: "2 sachets × 0,90 € (Prix exact Aldi)", qty1Meal: "1 sachet de 500 g (Prix exact Aldi)", price: 1.80, price1Meal: 0.90, url: "https://www.aldi.be/fr/product/petites-pommes-de-terre-cuites-6627.html" },
+          { id: "ex_c4", store: "ALDI", cat: "🔵 Sauce & Dessert", name: "Milsani Skyr Nature 0 % MG (500 g)", qty: "1 pot de 500 g (Prix exact Aldi)", qty1Meal: "1 pot de 500 g (Prix exact Aldi)", price: 1.39, price1Meal: 1.39, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" }
         ]
       },
       {
         id: "kit_boeuf",
-        badge: "🥩 25 min • Promo Colruyt",
-        title: "Kit 4 : Poêlée Minute de Bœuf Maigre aux Champignons, Carottes & PDT",
-        prepTime: "25 min chrono",
+        badge: "🥩 20 min • 100% Aldi",
+        title: "Kit 4 : Poêlée Minute de Lanières de Bœuf, Champignons, Carottes & PDT",
+        prepTime: "20 min chrono",
         portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. demain)",
-        todayMeal: "Émincé de bœuf maigre belge sauté aux champignons frais, carottes fondantes à la tomate et pommes de terre dorées.",
+        todayMeal: "Lanières de bœuf maigre sautées aux champignons fins, carottes fondantes à la tomate et petites pommes de terre dorées.",
         tomorrowReheat: "Les plats en sauce tomate-champignons sont encore plus savoureux réchauffés le lendemain (2 min 30 au micro-ondes ou 5 min à feu doux).",
         steps: [
-          "00:00 → 00:07 : Émincez finement le bœuf maigre Colruyt (en lamelles fines, il cuit en quelques minutes !) et coupez les carottes en fines rondelles.",
-          "00:07 → 00:20 : Saisissez le bœuf 4 min à feu vif, réservez. Faites revenir les champignons et carottes avec la passata pendant 12 min à couvert pendant que les pommes de terre cuisent.",
-          "00:20 → 00:25 : Remettez le bœuf dans la sauce et servez !"
+          "00:00 → 00:05 : Coupez les carottes en fines rondelles.",
+          "00:05 → 00:16 : Saisissez les lanières de bœuf 4 min à feu vif, réservez. Faites revenir les champignons fins (250 g) et carottes avec les dés de tomates (400 g) pendant 10 min à couvert pendant que les petites pommes de terre dorent.",
+          "00:16 → 00:20 : Remettez le bœuf dans la sauce et servez !"
         ],
         items: [
-          { id: "ex_b1", store: "COLRUYT", cat: "🔵 Protéines 25%", name: "Bœuf maigre belge (Promo Prix Rouge)", qty: "500 g (4 assiettes)", qty1Meal: "250 g (2 assiettes)", price: 6.39, price1Meal: 3.20, url: "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/19?offer=201c1f58-0755-4242-99b9-edfea16779fd" },
-          { id: "ex_b2", store: "ALDI", cat: "🟢 Légumes 50%", name: "Champignons frais", qty: "1 barquette (500 g)", qty1Meal: "250 g (1/2 barquette)", price: 1.89, price1Meal: 0.95, url: "https://www.aldi.be/fr/product/champignons-6226.html" },
-          { id: "ex_b3", store: "ALDI", cat: "🟢 Légumes 50%", name: "Carottes belges fraîches", qty: "800 g (4 assiettes)", qty1Meal: "400 g (2 assiettes)", price: 0.72, price1Meal: 0.36, url: "https://www.aldi.be/fr/product/carottes-8275.html" },
-          { id: "ex_b4", store: "ALDI", cat: "🟢 Légumes 50%", name: "Passata de tomates", qty: "1 brique (500 g)", qty1Meal: "250 g (1/2 brique)", price: 0.69, price1Meal: 0.35, url: "https://www.aldi.be/fr/product/passata-de-tomates-3010209.html" },
-          { id: "ex_b5", store: "ALDI", cat: "🟡 Féculents 25%", name: "Pommes de terre à chair très ferme", qty: "800 g (4 assiettes)", qty1Meal: "400 g (2 assiettes)", price: 0.96, price1Meal: 0.48, url: "https://www.aldi.be/fr/product/pommes-de-terre-a-chair-tres-ferme-6148.html" }
+          { id: "ex_b1", store: "ALDI", cat: "🔵 Protéines 25%", name: "Lanières de bœuf maigre pour wok (400 g)", qty: "1 barquette de 400 g (Prix exact Aldi)", qty1Meal: "1 barquette de 400 g (Prix exact Aldi)", price: 6.79, price1Meal: 6.79, url: "https://www.aldi.be/fr/product/lanieres-de-boeuf-pour-wok-facon-orientale-3007532.html" },
+          { id: "ex_b2", store: "ALDI", cat: "🟢 Légumes 50%", name: "Champignons fins (250 g)", qty: "1 barquette de 250 g (Prix exact Aldi)", qty1Meal: "1 barquette de 250 g (Prix exact Aldi)", price: 0.99, price1Meal: 0.99, url: "https://www.aldi.be/fr/product/champignons-fins-6260.html" },
+          { id: "ex_b3", store: "ALDI", cat: "🟢 Légumes 50%", name: "Carottes fraîches (1 kg)", qty: "1 sachet de 1 kg (Prix exact Aldi)", qty1Meal: "1 sachet de 1 kg (Prix exact Aldi)", price: 1.25, price1Meal: 1.25, url: "https://www.aldi.be/fr/product/carottes-3002376.html" },
+          { id: "ex_b4", store: "ALDI", cat: "🟢 Légumes 50%", name: "Dés de tomates (400 g)", qty: "1 boîte de 400 g (Prix exact Aldi)", qty1Meal: "1 boîte de 400 g (Prix exact Aldi)", price: 0.60, price1Meal: 0.60, url: "https://www.aldi.be/fr/product/des-de-tomates-1897.html" },
+          { id: "ex_b5", store: "ALDI", cat: "🟡 Féculents 25%", name: "Petites pommes de terre (500 g)", qty: "1 sachet de 500 g (Prix exact Aldi)", qty1Meal: "1 sachet de 500 g (Prix exact Aldi)", price: 0.90, price1Meal: 0.90, url: "https://www.aldi.be/fr/product/petites-pommes-de-terre-cuites-6627.html" }
         ]
       }
     ];
@@ -982,26 +985,49 @@
       };
     }
 
+    // NEVER divides a package price below 1 whole unit! Always returns exact store shelf prices (unitPrice × integer units)
     function getScaledItem(item) {
       const usage = getItemUsageRatio(item.id);
       if (usage.activeUses === 0) {
-        return { needed: false, qtyText: `0 ${item.unit}`, price: 0, activeUses: 0 };
+        return { needed: false, name: item.name, store: item.store, url: item.url, qtyText: `0 ${item.unit}`, price: 0, activeUses: 0 };
       }
+      // If full week or full usage of this item
       if (usage.ratio >= 0.999) {
         return {
           needed: true,
+          name: item.name,
+          store: item.store,
+          url: item.url,
           qtyText: `${item.baseQty} ${item.unit}`,
           price: item.basePrice,
           activeUses: usage.activeUses
         };
       }
-      const scaledQty = Math.max(1, Math.round(item.baseQty * usage.ratio));
-      const scaledPrice = Math.max(0.25, Math.round(item.basePrice * usage.ratio * 100) / 100);
-      const unitShort = item.unit.split("(")[0].trim() || item.unit;
+      // If cooking only 1 or 2 meals and a real smaller store package exists on Aldi, switch to that exact package & URL!
+      if (usage.activeUses <= 2 && item.smallVariant) {
+        return {
+          needed: true,
+          name: item.smallVariant.name,
+          store: item.smallVariant.store || item.store,
+          url: item.smallVariant.url || item.url,
+          qtyText: item.smallVariant.qtyText,
+          price: item.smallVariant.price,
+          activeUses: usage.activeUses
+        };
+      }
+      // If item consists of multiple individual packages (e.g., 2 pots of Skyr at 1,39 €, 3 cans of Tuna at 1,25 €)
+      const maxUnits = item.maxUnits || 1;
+      const unitPrice = item.unitPrice || (item.basePrice / maxUnits);
+      const unitsNeeded = Math.max(1, Math.ceil(maxUnits * usage.ratio));
+      const exactPrice = Math.round(unitsNeeded * unitPrice * 100) / 100;
+      const label = item.unitLabel || item.unit;
       return {
         needed: true,
-        qtyText: `${scaledQty} ${unitShort} (pour ${usage.activeUses} repas)`,
-        price: scaledPrice,
+        name: item.name,
+        store: item.store,
+        url: item.url,
+        qtyText: `${unitsNeeded} × ${label}`,
+        price: exactPrice,
         activeUses: usage.activeUses
       };
     }
@@ -1010,7 +1036,7 @@
       const isSingleMeal = state.expressPortions === 2;
       return {
         qtyText: isSingleMeal ? (it.qty1Meal || it.qty) : it.qty,
-        price: isSingleMeal ? (it.price1Meal || Math.round(it.price * 50) / 100) : it.price
+        price: isSingleMeal ? (it.price1Meal || it.price) : it.price
       };
     }
 
@@ -1386,12 +1412,12 @@
           if (!sc.needed) return;
           rawList.push({
             id: it.id,
-            store: it.store,
+            store: sc.store || it.store,
             cat: it.cat,
-            name: it.name,
+            name: sc.name || it.name,
             qtyText: sc.qtyText,
             price: sc.price,
-            url: it.url,
+            url: sc.url || it.url,
             checked: !!state.checkedEssential[it.id],
             isExpress: false
           });
