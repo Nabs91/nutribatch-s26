@@ -1,5 +1,5 @@
-// Network-first Service Worker (v4 - Apple HIG Edition + Daily Promo Pruner)
-const CACHE_NAME = "nutribatch-hig-v4";
+// Network-first Service Worker (v5 - Expert UX/UI Ergonomics Edition)
+const CACHE_NAME = "nutribatch-hig-v5";
 self.addEventListener("install", e => self.skipWaiting());
 self.addEventListener("activate", e => {
   e.waitUntil(
