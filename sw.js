@@ -1,5 +1,5 @@
-// Network-first Service Worker (v5 - Expert UX/UI Ergonomics Edition)
-const CACHE_NAME = "nutribatch-hig-v5";
+// Network-first Service Worker (v6 - Per-Meal Ingredient Scaling & Express Cart Sync)
+const CACHE_NAME = "nutribatch-hig-v6";
 self.addEventListener("install", e => self.skipWaiting());
 self.addEventListener("activate", e => {
   e.waitUntil(

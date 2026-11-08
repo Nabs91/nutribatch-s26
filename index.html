@@ -782,7 +782,7 @@
     ];
 
     // =========================================================================
-    // 4 EXPRESS 48H KITS (SAME DAY + NEXT DAY REHEAT FOR 2 PEOPLE = 4 PLATES)
+    // 4 EXPRESS KITS (PORTIONS ADAPTÉES : 1 REPAS [2 ASSIETTES] OU 48H [4 ASSIETTES])
     // =========================================================================
     const EXPRESS_KITS = [
       {
@@ -791,63 +791,60 @@
         title: "Kit 1 : Wok Poulet Citron-Skyr, Riz Basmati & Brocoli-Poivrons",
         prepTime: "20 min chrono",
         portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. à réchauffer demain)",
-        todayMeal: "Émincé de poulet doré minute au citron & origan, riz basmati vapeur et poêlée croquante de brocoli & poivrons tricolores + 1 Banane.",
+        todayMeal: "Émincé de poulet doré minute au citron & origan, riz basmati vapeur et poêlée croquante de brocoli & poivrons tricolores.",
         tomorrowReheat: "Réchauffez 2 min 30 au micro-ondes (avec 1 c.à.s de Skyr 0% ajoutée après réchauffage pour un moelleux parfait) ou 4 min à la poêle.",
         steps: [
-          "00:00 → 00:05 : Lancez 320 g de riz basmati dans l'eau bouillante salée (11 min). Coupez 650 g de filet de poulet en lanières.",
-          "00:05 → 00:15 : Saisissez le poulet à la poêle vive 6 min avec paprika, origan et ail. Ajoutez le sachet de poivrons (500 g) et le brocoli en fleurettes (600 g) avec un fond d'eau, couvrez 7 min.",
-          "00:15 → 00:20 : Hors du feu, liez avec 3 c.à.s de Skyr 0% et du jus de citron. Servez 2 assiettes (50% légumes / 25% riz / 25% poulet) et mettez immédiatement les 2 autres portions en boîte hermétique au frigo pour demain !"
+          "00:00 → 00:05 : Lancez le riz basmati dans l'eau bouillante salée (11 min). Coupez le filet de poulet en lanières.",
+          "00:05 → 00:15 : Saisissez le poulet à la poêle vive 6 min avec paprika, origan et ail. Ajoutez les poivrons et le brocoli en fleurettes avec un fond d'eau, couvrez 7 min.",
+          "00:15 → 00:20 : Hors du feu, liez avec le Skyr 0% et du jus de citron. Servez 2 assiettes (50% légumes / 25% riz / 25% poulet) et mettez les 2 autres portions au frigo si vous avez choisi le format 48h !"
         ],
         items: [
-          { id: "ex_p1", store: "ALDI", name: "Filets de poitrine de poulet XXL (1 kg — utilisez 650g)", qty: "1 barquette (1 kg)", price: 8.99, url: "https://www.aldi.be/fr/product/filet-de-poitrine-de-poulet-xxl-3007574.html" },
-          { id: "ex_p2", store: "ALDI", name: "Brocoli en fleurettes (1 kg)", qty: "1 sachet (1 kg)", price: 1.79, url: "https://www.aldi.be/fr/product/brocoli-6255.html" },
-          { id: "ex_p3", store: "ALDI", name: "Mélange de poivrons tricolores (500 g)", qty: "1 sachet (500 g)", price: 1.99, url: "https://www.aldi.be/fr/product/melange-de-poivrons-6212.html" },
-          { id: "ex_p4", store: "ALDI", name: "Riz Basmati (1 kg)", qty: "1 boîte (1 kg)", price: 1.89, url: "https://www.aldi.be/fr/product/riz-basmati-3011332.html" },
-          { id: "ex_p5", store: "ALDI", name: "Milsani Skyr Nature 0 % MG (500 g)", qty: "1 pot (500 g)", price: 1.49, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" },
-          { id: "ex_p6", store: "ALDI", name: "Bananes fraîches (1 kg)", qty: "1 régime (1 kg)", price: 1.59, url: "https://www.aldi.be/fr/product/bananes-8272.html" }
+          { id: "ex_p1", store: "ALDI", cat: "🔵 Protéines 25%", name: "Filets de poitrine de poulet (Portion juste)", qty: "500 g (4 assiettes)", qty1Meal: "250 g (2 assiettes)", price: 4.49, price1Meal: 2.25, url: "https://www.aldi.be/fr/product/filet-de-poitrine-de-poulet-xxl-3007574.html" },
+          { id: "ex_p2", store: "ALDI", cat: "🟢 Légumes 50%", name: "Brocoli en fleurettes", qty: "500 g (4 assiettes)", qty1Meal: "300 g (2 assiettes)", price: 0.99, price1Meal: 0.55, url: "https://www.aldi.be/fr/product/brocoli-6255.html" },
+          { id: "ex_p3", store: "ALDI", cat: "🟢 Légumes 50%", name: "Mélange de poivrons tricolores", qty: "1 sachet (500 g)", qty1Meal: "250 g (1/2 sachet)", price: 1.99, price1Meal: 1.00, url: "https://www.aldi.be/fr/product/melange-de-poivrons-6212.html" },
+          { id: "ex_p4", store: "ALDI", cat: "🟡 Féculents 25%", name: "Riz Basmati (Portion repas)", qty: "320 g (4 assiettes)", qty1Meal: "160 g (2 assiettes)", price: 0.65, price1Meal: 0.35, url: "https://www.aldi.be/fr/product/riz-basmati-3011332.html" },
+          { id: "ex_p5", store: "ALDI", cat: "🔵 Sauce Protéinée", name: "Milsani Skyr Nature 0 % MG", qty: "250 g (1/2 pot)", qty1Meal: "125 g (Sauce)", price: 0.75, price1Meal: 0.40, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" }
         ]
       },
       {
         id: "kit_pates_thon",
-        badge: "⚡ 15 min • Ultra-Rapide",
+        badge: "⚡ 15 min • Ultra-Économique",
         title: "Kit 2 : One-Pot Penne Complètes au Thon, Courgettes, Épinards & Tomate",
         prepTime: "15 min chrono",
         portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. demain midi ou soir)",
-        todayMeal: "Penne complètes fondantes à la passata de tomates, courgettes sautées à l'ail, jeunes pousses d'épinards et thon au naturel + 1 Pomme.",
+        todayMeal: "Penne complètes fondantes à la passata de tomates, courgettes sautées à l'ail, jeunes pousses d'épinards et thon au naturel.",
         tomorrowReheat: "Encore meilleur réchauffé le lendemain ! Ajoutez 1 filet d'eau avant de passer 2 min au micro-ondes à couvert : la sauce tomate reste ultra-onctueuse.",
         steps: [
-          "00:00 → 00:05 : Mettez 350 g de penne complètes à cuire (10 min). Coupez les 2 courgettes (600 g) en demi-rondelles.",
-          "00:05 → 00:12 : Faites dorer les courgettes 5 min à la poêle, versez la brique de passata (500 g) et le sachet d'épinards frais (400 g) qui fond en 2 minutes.",
-          "00:12 → 00:15 : Ajoutez les 3 boîtes de thon égouttées et les pâtes. Mélangez : servez 2 assiettes ce soir et mettez 2 boîtes au frais pour demain !"
+          "00:00 → 00:05 : Mettez les penne complètes à cuire (10 min). Coupez les courgettes en demi-rondelles.",
+          "00:05 → 00:12 : Faites dorer les courgettes 5 min à la poêle, versez la passata et les épinards frais qui fondent en 2 minutes.",
+          "00:12 → 00:15 : Ajoutez le thon égoutté et les pâtes. Mélangez : c'est prêt !"
         ],
         items: [
-          { id: "ex_t1", store: "ALDI", name: "Thon au naturel (3 boîtes × 150 g)", qty: "3 boîtes (450 g)", price: 4.17, url: "https://www.aldi.be/fr/product/thon-au-naturel-3013183.html" },
-          { id: "ex_t2", store: "ALDI", name: "Penne Complet / Blé Dur (500 g)", qty: "1 paquet (500 g)", price: 0.79, url: "https://www.aldi.be/fr/product/penne-complet-3010902.html" },
-          { id: "ex_t3", store: "ALDI", name: "Courgettes fraîches (600 g)", qty: "2 pièces (600 g)", price: 1.39, url: "https://www.aldi.be/fr/product/courgettes-3005491.html" },
-          { id: "ex_t4", store: "ALDI", name: "Épinards frais en branches (400 g)", qty: "1 sachet (400 g)", price: 1.29, url: "https://www.aldi.be/fr/product/epinards-7996.html" },
-          { id: "ex_t5", store: "ALDI", name: "Passata de tomates (500 g)", qty: "1 brique (500 g)", price: 0.69, url: "https://www.aldi.be/fr/product/passata-de-tomates-3010209.html" },
-          { id: "ex_t6", store: "ALDI", name: "Pommes Jonagold belges (1,5 kg)", qty: "1 sachet (1,5 kg)", price: 1.99, url: "https://www.aldi.be/fr/product/pommes-jonagold-8134.html" }
+          { id: "ex_t1", store: "ALDI", cat: "🔵 Protéines 25%", name: "Thon au naturel en boîte", qty: "2 boîtes (300 g)", qty1Meal: "1 boîte (150 g)", price: 2.78, price1Meal: 1.39, url: "https://www.aldi.be/fr/product/thon-au-naturel-3013183.html" },
+          { id: "ex_t2", store: "ALDI", cat: "🟡 Féculents 25%", name: "Penne Complet / Blé Dur", qty: "1 paquet (500 g)", qty1Meal: "200 g (2 assiettes)", price: 0.79, price1Meal: 0.40, url: "https://www.aldi.be/fr/product/penne-complet-3010902.html" },
+          { id: "ex_t3", store: "ALDI", cat: "🟢 Légumes 50%", name: "Courgettes fraîches", qty: "2 pièces (600 g)", qty1Meal: "1 pièce (300 g)", price: 1.39, price1Meal: 0.70, url: "https://www.aldi.be/fr/product/courgettes-3005491.html" },
+          { id: "ex_t4", store: "ALDI", cat: "🟢 Légumes 50%", name: "Épinards frais en branches", qty: "1 sachet (400 g)", qty1Meal: "200 g (1/2 sachet)", price: 1.29, price1Meal: 0.65, url: "https://www.aldi.be/fr/product/epinards-7996.html" },
+          { id: "ex_t5", store: "ALDI", cat: "🟢 Légumes 50%", name: "Passata de tomates", qty: "1 brique (500 g)", qty1Meal: "250 g (1/2 brique)", price: 0.69, price1Meal: 0.35, url: "https://www.aldi.be/fr/product/passata-de-tomates-3010209.html" }
         ]
       },
       {
         id: "kit_cabillaud",
         badge: "🐟 20 min • Four Sans Effort",
-        title: "Kit 3 : Papillote / Plaque de Cabillaud, Haricots Verts & Pommes de Terre",
+        title: "Kit 3 : Papillote de Cabillaud, Haricots Verts & Pommes de Terre",
         prepTime: "20 min chrono",
         portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. demain)",
-        todayMeal: "Filets de cabillaud rôtis au citron, haricots verts extra-fins aillés et pommes de terre vapeur + 1 Poire Conférence.",
+        todayMeal: "Filets de cabillaud rôtis au citron, haricots verts extra-fins aillés et pommes de terre vapeur.",
         tomorrowReheat: "Réchauffez à puissance moyenne (600W pendant 2 min) avec une cuillère de sauce Skyr-citron pour garder le poisson bien tendre.",
         steps: [
-          "00:00 → 00:05 : Coupez 800 g de pommes de terre en petits cubes pour une cuisson express (12 min à l'eau bouillante avec les haricots verts).",
-          "00:05 → 00:18 : Enfournez les 4 filets de cabillaud (600 g) à 200 °C pendant 12-14 min avec citron, herbes et un filet d'huile d'olive.",
-          "00:18 → 00:20 : Dressez 2 assiettes pour aujourd'hui et préparez vos 2 boîtes (poisson + haricots verts + pommes de terre) pour demain !"
+          "00:00 → 00:05 : Coupez les pommes de terre en petits cubes pour une cuisson express (12 min à l'eau bouillante avec les haricots verts).",
+          "00:05 → 00:18 : Enfournez les filets de cabillaud à 200 °C pendant 12-14 min avec citron et herbes.",
+          "00:18 → 00:20 : Dressez vos assiettes équilibrées 50% haricots verts / 25% pommes de terre / 25% cabillaud !"
         ],
         items: [
-          { id: "ex_c1", store: "ALDI", name: "Filets de cabillaud (600 g — 4 filets)", qty: "1 sachet (600 g)", price: 5.49, url: "https://www.aldi.be/fr/product/filets-de-cabillaud-5392.html" },
-          { id: "ex_c2", store: "ALDI", name: "Haricots verts extra-fins (1 kg)", qty: "1 sachet (1 kg)", price: 1.39, url: "https://www.aldi.be/fr/product/haricots-verts-6245.html" },
-          { id: "ex_c3", store: "ALDI", name: "Pommes de terre à chair très ferme (2,5 kg)", qty: "1 filet (2,5 kg)", price: 2.99, url: "https://www.aldi.be/fr/product/pommes-de-terre-a-chair-tres-ferme-6148.html" },
-          { id: "ex_c4", store: "ALDI", name: "Milsani Skyr Nature 0 % MG (500 g)", qty: "1 pot (500 g)", price: 1.49, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" },
-          { id: "ex_c5", store: "ALDI", name: "Poires Conférence belges (1 kg)", qty: "1 barquette (1 kg)", price: 1.59, url: "https://www.aldi.be/fr/product/poires-conference-8144.html" }
+          { id: "ex_c1", store: "ALDI", cat: "🔵 Protéines 25%", name: "Filets de cabillaud", qty: "4 filets (600 g)", qty1Meal: "2 filets (300 g)", price: 5.49, price1Meal: 2.75, url: "https://www.aldi.be/fr/product/filets-de-cabillaud-5392.html" },
+          { id: "ex_c2", store: "ALDI", cat: "🟢 Légumes 50%", name: "Haricots verts extra-fins", qty: "1 sachet (1 kg)", qty1Meal: "500 g (2 assiettes)", price: 1.39, price1Meal: 0.70, url: "https://www.aldi.be/fr/product/haricots-verts-6245.html" },
+          { id: "ex_c3", store: "ALDI", cat: "🟡 Féculents 25%", name: "Pommes de terre à chair très ferme", qty: "800 g (4 assiettes)", qty1Meal: "400 g (2 assiettes)", price: 0.96, price1Meal: 0.48, url: "https://www.aldi.be/fr/product/pommes-de-terre-a-chair-tres-ferme-6148.html" },
+          { id: "ex_c4", store: "ALDI", cat: "🔵 Sauce Protéinée", name: "Milsani Skyr Nature 0 % MG", qty: "250 g (Sauce citron)", qty1Meal: "125 g (Sauce)", price: 0.75, price1Meal: 0.40, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" }
         ]
       },
       {
@@ -859,19 +856,37 @@
         todayMeal: "Émincé de bœuf maigre belge sauté aux champignons frais, carottes fondantes à la tomate et pommes de terre dorées.",
         tomorrowReheat: "Les plats en sauce tomate-champignons sont encore plus savoureux réchauffés le lendemain (2 min 30 au micro-ondes ou 5 min à feu doux).",
         steps: [
-          "00:00 → 00:07 : Émincez finement les 700 g de bœuf maigre Colruyt (en lamelles fines, il cuit en quelques minutes !) et coupez les carottes en fines rondelles.",
-          "00:07 → 00:20 : Saisissez le bœuf 4 min à feu vif, réservez. Dans la même poêle, faites revenir les champignons (500 g) et carottes avec la passata (500 g) pendant 12 min à couvert pendant que les pommes de terre cuisent.",
-          "00:20 → 00:25 : Remettez le bœuf dans la sauce : 2 portions pour aujourd'hui + 2 boîtes prêtes à réchauffer demain pour 2 personnes !"
+          "00:00 → 00:07 : Émincez finement le bœuf maigre Colruyt (en lamelles fines, il cuit en quelques minutes !) et coupez les carottes en fines rondelles.",
+          "00:07 → 00:20 : Saisissez le bœuf 4 min à feu vif, réservez. Faites revenir les champignons et carottes avec la passata pendant 12 min à couvert pendant que les pommes de terre cuisent.",
+          "00:20 → 00:25 : Remettez le bœuf dans la sauce et servez !"
         ],
         items: [
-          { id: "ex_b1", store: "COLRUYT", name: "Bœuf maigre belge (Promo Prix Rouge — 700 g)", qty: "1 barquette (700 g)", price: 8.95, url: "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/19?offer=201c1f58-0755-4242-99b9-edfea16779fd" },
-          { id: "ex_b2", store: "ALDI", name: "Champignons frais (500 g)", qty: "1 barquette (500 g)", price: 1.89, url: "https://www.aldi.be/fr/product/champignons-6226.html" },
-          { id: "ex_b3", store: "ALDI", name: "Carottes belges fraîches (2 kg)", qty: "1 sachet (2 kg)", price: 1.79, url: "https://www.aldi.be/fr/product/carottes-8275.html" },
-          { id: "ex_b4", store: "ALDI", name: "Passata de tomates (500 g)", qty: "1 brique (500 g)", price: 0.69, url: "https://www.aldi.be/fr/product/passata-de-tomates-3010209.html" },
-          { id: "ex_b5", store: "ALDI", name: "Pommes de terre à chair très ferme (2,5 kg)", qty: "1 filet (2,5 kg)", price: 2.99, url: "https://www.aldi.be/fr/product/pommes-de-terre-a-chair-tres-ferme-6148.html" }
+          { id: "ex_b1", store: "COLRUYT", cat: "🔵 Protéines 25%", name: "Bœuf maigre belge (Promo Prix Rouge)", qty: "500 g (4 assiettes)", qty1Meal: "250 g (2 assiettes)", price: 6.39, price1Meal: 3.20, url: "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/19?offer=201c1f58-0755-4242-99b9-edfea16779fd" },
+          { id: "ex_b2", store: "ALDI", cat: "🟢 Légumes 50%", name: "Champignons frais", qty: "1 barquette (500 g)", qty1Meal: "250 g (1/2 barquette)", price: 1.89, price1Meal: 0.95, url: "https://www.aldi.be/fr/product/champignons-6226.html" },
+          { id: "ex_b3", store: "ALDI", cat: "🟢 Légumes 50%", name: "Carottes belges fraîches", qty: "800 g (4 assiettes)", qty1Meal: "400 g (2 assiettes)", price: 0.72, price1Meal: 0.36, url: "https://www.aldi.be/fr/product/carottes-8275.html" },
+          { id: "ex_b4", store: "ALDI", cat: "🟢 Légumes 50%", name: "Passata de tomates", qty: "1 brique (500 g)", qty1Meal: "250 g (1/2 brique)", price: 0.69, price1Meal: 0.35, url: "https://www.aldi.be/fr/product/passata-de-tomates-3010209.html" },
+          { id: "ex_b5", store: "ALDI", cat: "🟡 Féculents 25%", name: "Pommes de terre à chair très ferme", qty: "800 g (4 assiettes)", qty1Meal: "400 g (2 assiettes)", price: 0.96, price1Meal: 0.48, url: "https://www.aldi.be/fr/product/pommes-de-terre-a-chair-tres-ferme-6148.html" }
         ]
       }
     ];
+
+    // Exact ingredient mapping per meal (default & alt variant) so selecting 1 meal ONLY puts that meal's ingredients in the cart!
+    const MEAL_INGREDIENTS_MAP = {
+      "0_midi": { def: ["e6", "e12", "e19", "e3", "e10", "e23"], alt: ["e6", "e12", "e19", "e21", "e10", "e23"] },
+      "0_soir": { def: ["e1", "e11", "e16", "e17", "e20", "e4"], alt: ["e1", "e15", "e16", "e20", "e4"] },
+      "1_midi": { def: ["e1", "e11", "e16", "e17", "e20", "e25"], alt: ["e6", "e9", "e11", "e18", "e20", "e25"] },
+      "1_soir": { def: ["e7", "e15", "e21", "e10", "e24"], alt: ["e7", "e13", "e21", "e10", "e24"] },
+      "2_midi": { def: ["e8", "e9", "e22", "e2", "e13", "e18", "e10", "e23"], alt: ["e8", "e22", "e2", "e10", "e19", "e18", "e11", "e23"] },
+      "2_soir": { def: ["e6", "e14", "e20", "e4"], alt: ["e6", "e14", "e20", "e10", "e4"] },
+      "3_midi": { def: ["e8", "e9", "e10", "e3", "e11", "e19", "e18", "e24"], alt: ["e8", "e9", "e10", "e2", "e5", "e11", "e19", "e24"] },
+      "3_soir": { def: ["e9", "e5", "e16", "e18", "e11", "e10", "e25"], alt: ["e9", "e5", "e16", "e18", "e10", "e25"] },
+      "4_midi": { def: ["e6", "e21", "e13", "e11", "e17", "e23"], alt: ["e6", "e21", "e15", "e11", "e23"] },
+      "4_soir": { def: ["e7", "e14", "e17", "e20", "e10", "e4"], alt: ["e7", "e2", "e14", "e20", "e10", "e4"] },
+      "5_midi": { def: ["e6", "e2", "e20", "e11", "e19", "e18", "e24"], alt: ["e6", "e2", "e10", "e3", "e19", "e11", "e18", "e24"] },
+      "5_soir": { def: ["e9", "e12", "e17", "e10", "e5", "e25"], alt: ["e9", "e12", "e13", "e17", "e10", "e21", "e25"] },
+      "6_midi": { def: ["e8", "e15", "e16", "e22", "e17", "e10", "e23"], alt: ["e8", "e15", "e22", "e17", "e10", "e23"] },
+      "6_soir": { def: ["e6", "e11", "e10", "e19", "e5", "e2", "e4"], alt: ["e6", "e11", "e10", "e20", "e4"] }
+    };
 
     // =========================================================================
     // APPLICATION STATE
@@ -880,6 +895,8 @@
       daysCount: 7,           // 1 to 7 days
       mealMode: "both",       // "both" (2/day), "midi" (1/day), "soir" (1/day)
       dayFilter: "ALL",       // "ALL" or dayIndex (0..6)
+      cartSource: "weekly",   // "weekly" (Menu 1..7j) or "express" (Kit Express)
+      expressPortions: 4,     // 4 (48h = 2 repas × 2 pers.) or 2 (1 seul repas × 2 pers.)
       configOpen: false,      // Progressive disclosure for days/meals drawer
       hideChecked: false,     // Hide checked items in supermarket mode
       searchQuery: "",        // Live search filter in supermarket mode
@@ -914,24 +931,87 @@
       return val.toFixed(2).replace(".", ",") + " €";
     }
 
+    function getMealIngredientIds(meal) {
+      const key = `${meal.dayIndex}_${meal.slot}`;
+      const entry = MEAL_INGREDIENTS_MAP[key];
+      if (!entry) return [];
+      return state.swappedMeals[key] ? entry.alt : entry.def;
+    }
+
+    function getDisplayedMeals() {
+      return MEALS_DB.filter(m => {
+        if (m.dayIndex >= state.daysCount) return false;
+        if (state.mealMode === "midi" && m.slot !== "midi") return false;
+        if (state.mealMode === "soir" && m.slot !== "soir") return false;
+        if (state.dayFilter !== "ALL" && String(m.dayIndex) !== String(state.dayFilter)) return false;
+        return true;
+      });
+    }
+
     function getActiveMealsCount() {
-      const perDay = state.mealMode === "both" ? 2 : 1;
-      return state.daysCount * perDay;
+      return getDisplayedMeals().length;
     }
 
     function getScaleFactor() {
       return getActiveMealsCount() / 14.0;
     }
 
-    function getScaledItem(item) {
-      const factor = getScaleFactor();
-      if (!item.scaleWithMeals || factor >= 0.99) {
-        return { qtyText: `${item.baseQty} ${item.unit}`, price: item.basePrice };
+    function getItemUsageRatio(itemId) {
+      let totalWeekUses = 0;
+      MEALS_DB.forEach(m => {
+        const ids = getMealIngredientIds(m);
+        if (ids.includes(itemId)) totalWeekUses += 1;
+      });
+      if (totalWeekUses === 0) totalWeekUses = 1;
+
+      const displayed = getDisplayedMeals();
+      // Full week (all 14 meals displayed) -> exact 1.0 ratio
+      if (displayed.length === 14) {
+        return { activeUses: totalWeekUses, totalWeekUses, ratio: 1.0 };
       }
-      // Proportionally scale quantity and price for shorter durations while keeping minimum 1 unit
-      const scaledQty = Math.max(1, Math.round(item.baseQty * factor));
-      const scaledPrice = Math.max(0.50, Math.round(item.basePrice * factor * 100) / 100);
-      return { qtyText: `${scaledQty} ${item.unit}`, price: scaledPrice };
+
+      let activeUses = 0;
+      displayed.forEach(m => {
+        const ids = getMealIngredientIds(m);
+        if (ids.includes(itemId)) activeUses += 1;
+      });
+      return {
+        activeUses,
+        totalWeekUses,
+        ratio: activeUses / totalWeekUses
+      };
+    }
+
+    function getScaledItem(item) {
+      const usage = getItemUsageRatio(item.id);
+      if (usage.activeUses === 0) {
+        return { needed: false, qtyText: `0 ${item.unit}`, price: 0, activeUses: 0 };
+      }
+      if (usage.ratio >= 0.999) {
+        return {
+          needed: true,
+          qtyText: `${item.baseQty} ${item.unit}`,
+          price: item.basePrice,
+          activeUses: usage.activeUses
+        };
+      }
+      const scaledQty = Math.max(1, Math.round(item.baseQty * usage.ratio));
+      const scaledPrice = Math.max(0.25, Math.round(item.basePrice * usage.ratio * 100) / 100);
+      const unitShort = item.unit.split("(")[0].trim() || item.unit;
+      return {
+        needed: true,
+        qtyText: `${scaledQty} ${unitShort} (pour ${usage.activeUses} repas)`,
+        price: scaledPrice,
+        activeUses: usage.activeUses
+      };
+    }
+
+    function getExpressItemScaled(it) {
+      const isSingleMeal = state.expressPortions === 2;
+      return {
+        qtyText: isSingleMeal ? (it.qty1Meal || it.qty) : it.qty,
+        price: isSingleMeal ? (it.price1Meal || Math.round(it.price * 50) / 100) : it.price
+      };
     }
 
     // =========================================================================
@@ -967,6 +1047,7 @@
         btn.setAttribute("aria-label", `${d} jour${d > 1 ? "s" : ""}`);
         btn.onclick = () => {
           state.daysCount = d;
+          state.cartSource = "weekly";
           if (state.dayFilter !== "ALL" && Number(state.dayFilter) >= d) {
             state.dayFilter = "ALL";
           }
@@ -994,6 +1075,7 @@
         }`;
         btn.onclick = () => {
           state.mealMode = m;
+          state.cartSource = "weekly";
           saveState();
           renderAll();
         };
@@ -1001,20 +1083,6 @@
     }
 
     function renderKPIs() {
-      const mealsCount = getActiveMealsCount();
-      const platesCount = mealsCount * 2;
-      const factor = getScaleFactor();
-
-      let essentialTotal = 0;
-      let checkedTotal = 0;
-      ESSENTIAL_ITEMS.forEach(it => {
-        const scaled = getScaledItem(it);
-        essentialTotal += scaled.price;
-        if (state.checkedEssential[it.id]) {
-          checkedTotal += scaled.price;
-        }
-      });
-
       let extrasTotal = 0;
       let extrasCount = 0;
       EXTRA_PROMOS.forEach(ex => {
@@ -1024,23 +1092,79 @@
         }
       });
 
+      document.getElementById("kpiExtrasTotal").textContent = formatEuro(extrasTotal);
+      document.getElementById("kpiExtrasCount").textContent = `${extrasCount}`;
+
+      // Check if we are in Express Cart Mode or Weekly Menu Cart Mode
+      if (state.cartSource === "express") {
+        const kit = EXPRESS_KITS.find(k => k.id === state.activeExpressKit) || EXPRESS_KITS[0];
+        let kitTotal = 0;
+        let kitChecked = 0;
+        kit.items.forEach(it => {
+          const sc = getExpressItemScaled(it);
+          kitTotal += sc.price;
+          if (state.checkedExpress && state.checkedExpress[it.id]) {
+            kitChecked += sc.price;
+          }
+        });
+        const remKit = Math.max(0, kitTotal - kitChecked);
+        const pct = kitTotal > 0 ? Math.min(100, Math.round((remKit / kitTotal) * 100)) : 0;
+        const mealsCount = state.expressPortions === 2 ? 1 : 2;
+        const platesCount = state.expressPortions;
+
+        document.getElementById("kpiEssentialTotal").textContent = formatEuro(remKit);
+        document.getElementById("kpiRemaining").textContent = kitChecked > 0
+          ? `(-${formatEuro(kitChecked)} coché • ⚡ Express)`
+          : `sur ${formatEuro(kitTotal)} (⚡ ${kit.title.split(":")[0]})`;
+        document.getElementById("budgetBar").style.width = `${pct}%`;
+
+        document.getElementById("kpiPlatesCount").textContent = `⚡ ${platesCount} assiettes Express (${formatEuro(kitTotal / platesCount)}/assiette)`;
+        document.getElementById("kpiMealsSub").textContent = `${mealsCount} repas × 2 pers.`;
+        document.getElementById("kpiProduceWeight").textContent = state.expressPortions === 2 ? "1,1 kg" : "2,2 kg";
+
+        document.getElementById("navCartPrice").textContent = formatEuro(remKit);
+        const remEl = document.getElementById("remainingCartAmount");
+        if (remEl) remEl.textContent = formatEuro(remKit);
+        document.getElementById("checkedCartAmount").textContent = formatEuro(kitChecked);
+        const totEl = document.getElementById("totalCartAmount");
+        if (totEl) totEl.textContent = formatEuro(kitTotal);
+        document.getElementById("shopSubCount").textContent = `⚡ ${kit.title.split(":")[0]} (${platesCount} assiettes)`;
+        return;
+      }
+
+      // Weekly / Filtered Menu Mode
+      const mealsCount = getActiveMealsCount();
+      const platesCount = mealsCount * 2;
+      const factor = getScaleFactor();
+
+      let essentialTotal = 0;
+      let checkedTotal = 0;
+      let neededCount = 0;
+      ESSENTIAL_ITEMS.forEach(it => {
+        const scaled = getScaledItem(it);
+        if (!scaled.needed) return;
+        neededCount += 1;
+        essentialTotal += scaled.price;
+        if (state.checkedEssential[it.id]) {
+          checkedTotal += scaled.price;
+        }
+      });
+
       const remainingToBuy = Math.max(0, essentialTotal - checkedTotal);
       const pct = essentialTotal > 0 ? Math.min(100, Math.round((remainingToBuy / essentialTotal) * 100)) : 0;
 
       document.getElementById("kpiEssentialTotal").textContent = formatEuro(remainingToBuy);
+      const perPlate = platesCount > 0 ? formatEuro(essentialTotal / platesCount) : "0,00 €";
       document.getElementById("kpiRemaining").textContent = checkedTotal > 0
-        ? `(-${formatEuro(checkedTotal)} coché)`
-        : `sur ${formatEuro(essentialTotal)} (max 70€)`;
+        ? `(-${formatEuro(checkedTotal)} coché sur ${formatEuro(essentialTotal)})`
+        : `sur ${formatEuro(essentialTotal)} (${perPlate}/assiette)`;
       document.getElementById("budgetBar").style.width = `${pct}%`;
 
-      document.getElementById("kpiPlatesCount").textContent = `${platesCount} assiettes`;
-      document.getElementById("kpiMealsSub").textContent = `${mealsCount} plat${mealsCount > 1 ? "s" : ""} × 2 personnes`;
+      document.getElementById("kpiPlatesCount").textContent = `${platesCount} assiettes (${neededCount} articles)`;
+      document.getElementById("kpiMealsSub").textContent = `${mealsCount} repas × 2 pers.`;
 
       const produceKg = (11.7 * factor).toFixed(1).replace(".", ",");
       document.getElementById("kpiProduceWeight").textContent = `${produceKg} kg`;
-
-      document.getElementById("kpiExtrasTotal").textContent = formatEuro(extrasTotal);
-      document.getElementById("kpiExtrasCount").textContent = `${extrasCount} promo${extrasCount > 1 ? "s" : ""} plaisir cochée${extrasCount > 1 ? "s" : ""}`;
 
       document.getElementById("navCartPrice").textContent = formatEuro(remainingToBuy);
       const remEl = document.getElementById("remainingCartAmount");
@@ -1048,8 +1172,8 @@
       document.getElementById("checkedCartAmount").textContent = formatEuro(checkedTotal);
       const totEl = document.getElementById("totalCartAmount");
       if (totEl) totEl.textContent = formatEuro(essentialTotal);
-      document.getElementById("menuHeaderCount").textContent = `${mealsCount} plat${mealsCount > 1 ? "s" : ""} sur ${state.daysCount} jour${state.daysCount > 1 ? "s" : ""}`;
-      document.getElementById("shopSubCount").textContent = `${state.daysCount} jour${state.daysCount > 1 ? "s" : ""} (${platesCount} assiettes)`;
+      document.getElementById("menuHeaderCount").textContent = `${mealsCount} plat${mealsCount > 1 ? "s" : ""} (${formatEuro(essentialTotal)} au total)`;
+      document.getElementById("shopSubCount").textContent = `${mealsCount} repas • ${platesCount} assiettes (${neededCount} ingr.)`;
     }
 
     function renderMeals() {
@@ -1078,8 +1202,9 @@
         allBtn.textContent = `Tous (${activeMeals.length})`;
         allBtn.onclick = () => {
           state.dayFilter = "ALL";
+          state.cartSource = "weekly";
           saveState();
-          renderMeals();
+          renderAll();
         };
         pillsContainer.appendChild(allBtn);
 
@@ -1094,22 +1219,34 @@
           btn.textContent = dayNamesShort[d];
           btn.onclick = () => {
             state.dayFilter = String(d);
+            state.cartSource = "weekly";
             saveState();
-            renderMeals();
+            renderAll();
           };
           pillsContainer.appendChild(btn);
         }
       }
 
-      const filtered = activeMeals.filter(m => {
-        if (state.dayFilter === "ALL") return true;
-        return String(m.dayIndex) === String(state.dayFilter);
-      });
+      const filtered = getDisplayedMeals();
 
       filtered.forEach((m) => {
         const key = `${m.dayIndex}_${m.slot}`;
         const isSwapped = !!state.swappedMeals[key];
         const data = isSwapped ? m.alt : m;
+
+        // Compute exact cost of this single meal (for 2 people)
+        const ingIds = getMealIngredientIds(m);
+        let mealCost = 0;
+        ingIds.forEach(id => {
+          const itemObj = ESSENTIAL_ITEMS.find(x => x.id === id);
+          if (itemObj) {
+            let totalUses = 0;
+            MEALS_DB.forEach(other => {
+              if (getMealIngredientIds(other).includes(id)) totalUses += 1;
+            });
+            mealCost += itemObj.basePrice / Math.max(1, totalUses);
+          }
+        });
 
         const card = document.createElement("div");
         card.className = "bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 shadow-xs";
@@ -1122,6 +1259,7 @@
             <div class="flex items-center gap-2">
               <span class="text-xs font-bold uppercase px-2.5 py-1 rounded-lg bg-[var(--background)] border border-[var(--border)]">${m.day}</span>
               <span class="text-xs font-bold uppercase px-2.5 py-1 rounded-lg ${badgeClass}">${m.slot}</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded-lg bg-emerald-500/15 text-emerald-500">${formatEuro(mealCost)} p/ 2 pers. (${formatEuro(mealCost / 2)}/assiette)</span>
               ${isSwapped ? '<span class="text-xs font-semibold px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-500">✨ Variante active</span>' : ''}
             </div>
             <button data-swap="${key}" class="swap-meal-btn touch-target-44 text-xs font-bold px-3 py-1.5 rounded-xl bg-[var(--background)] border border-[var(--border)] hover:border-emerald-500/60 transition">
@@ -1156,7 +1294,7 @@
           const k = btn.getAttribute("data-swap");
           state.swappedMeals[k] = !state.swappedMeals[k];
           saveState();
-          renderMeals();
+          renderAll();
         };
       });
     }
@@ -1188,9 +1326,84 @@
         };
       }
 
-      // Filter buttons style
+      const container = document.getElementById("shoppingListContainer");
+      container.innerHTML = "";
+
+      // Mode Banner inside Shopping Cart: allows switching between Express Cart & Menu Cart in 1 tap
+      const modeBanner = document.createElement("div");
+      const isExpressMode = state.cartSource === "express";
+      const activeKit = EXPRESS_KITS.find(k => k.id === state.activeExpressKit) || EXPRESS_KITS[0];
+      modeBanner.className = `p-3 rounded-2xl border flex flex-wrap items-center justify-between gap-2 ${
+        isExpressMode
+          ? "bg-amber-500/15 border-amber-500/40"
+          : "bg-emerald-500/10 border-emerald-500/30"
+      }`;
+      modeBanner.innerHTML = `
+        <div class="text-xs">
+          <span class="font-bold ${isExpressMode ? 'text-amber-500' : 'text-emerald-500'}">
+            ${isExpressMode ? `⚡ Panier synchronisé sur : ${activeKit.title}` : `🥗 Panier synchronisé sur votre Menu (${getActiveMealsCount()} repas sélectionnés)`}
+          </span>
+          <div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">
+            ${isExpressMode
+              ? `Format : ${state.expressPortions === 2 ? '1 seul repas (2 assiettes)' : 'Batch Express 48h (4 assiettes)'}`
+              : 'Seuls les ingrédients utilisés par vos repas affichés sont inclus dans ce panier.'}
+          </div>
+        </div>
+        <button id="switchCartSourceBtn" class="touch-target-44 text-xs font-bold px-3 py-1.5 rounded-xl bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] transition">
+          ${isExpressMode ? "🔄 Voir Panier Menu" : "⚡ Voir Panier Express"}
+        </button>
+      `;
+      container.appendChild(modeBanner);
+      const switchBtn = modeBanner.querySelector("#switchCartSourceBtn");
+      if (switchBtn) {
+        switchBtn.onclick = () => {
+          state.cartSource = isExpressMode ? "weekly" : "express";
+          saveState();
+          renderAll();
+        };
+      }
+
+      // Build unified list of items depending on active cartSource
+      let rawList = [];
+      if (isExpressMode) {
+        rawList = activeKit.items.map(it => {
+          const sc = getExpressItemScaled(it);
+          return {
+            id: it.id,
+            store: it.store,
+            cat: it.cat || "⚡ Kit Express",
+            name: it.name,
+            qtyText: sc.qtyText,
+            price: sc.price,
+            url: it.url,
+            checked: !!(state.checkedExpress && state.checkedExpress[it.id]),
+            isExpress: true
+          };
+        });
+      } else {
+        ESSENTIAL_ITEMS.forEach(it => {
+          const sc = getScaledItem(it);
+          if (!sc.needed) return;
+          rawList.push({
+            id: it.id,
+            store: it.store,
+            cat: it.cat,
+            name: it.name,
+            qtyText: sc.qtyText,
+            price: sc.price,
+            url: it.url,
+            checked: !!state.checkedEssential[it.id],
+            isExpress: false
+          });
+        });
+      }
+
+      // Update Store Filter button counts dynamically for the active items!
       document.querySelectorAll(".store-filter-btn").forEach(btn => {
         const st = btn.getAttribute("data-store");
+        const count = st === "ALL" ? rawList.length : rawList.filter(x => x.store === st).length;
+        const labelBase = st === "ALL" ? "Tous" : (st === "CARREFOUR MARKET" ? "Carrefour" : st.charAt(0) + st.slice(1).toLowerCase());
+        btn.textContent = `${labelBase} (${count})`;
         const active = state.storeFilter === st;
         btn.className = `store-filter-btn shrink-0 px-3 py-1.5 rounded-xl text-xs font-semibold border transition ${
           active
@@ -1203,12 +1416,9 @@
         };
       });
 
-      const container = document.getElementById("shoppingListContainer");
-      container.innerHTML = "";
-
-      const matching = ESSENTIAL_ITEMS.filter(it => {
+      const matching = rawList.filter(it => {
         if (state.storeFilter !== "ALL" && it.store !== state.storeFilter) return false;
-        if (state.hideChecked && state.checkedEssential[it.id]) return false;
+        if (state.hideChecked && it.checked) return false;
         if (state.searchQuery) {
           const hay = `${it.name} ${it.cat} ${it.store}`.toLowerCase();
           if (!hay.includes(state.searchQuery)) return false;
@@ -1216,25 +1426,22 @@
         return true;
       });
 
-      // Sort unchecked items first so the user in the supermarket always sees remaining items at the top
-      const uncheckedItems = matching.filter(it => !state.checkedEssential[it.id]);
-      const checkedItems = matching.filter(it => !!state.checkedEssential[it.id]);
+      const uncheckedItems = matching.filter(it => !it.checked);
+      const checkedItems = matching.filter(it => it.checked);
       const ordered = [...uncheckedItems, ...checkedItems];
 
       if (ordered.length === 0) {
-        container.innerHTML = `
-          <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 text-center text-xs text-[var(--muted-foreground)]">
-            🎉 Aucun article à afficher pour ce filtre (ou tous vos articles sont déjà cochés dans le caddie !).
-          </div>
-        `;
+        const emptyDiv = document.createElement("div");
+        emptyDiv.className = "bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 text-center text-xs text-[var(--muted-foreground)]";
+        emptyDiv.textContent = "🎉 Aucun article à afficher pour ce filtre (ou tous vos articles sont déjà cochés dans le caddie !).";
+        container.appendChild(emptyDiv);
         return;
       }
 
       let renderedCheckedDivider = false;
 
       ordered.forEach(it => {
-        const checked = !!state.checkedEssential[it.id];
-        if (checked && !renderedCheckedDivider && uncheckedItems.length > 0) {
+        if (it.checked && !renderedCheckedDivider && uncheckedItems.length > 0) {
           renderedCheckedDivider = true;
           const div = document.createElement("div");
           div.className = "pt-2 pb-1 px-1 text-xs font-bold uppercase tracking-wider text-[var(--muted-foreground)]";
@@ -1242,33 +1449,30 @@
           container.appendChild(div);
         }
 
-        const scaled = getScaledItem(it);
-
         const row = document.createElement("div");
-        row.setAttribute("data-row-check", it.id);
         row.className = `row-tap flex items-center justify-between gap-3 p-3.5 rounded-2xl border transition ${
-          checked
+          it.checked
             ? "bg-[var(--background)]/60 border-[var(--border)] opacity-60"
             : "bg-[var(--card)] border-[var(--border)] shadow-2xs"
         }`;
 
         row.innerHTML = `
           <div class="flex items-start gap-3 min-w-0 flex-1">
-            <button data-check="${it.id}" aria-label="${checked ? 'Décocher' : 'Cocher'} ${it.name}" aria-pressed="${checked}" class="check-essential-btn touch-target-44 w-11 h-11 rounded-xl border flex items-center justify-center text-sm font-bold shrink-0 transition ${
-              checked ? "bg-emerald-600 border-emerald-600 text-white" : "border-[var(--border)] bg-[var(--background)]"
+            <button aria-label="${it.checked ? 'Décocher' : 'Cocher'} ${it.name}" aria-pressed="${it.checked}" class="touch-target-44 w-11 h-11 rounded-xl border flex items-center justify-center text-sm font-bold shrink-0 transition ${
+              it.checked ? "bg-emerald-600 border-emerald-600 text-white" : "border-[var(--border)] bg-[var(--background)]"
             }">
-              ${checked ? "✓" : ""}
+              ${it.checked ? "✓" : ""}
             </button>
             <div class="min-w-0 flex-1">
               <div class="flex flex-wrap items-center gap-1.5 mb-1">
                 <span class="text-xs font-bold px-2 py-0.5 rounded-md bg-[var(--background)] border border-[var(--border)]">${it.store}</span>
                 <span class="text-xs font-semibold text-[var(--muted-foreground)]">${it.cat}</span>
               </div>
-              <div class="font-bold text-sm text-[var(--foreground)] truncate ${checked ? 'line-through text-[var(--muted-foreground)]' : ''}">
+              <div class="font-bold text-sm text-[var(--foreground)] truncate ${it.checked ? 'line-through text-[var(--muted-foreground)]' : ''}">
                 ${it.name}
               </div>
               <div class="flex flex-wrap items-center gap-3 mt-1">
-                <span class="text-xs text-[var(--muted-foreground)]">Qté : <strong class="text-[var(--foreground)]">${scaled.qtyText}</strong></span>
+                <span class="text-xs text-[var(--muted-foreground)]">Qté : <strong class="text-[var(--foreground)]">${it.qtyText}</strong></span>
                 <a href="${it.url}" target="_blank" rel="noopener noreferrer" class="ext-offer-link inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 hover:underline">
                   🔗 Voir l'offre ↗
                 </a>
@@ -1276,18 +1480,23 @@
             </div>
           </div>
           <div class="text-right shrink-0">
-            <div class="text-sm font-bold ${checked ? 'line-through text-[var(--muted-foreground)]' : 'text-[var(--foreground)]'}">${formatEuro(scaled.price)}</div>
-            ${checked ? '<div class="text-[10px] font-bold text-emerald-500">−' + formatEuro(scaled.price) + ' déduit</div>' : '<div class="text-[10px] text-[var(--muted-foreground)]">Toucher p/ cocher</div>'}
+            <div class="text-sm font-bold ${it.checked ? 'line-through text-[var(--muted-foreground)]' : 'text-[var(--foreground)]'}">${formatEuro(it.price)}</div>
+            ${it.checked ? '<div class="text-[10px] font-bold text-emerald-500">−' + formatEuro(it.price) + ' déduit</div>' : '<div class="text-[10px] text-[var(--muted-foreground)]">Toucher p/ cocher</div>'}
           </div>
         `;
 
-        // Full-row tap toggles checkbox unless user clicked the external offer link
         row.onclick = (e) => {
           if (e.target.closest(".ext-offer-link")) return;
-          state.checkedEssential[it.id] = !state.checkedEssential[it.id];
+          if (it.isExpress) {
+            if (!state.checkedExpress) state.checkedExpress = {};
+            state.checkedExpress[it.id] = !state.checkedExpress[it.id];
+          } else {
+            state.checkedEssential[it.id] = !state.checkedEssential[it.id];
+          }
           saveState();
           renderKPIs();
           renderShoppingList();
+          renderExpress();
         };
 
         container.appendChild(row);
@@ -1447,7 +1656,16 @@
         }`;
         btn.onclick = () => {
           state.activeTab = target;
+          // Automatically sync Cart & Top Header Ticket with the active mode!
+          if (target === "tab-express") {
+            state.cartSource = "express";
+          } else if (target === "tab-meals") {
+            state.cartSource = "weekly";
+          }
           saveState();
+          renderKPIs();
+          renderShoppingList();
+          renderExpress();
           renderTabs();
         };
       });
@@ -1460,10 +1678,11 @@
 
       btnGroup.innerHTML = "";
       const kit = EXPRESS_KITS.find(k => k.id === state.activeExpressKit) || EXPRESS_KITS[0];
+      const platesCount = state.expressPortions === 2 ? 2 : 4;
 
       EXPRESS_KITS.forEach(k => {
         const active = k.id === kit.id;
-        const kitTotal = k.items.reduce((acc, it) => acc + it.price, 0);
+        const kitTotal = k.items.reduce((acc, it) => acc + getExpressItemScaled(it).price, 0);
         const btn = document.createElement("button");
         btn.className = `text-left p-3 rounded-2xl border transition flex flex-col justify-between ${
           active
@@ -1473,13 +1692,16 @@
         btn.innerHTML = `
           <div class="flex items-center justify-between gap-2 w-full mb-1">
             <span class="text-[11px] font-bold px-2 py-0.5 rounded-md ${active ? 'bg-amber-500 text-white' : 'bg-[var(--card)] text-amber-500'}">${k.badge}</span>
-            <span class="text-xs font-bold text-emerald-500">${formatEuro(kitTotal)} (4 repas)</span>
+            <span class="text-xs font-bold text-emerald-500">${formatEuro(kitTotal)} (${platesCount} assiettes)</span>
           </div>
           <div class="font-bold text-xs text-[var(--foreground)]">${k.title}</div>
         `;
         btn.onclick = () => {
           state.activeExpressKit = k.id;
+          state.cartSource = "express";
           saveState();
+          renderKPIs();
+          renderShoppingList();
           renderExpress();
         };
         btnGroup.appendChild(btn);
@@ -1488,9 +1710,10 @@
       let totalKit = 0;
       let checkedKit = 0;
       kit.items.forEach(it => {
-        totalKit += it.price;
+        const sc = getExpressItemScaled(it);
+        totalKit += sc.price;
         if (state.checkedExpress && state.checkedExpress[it.id]) {
-          checkedKit += it.price;
+          checkedKit += sc.price;
         }
       });
       const remainingKit = Math.max(0, totalKit - checkedKit);
@@ -1501,6 +1724,7 @@
 
       const itemsHtml = kit.items.map(it => {
         const checked = !!(state.checkedExpress && state.checkedExpress[it.id]);
+        const sc = getExpressItemScaled(it);
         return `
           <div data-exp-row="${it.id}" class="exp-row-tap row-tap flex items-center justify-between gap-3 p-3 rounded-xl border transition ${
             checked ? 'bg-[var(--background)]/60 border-[var(--border)] opacity-60' : 'bg-[var(--background)] border-[var(--border)]'
@@ -1514,7 +1738,7 @@
               <div class="min-w-0 flex-1">
                 <div class="flex items-center gap-1.5 mb-0.5">
                   <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-[var(--card)] border border-[var(--border)]">${it.store}</span>
-                  <span class="text-xs text-[var(--muted-foreground)]">${it.qty}</span>
+                  <span class="text-xs text-[var(--muted-foreground)]">${sc.qtyText}</span>
                 </div>
                 <div class="font-bold text-sm text-[var(--foreground)] truncate ${checked ? 'line-through text-[var(--muted-foreground)]' : ''}">
                   ${it.name}
@@ -1527,8 +1751,8 @@
               </div>
             </div>
             <div class="text-right shrink-0">
-              <div class="text-sm font-bold ${checked ? 'line-through text-[var(--muted-foreground)]' : 'text-[var(--foreground)]'}">${formatEuro(it.price)}</div>
-              ${checked ? '<div class="text-[10px] font-bold text-emerald-500">−' + formatEuro(it.price) + ' déduit</div>' : '<div class="text-[10px] text-[var(--muted-foreground)]">Toucher p/ cocher</div>'}
+              <div class="text-sm font-bold ${checked ? 'line-through text-[var(--muted-foreground)]' : 'text-[var(--foreground)]'}">${formatEuro(sc.price)}</div>
+              ${checked ? '<div class="text-[10px] font-bold text-emerald-500">−' + formatEuro(sc.price) + ' déduit</div>' : '<div class="text-[10px] text-[var(--muted-foreground)]">Toucher p/ cocher</div>'}
             </div>
           </div>
         `;
@@ -1542,36 +1766,73 @@
 
       detailContainer.innerHTML = `
         <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 space-y-3">
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <h3 class="font-bold text-base text-[var(--foreground)]">${kit.title}</h3>
-            <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-500">⏱️ ${kit.prepTime} • ${formatEuro(totalKit / 4)} / assiette</span>
+          <!-- Toggle between 1 Meal (2 plates) and 48h Batch (4 plates) -->
+          <div class="p-2.5 rounded-2xl bg-[var(--background)] border border-[var(--border)] flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-bold text-[var(--muted-foreground)] px-1">Combien de repas voulez-vous cuisiner ?</span>
+            <div class="ios-segmented grid grid-cols-2 gap-1 w-full sm:w-auto">
+              <button id="expPortion2Btn" class="touch-target-44 px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+                state.expressPortions === 2 ? 'bg-emerald-600 text-white shadow-xs' : 'text-[var(--foreground)]'
+              }">🍽️ 1 Repas (Ce soir • 2 pers.)</button>
+              <button id="expPortion4Btn" class="touch-target-44 px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+                state.expressPortions !== 2 ? 'bg-emerald-600 text-white shadow-xs' : 'text-[var(--foreground)]'
+              }">🍱 2 Repas 48h (Auj. + Demain • 4 ass.)</button>
+            </div>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-bold text-base text-[var(--foreground)]">${kit.title}</h3>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-500">⏱️ ${kit.prepTime} • ${formatEuro(totalKit)} (${formatEuro(totalKit / platesCount)} / assiette)</span>
+          </div>
+
+          <div class="grid grid-cols-1 ${state.expressPortions === 2 ? '' : 'sm:grid-cols-2'} gap-2.5 text-xs">
             <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
-              <div class="font-bold text-emerald-500 mb-1">🍽️ Jour 1 (Aujourd'hui — 2 personnes) :</div>
+              <div class="font-bold text-emerald-500 mb-1">🍽️ Aujourd'hui (2 personnes) :</div>
               <div class="text-[var(--foreground)]">${kit.todayMeal}</div>
             </div>
+            ${state.expressPortions === 2 ? '' : `
             <div class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
-              <div class="font-bold text-amber-500 mb-1">🍱 Jour 2 (À réchauffer demain — 2 personnes) :</div>
+              <div class="font-bold text-amber-500 mb-1">🍱 Demain à réchauffer (2 personnes) :</div>
               <div class="text-[var(--foreground)]">${kit.tomorrowReheat}</div>
-            </div>
+            </div>`}
           </div>
 
           <div>
-            <div class="flex items-center justify-between mb-2">
-              <h4 class="font-bold text-sm">🛒 Mini-Liste de Courses sur le moment (${kit.items.length} articles)</h4>
-              <span class="text-xs text-[var(--muted-foreground)]">Touchez une ligne pour cocher</span>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h4 class="font-bold text-sm">🛒 Mini-Liste de Courses Express (${kit.items.length} articles — synchronisée avec 🛒 Panier)</h4>
+              <span class="text-xs text-emerald-500 font-semibold">✓ Synchronisé en haut & dans l'onglet Panier</span>
             </div>
             <div class="space-y-2">${itemsHtml}</div>
           </div>
 
           <div>
-            <h4 class="font-bold text-sm mb-2">👩‍🍳 Préparation Express en 3 étapes (4 portions d'un coup)</h4>
+            <h4 class="font-bold text-sm mb-2">👩‍🍳 Préparation Express en 3 étapes (${platesCount} assiettes)</h4>
             <ul class="space-y-2">${stepsHtml}</ul>
           </div>
         </div>
       `;
+
+      const p2Btn = detailContainer.querySelector("#expPortion2Btn");
+      const p4Btn = detailContainer.querySelector("#expPortion4Btn");
+      if (p2Btn) {
+        p2Btn.onclick = () => {
+          state.expressPortions = 2;
+          state.cartSource = "express";
+          saveState();
+          renderKPIs();
+          renderShoppingList();
+          renderExpress();
+        };
+      }
+      if (p4Btn) {
+        p4Btn.onclick = () => {
+          state.expressPortions = 4;
+          state.cartSource = "express";
+          saveState();
+          renderKPIs();
+          renderShoppingList();
+          renderExpress();
+        };
+      }
 
       detailContainer.querySelectorAll(".exp-row-tap").forEach(row => {
         row.onclick = (e) => {
@@ -1579,7 +1840,10 @@
           const id = row.getAttribute("data-exp-row");
           if (!state.checkedExpress) state.checkedExpress = {};
           state.checkedExpress[id] = !state.checkedExpress[id];
+          state.cartSource = "express";
           saveState();
+          renderKPIs();
+          renderShoppingList();
           renderExpress();
         };
       });
