@@ -213,10 +213,20 @@
     .w-full { width: 100%; }
     .w-1\/2 { width: 50%; }
     .w-1\/4 { width: 25%; }
+    .w-11 { width: 2.75rem; }
+    .h-11 { height: 2.75rem; }
     .w-10 { width: 2.5rem; }
     .h-10 { height: 2.5rem; }
     .w-6 { width: 1.5rem; }
     .h-6 { height: 1.5rem; }
+    .w-4 { width: 1rem; }
+    .h-4 { height: 1rem; }
+    .w-3\.5 { width: 0.875rem; }
+    .h-3\.5 { height: 0.875rem; }
+    .w-3 { width: 0.75rem; }
+    .h-3 { height: 0.75rem; }
+    .w-2 { width: 0.5rem; }
+    .h-2 { height: 0.5rem; }
     .h-1\.5 { height: 0.375rem; }
     .h-full { height: 100%; }
     .rounded-3xl { border-radius: 1.5rem; }
@@ -351,11 +361,13 @@
         </div>
 
         <div class="flex items-center gap-2">
-          <button id="installAppBtn" class="hidden touch-target-44 text-xs font-bold px-3.5 py-2 rounded-xl bg-emerald-600 text-white shadow-xs hover:bg-emerald-500 transition">
-            📲 Installer l'appli
+          <button id="installAppBtn" class="hidden touch-target-44 inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-2 rounded-xl bg-emerald-600 text-white shadow-xs hover:bg-emerald-500 transition">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            <span>Installer l'appli</span>
           </button>
-          <button id="undoResetBtn" class="hidden touch-target-44 text-xs font-bold px-3 py-2 rounded-xl bg-amber-500/15 border border-amber-500/40 text-amber-500 transition">
-            ↩ Annuler
+          <button id="undoResetBtn" class="hidden touch-target-44 inline-flex items-center gap-1 text-xs font-bold px-3 py-2 rounded-xl bg-amber-500/15 border border-amber-500/40 text-amber-500 transition">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11"/></svg>
+            <span>Annuler</span>
           </button>
           <button id="resetBtn" class="touch-target-44 text-xs font-semibold px-3 py-2 rounded-xl border border-[var(--border)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">
             Tout décocher
@@ -365,9 +377,12 @@
 
       <!-- Native App Install Banner for Samsung S26 Ultra -->
       <div id="installHelpBanner" class="mb-4 p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex flex-wrap items-center justify-between gap-2">
-        <div class="text-xs">
-          <span class="font-bold text-emerald-500">📱 Application Plein Écran S26 Ultra :</span>
-          <span class="text-[var(--foreground)] ml-1">Appuyez sur <strong>⋮</strong> en haut à droite → <strong>Ajouter à l'écran d'accueil</strong> → <strong>Installer</strong>.</span>
+        <div class="text-xs flex items-center gap-2">
+          <svg class="w-4 h-4 text-emerald-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+          <div>
+            <span class="font-bold text-emerald-500">Mode Plein Écran S26 Ultra :</span>
+            <span class="text-[var(--foreground)] ml-1">Menu <strong>⋮</strong> en haut à droite → <strong>Ajouter à l'écran d'accueil</strong> → <strong>Installer</strong>.</span>
+          </div>
         </div>
         <button id="closeInstallBanner" class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-[var(--background)] border border-[var(--border)] text-[var(--muted-foreground)]">Masquer</button>
       </div>
@@ -378,8 +393,8 @@
           <div>
             <span class="text-xs font-bold uppercase tracking-wider text-[var(--muted-foreground)]">Reste à payer en caisse</span>
             <div class="flex items-baseline gap-2 mt-0.5">
-              <span id="kpiEssentialTotal" class="font-serif-editorial text-3xl font-bold text-emerald-500">68,69 €</span>
-              <span id="kpiRemaining" class="text-xs font-semibold text-[var(--muted-foreground)]">sur 68,69 € (Plafond 70 €)</span>
+              <span id="kpiEssentialTotal" class="font-serif-editorial text-3xl font-bold text-emerald-500">68,43 €</span>
+              <span id="kpiRemaining" class="text-xs font-semibold text-[var(--muted-foreground)]">sur 68,43 € (Plafond 70 €)</span>
             </div>
           </div>
           <div class="text-right">
@@ -396,16 +411,19 @@
           <div id="budgetBar" class="bg-emerald-600 h-full rounded-full transition-all duration-300" style="width: 98%"></div>
         </div>
 
-        <!-- Signature 50 / 25 / 25 Visual Plate Proportion -->
+        <!-- Signature 50 / 25 / 25 Visual Plate Proportion (Clean SF-Style Dots, Zero Kitsch Emoji) -->
         <div class="grid grid-cols-4 gap-1.5 text-center text-xs font-semibold">
-          <div class="col-span-2 py-2 px-2 rounded-xl bg-emerald-500/15 text-emerald-500 border border-emerald-500/20">
-            🥗 50 % Légumes (~260g/assiette)
+          <div class="col-span-2 py-2 px-2 rounded-xl bg-emerald-500/15 text-emerald-500 border border-emerald-500/20 flex items-center justify-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+            <span class="truncate">50 % Légumes (~260g)</span>
           </div>
-          <div class="py-2 px-1.5 rounded-xl bg-amber-500/15 text-amber-500 border border-amber-500/20 truncate">
-            🌾 25 % Féculents
+          <div class="py-2 px-1.5 rounded-xl bg-amber-500/15 text-amber-500 border border-amber-500/20 flex items-center justify-center gap-1.5 truncate">
+            <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
+            <span class="truncate">25 % Féculents</span>
           </div>
-          <div class="py-2 px-1.5 rounded-xl bg-blue-500/15 text-blue-500 border border-blue-500/20 truncate">
-            🍗 25 % Protéines
+          <div class="py-2 px-1.5 rounded-xl bg-blue-500/15 text-blue-500 border border-blue-500/20 flex items-center justify-center gap-1.5 truncate">
+            <span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>
+            <span class="truncate">25 % Protéines</span>
           </div>
         </div>
 
@@ -416,8 +434,8 @@
             <span id="daysLabel" class="font-bold px-2 py-0.5 rounded-lg bg-emerald-500/15 text-emerald-500">7 jours</span>
             <span id="mealsPerDayLabel" class="font-bold px-2 py-0.5 rounded-lg bg-blue-500/15 text-blue-500">2 plats/j (Midi & Soir)</span>
           </div>
-          <button id="toggleConfigBtn" class="touch-target-44 text-xs font-bold px-3 py-1.5 rounded-xl bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] hover:border-emerald-500/50 transition">
-            ⚙️ Adapter jours & repas ▾
+          <button id="toggleConfigBtn" class="touch-target-44 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] hover:border-emerald-500/50 transition">
+            <span>Adapter jours & repas</span>
           </button>
         </div>
 
@@ -445,7 +463,7 @@
         <div class="flex items-center justify-between gap-2 mb-2 px-1">
           <div>
             <h2 class="text-sm sm:text-base font-bold">Votre Menu (<span id="menuHeaderCount">14 plats</span>)</h2>
-            <p class="text-xs text-[var(--muted-foreground)]">Filtrez par jour ou cliquez sur « 🔄 Varier » pour changer une recette.</p>
+            <p class="text-xs text-[var(--muted-foreground)]">Filtrez par jour ou touchez « Varier ce plat » pour changer une recette.</p>
           </div>
         </div>
         <!-- Day Quick-Jump Horizontal Pill Bar -->
@@ -464,18 +482,18 @@
           </div>
           <div class="flex items-center gap-2">
             <button id="hideCheckedBtn" class="touch-target-44 text-xs font-semibold px-3 py-1.5 rounded-xl bg-[var(--background)] border border-[var(--border)] text-[var(--foreground)] transition">
-              👁️ Masquer cochés
+              Masquer cochés
             </button>
             <div class="text-right">
-              <div class="text-xs text-[var(--muted-foreground)]">Reste : <span id="remainingCartAmount" class="text-base font-bold text-emerald-500">68,69 €</span></div>
-              <div class="text-[11px] text-[var(--muted-foreground)]">Coché : <span id="checkedCartAmount" class="font-semibold text-[var(--foreground)]">0,00 €</span> / <span id="totalCartAmount">68,69 €</span></div>
+              <div class="text-xs text-[var(--muted-foreground)]">Reste : <span id="remainingCartAmount" class="text-base font-bold text-emerald-500">68,43 €</span></div>
+              <div class="text-[11px] text-[var(--muted-foreground)]">Coché : <span id="checkedCartAmount" class="font-semibold text-[var(--foreground)]">0,00 €</span> / <span id="totalCartAmount">68,43 €</span></div>
             </div>
           </div>
         </div>
 
         <!-- Live Search + Store Filter Pills -->
         <div class="flex flex-col sm:flex-row gap-2">
-          <input id="cartSearchInput" type="search" placeholder="🔍 Rechercher un article (ex: poulet, riz, carottes...)" class="w-full sm:w-64 px-3 py-2 rounded-xl text-xs bg-[var(--background)] border border-[var(--border)] text-[var(--foreground)] focus:outline-none focus:border-emerald-500" />
+          <input id="cartSearchInput" type="search" placeholder="Rechercher un article (ex: poulet, riz, carottes...)" class="w-full sm:w-64 px-3 py-2 rounded-xl text-xs bg-[var(--background)] border border-[var(--border)] text-[var(--foreground)] focus:outline-none focus:border-emerald-500" />
           <div class="flex gap-1.5 overflow-x-auto no-scrollbar" id="storeFilterGroup">
             <button data-store="ALL" class="store-filter-btn shrink-0 px-3 py-1.5 rounded-xl text-xs font-semibold border transition">Tous (25)</button>
             <button data-store="ALDI" class="store-filter-btn shrink-0 px-3 py-1.5 rounded-xl text-xs font-semibold border transition">Aldi (20)</button>
@@ -506,10 +524,10 @@
 
         <!-- Category Filter Pills for Extras -->
         <div class="flex flex-wrap gap-1.5 mt-3" id="extraCatGroup">
-          <button data-cat="ALL" class="extra-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition">Tout voir (16)</button>
-          <button data-cat="CHOCO_BISCUITS" class="extra-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition">🍫 Chocolats & Biscuits</button>
-          <button data-cat="CHIPS_SNACKS" class="extra-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition">🥨 Chips, Encas & Boissons</button>
-          <button data-cat="MAISON" class="extra-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition">🧺 Lessive & Maison (-60%)</button>
+          <button data-cat="ALL" class="extra-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition">Tout voir (14)</button>
+          <button data-cat="CHOCO_BISCUITS" class="extra-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition">Chocolats & Biscuits</button>
+          <button data-cat="CHIPS_SNACKS" class="extra-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition">Chips, Encas & Boissons</button>
+          <button data-cat="MAISON" class="extra-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold border transition">Lessive & Maison (-60%)</button>
         </div>
       </div>
 
@@ -533,7 +551,7 @@
         <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
           <div>
             <div class="flex items-center gap-2">
-              <h2 class="text-base font-bold">⚡ Batch Express 48h (Aujourd'hui + Demain)</h2>
+              <h2 class="text-base font-bold">Batch Express 48h (Aujourd'hui + Demain)</h2>
               <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-500">4 Assiettes (2 Pers. × 2 Jours)</span>
             </div>
             <p class="text-xs text-[var(--muted-foreground)] mt-1">
@@ -556,27 +574,27 @@
 
   </div>
 
-  <!-- Apple HIG Floating Liquid Glass Pill Tab Bar (liquid-glass.md + tab-bars.md) -->
+  <!-- Apple HIG Floating Liquid Glass Pill Tab Bar with SF-Symbols Vector Icons (Zero Kitsch Emoji) -->
   <nav aria-label="Navigation principale" class="fixed bottom-3 left-3 right-3 z-50">
     <div class="max-w-xl mx-auto liquid-glass-pill rounded-full px-2 py-1.5 grid grid-cols-5 gap-1">
-      <button data-tab="tab-meals" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1 px-1 rounded-full text-xs font-semibold transition">
-        <span class="text-base leading-none mb-0.5" aria-hidden="true">🍽️</span>
+      <button data-tab="tab-meals" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-full text-xs font-semibold transition">
+        <svg class="w-4 h-4 mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
         <span>Menu</span>
       </button>
-      <button data-tab="tab-express" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1 px-1 rounded-full text-xs font-semibold transition">
-        <span class="text-base leading-none mb-0.5" aria-hidden="true">⚡</span>
+      <button data-tab="tab-express" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-full text-xs font-semibold transition">
+        <svg class="w-4 h-4 mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         <span>Express</span>
       </button>
-      <button data-tab="tab-shopping" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1 px-1 rounded-full text-xs font-semibold transition">
-        <span class="text-base leading-none mb-0.5" aria-hidden="true">🛒</span>
-        <span><span id="navCartPrice">68,69€</span></span>
+      <button data-tab="tab-shopping" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-full text-xs font-semibold transition">
+        <svg class="w-4 h-4 mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span><span id="navCartPrice">68,43€</span></span>
       </button>
-      <button data-tab="tab-extras" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1 px-1 rounded-full text-xs font-semibold transition">
-        <span class="text-base leading-none mb-0.5" aria-hidden="true">🍫</span>
+      <button data-tab="tab-extras" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-full text-xs font-semibold transition">
+        <svg class="w-4 h-4 mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
         <span>Promos</span>
       </button>
-      <button data-tab="tab-cook" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1 px-1 rounded-full text-xs font-semibold transition">
-        <span class="text-base leading-none mb-0.5" aria-hidden="true">⏱️</span>
+      <button data-tab="tab-cook" class="nav-tab-btn touch-target-44 flex flex-col items-center justify-center py-1.5 px-1 rounded-full text-xs font-semibold transition">
+        <svg class="w-4 h-4 mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3 2 6"/><path d="m22 6-3-3"/><path d="M10 2h4"/></svg>
         <span>Cuisine</span>
       </button>
     </div>
@@ -807,31 +825,31 @@
     // Every item uses whole packages (unitPrice × units) — NEVER fake fractional cents!
     // =========================================================================
     let ESSENTIAL_ITEMS = [
-      { id: "e1", store: "COLRUYT", name: "Bœuf maigre à mijoter belge (Promo Prix Rouge)", baseQty: 700, unit: "g (1 barquette)", unitLabel: "barquette (700 g)", maxUnits: 1, unitPrice: 8.95, cat: "🔵 Protéines 25%", basePrice: 8.95, scaleWithMeals: true, url: "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/19?offer=201c1f58-0755-4242-99b9-edfea16779fd", smallVariant: { name: "Lanières de bœuf maigre pour wok (400 g)", qtyText: "1 barquette (400 g — prix exact Aldi)", price: 6.79, store: "ALDI", url: "https://www.aldi.be/fr/product/lanieres-de-boeuf-pour-wok-facon-orientale-3007532.html" } },
-      { id: "e2", store: "COLRUYT", name: "Pesto Rosso à la tomate (Promo Xtra)", baseQty: 190, unit: "g (1 pot)", unitLabel: "pot (190 g)", maxUnits: 1, unitPrice: 2.19, cat: "🍅 Sauce Santé", basePrice: 2.19, scaleWithMeals: false, url: "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/21?offer=0d877920-9d1a-4de5-abf0-00414bcca0cd" },
-      { id: "e3", store: "CARREFOUR MARKET", name: "Tortillas Blé & Salsa Old El Paso (Promo 1+1 GRATUIT)", baseQty: 650, unit: "g (2 paquets = 16 wraps)", unitLabel: "lot 1+1 (2 paquets)", maxUnits: 1, unitPrice: 4.42, cat: "🟡 Féculents 25%", basePrice: 4.42, scaleWithMeals: false, url: "https://www.myshopi.com/nl/carrefour-market-folder/0a6d7aa0-9c5c-4f86-802f-bd735470db39/17?offer=509e5023-7e97-4a9e-bbdd-89d44d77a30d" },
-      { id: "e4", store: "ALDI", name: "Mousseline / Compote de pommes (710 g — 0,69 €/pot)", baseQty: 1420, unit: "g (2 bocaux de 710 g à 0,69 €)", unitLabel: "bocal de 710 g (0,69 €/pc)", maxUnits: 2, unitPrice: 0.69, cat: "🟠 Fruits", basePrice: 1.38, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/mousseline-de-pommes-4105.html" },
-      { id: "e5", store: "DELHAIZE", name: "Pain multicéréales Bio (Promo -25%)", baseQty: 600, unit: "g (1 grand pain tranché)", unitLabel: "grand pain tranché (600 g)", maxUnits: 1, unitPrice: 2.39, cat: "🟡 Féculents 25%", basePrice: 2.39, scaleWithMeals: false, url: "https://www.myshopi.com/nl/delhaize-folder/f9afbd45-ef98-4b6f-b93a-8abea09a8012/46?offer=3164a090-db6d-4a2b-b5ff-7505a78e0da5" },
-      { id: "e6", store: "ALDI", name: "Lamelles de filet de poulet frais (1 kg)", baseQty: 1000, unit: "g (1 barquette de 1 kg)", unitLabel: "barquette (1 kg)", maxUnits: 1, unitPrice: 8.99, cat: "🔵 Protéines 25%", basePrice: 8.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/lamelles-de-poulet-3003149.html", smallVariant: { name: "Aiguillettes de filet de poulet frais (500 g)", qtyText: "1 barquette (500 g — prix exact Aldi)", price: 5.79, store: "ALDI", url: "https://www.aldi.be/fr/product/aiguillettes-de-poulet-0288.html" } },
-      { id: "e7", store: "ALDI", name: "Filets de cabillaud (4 × 100 g)", baseQty: 400, unit: "g (1 paquet de 4 filets)", unitLabel: "paquet de 4 filets (400 g)", maxUnits: 1, unitPrice: 6.49, cat: "🔵 Protéines 25%", basePrice: 6.49, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/cabillaud-3015779.html" },
-      { id: "e8", store: "ALDI", name: "Thon au naturel en boîte (150 g — 1,25 €/boîte)", baseQty: 450, unit: "g (3 boîtes de 150 g à 1,25 €)", unitLabel: "boîte de 150 g (1,25 €/pc)", maxUnits: 3, unitPrice: 1.25, cat: "🔵 Protéines 25%", basePrice: 3.75, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/thon-au-naturel-3007721.html" },
-      { id: "e9", store: "ALDI", name: "Œufs de poules élevées au sol (12 pcs)", baseQty: 12, unit: "œufs (1 boîte de 12 pcs)", unitLabel: "boîte de 12 œufs", maxUnits: 1, unitPrice: 2.59, cat: "🔵 Protéines 25%", basePrice: 2.59, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/oeufs-de-poules-elevees-au-sol-3002728.html", smallVariant: { name: "Œufs de poules élevées au sol (6 pcs)", qtyText: "1 boîte de 6 œufs (prix exact Aldi)", price: 1.99, store: "ALDI", url: "https://www.aldi.be/fr/product/oeufs-de-poules-elevees-au-sol-3002727.html" } },
-      { id: "e10", store: "ALDI", name: "Milsani Skyr Nature 0 % MG (500 g — 1,39 €/pot)", baseQty: 1000, unit: "g (2 pots de 500 g à 1,39 €)", unitLabel: "pot de 500 g (1,39 €/pc)", maxUnits: 2, unitPrice: 1.39, cat: "🔵 Protéines 25%", basePrice: 2.78, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" },
-      { id: "e11", store: "ALDI", name: "Carottes belges fraîches (1 kg — 1,25 €/sachet)", baseQty: 2000, unit: "g (2 sachets de 1 kg à 1,25 €)", unitLabel: "sachet de 1 kg (1,25 €/pc)", maxUnits: 2, unitPrice: 1.25, cat: "🟢 Légumes 50%", basePrice: 2.50, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/carottes-3002376.html" },
-      { id: "e12", store: "ALDI", name: "Lanières de poivrons tricolores (600 g)", baseQty: 600, unit: "g (1 sachet de 600 g)", unitLabel: "sachet (600 g)", maxUnits: 1, unitPrice: 1.99, cat: "🟢 Légumes 50%", basePrice: 1.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/lanieres-de-poivron-6486.html" },
-      { id: "e13", store: "ALDI", name: "Carottes râpées / Crudités fraîches (400 g)", baseQty: 400, unit: "g (1 sachet de 400 g)", unitLabel: "sachet (400 g)", maxUnits: 1, unitPrice: 0.99, cat: "🟢 Légumes 50%", basePrice: 0.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/carottes-rapees-ou-chou-blanc-rape-0473.html" },
-      { id: "e14", store: "ALDI", name: "Haricots verts très fins (1 kg)", baseQty: 1000, unit: "g (1 sachet de 1 kg)", unitLabel: "sachet (1 kg)", maxUnits: 1, unitPrice: 1.65, cat: "🟢 Légumes 50%", basePrice: 1.65, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/haricots-verts-3002382.html" },
-      { id: "e15", store: "ALDI", name: "Brocoli en fleurettes (500 g — 1,00 €/sachet)", baseQty: 1000, unit: "g (2 sachets de 500 g à 1,00 €)", unitLabel: "sachet de 500 g (1,00 €/pc)", maxUnits: 2, unitPrice: 1.00, cat: "🟢 Légumes 50%", basePrice: 2.00, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/brocoli-6255.html" },
-      { id: "e16", store: "ALDI", name: "Champignons fins (250 g — 0,99 €/barquette)", baseQty: 500, unit: "g (2 barquettes de 250 g à 0,99 €)", unitLabel: "barquette de 250 g (0,99 €/pc)", maxUnits: 2, unitPrice: 0.99, cat: "🟢 Légumes 50%", basePrice: 1.98, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/champignons-fins-6260.html" },
-      { id: "e17", store: "ALDI", name: "Passata de tomates (1 kg)", baseQty: 1000, unit: "g (1 pack de 1 kg)", unitLabel: "pack (1 kg)", maxUnits: 1, unitPrice: 1.18, cat: "🟢 Légumes 50%", basePrice: 1.18, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/passata-de-tomates-3010209.html", smallVariant: { name: "Dés de tomates (400 g)", qtyText: "1 boîte de 400 g (prix exact Aldi)", price: 0.60, store: "ALDI", url: "https://www.aldi.be/fr/product/des-de-tomates-1897.html" } },
-      { id: "e18", store: "ALDI", name: "Épinards en branches (1 kg)", baseQty: 1000, unit: "g (1 sachet de 1 kg)", unitLabel: "sachet (1 kg)", maxUnits: 1, unitPrice: 1.09, cat: "🟢 Légumes 50%", basePrice: 1.09, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/epinards-en-branches-3002378.html" },
-      { id: "e19", store: "ALDI", name: "Salade gourmande croquante (150 g)", baseQty: 150, unit: "g (1 sachet de 150 g)", unitLabel: "sachet (150 g)", maxUnits: 1, unitPrice: 1.29, cat: "🟢 Légumes 50%", basePrice: 1.29, scaleWithMeals: false, url: "https://www.aldi.be/fr/product/salade-gourmande-2388.html" },
-      { id: "e20", store: "ALDI", name: "Pommes de terre belges (2,5 kg)", baseQty: 2500, unit: "g (1 filet de 2,5 kg)", unitLabel: "filet (2,5 kg)", maxUnits: 1, unitPrice: 2.47, cat: "🟡 Féculents 25%", basePrice: 2.47, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/pommes-de-terre-a-puree-2817.html", smallVariant: { name: "Petites pommes de terre (500 g)", qtyText: "1 sachet de 500 g (prix exact Aldi)", price: 0.90, store: "ALDI", url: "https://www.aldi.be/fr/product/petites-pommes-de-terre-cuites-6627.html" } },
-      { id: "e21", store: "ALDI", name: "Riz Basmati (1 kg)", baseQty: 1000, unit: "g (1 boîte de 1 kg)", unitLabel: "boîte (1 kg)", maxUnits: 1, unitPrice: 1.79, cat: "🟡 Féculents 25%", basePrice: 1.79, scaleWithMeals: false, url: "https://www.aldi.be/fr/product/riz-basmati-3011332.html" },
-      { id: "e22", store: "ALDI", name: "Penne Complet / Blé Dur (500 g)", baseQty: 500, unit: "g (1 paquet de 500 g)", unitLabel: "paquet (500 g)", maxUnits: 1, unitPrice: 0.99, cat: "🟡 Féculents 25%", basePrice: 0.99, scaleWithMeals: false, url: "https://www.aldi.be/fr/product/penne-complet-3010902.html" },
-      { id: "e23", store: "ALDI", name: "Pommes Boskoop belges (2 kg)", baseQty: 2000, unit: "g (1 sachet de 2 kg)", unitLabel: "sachet (2 kg)", maxUnits: 1, unitPrice: 2.09, cat: "🟠 Fruits", basePrice: 2.09, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/pommes-boskoop-6179.html" },
-      { id: "e24", store: "ALDI", name: "Bananes fraîches (1 kg)", baseQty: 1000, unit: "g (1 kg)", unitLabel: "régime (1 kg)", maxUnits: 1, unitPrice: 0.99, cat: "🟠 Fruits", basePrice: 0.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/bananes-8272.html" },
-      { id: "e25", store: "ALDI", name: "Poires Conférence belges (1 kg)", baseQty: 1000, unit: "g (1 kg)", unitLabel: "barquette (1 kg)", maxUnits: 1, unitPrice: 1.50, cat: "🟠 Fruits", basePrice: 1.50, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/poires-conference-8144.html" }
+      { id: "e1", store: "COLRUYT", name: "Bœuf maigre à mijoter belge (Promo Prix Rouge)", baseQty: 700, unit: "g (1 barquette)", unitLabel: "barquette (700 g)", maxUnits: 1, unitPrice: 8.95, cat: "Protéines 25%", basePrice: 8.95, scaleWithMeals: true, url: "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/19?offer=201c1f58-0755-4242-99b9-edfea16779fd", smallVariant: { name: "Lanières de bœuf maigre pour wok (400 g)", qtyText: "1 barquette (400 g — prix exact Aldi)", price: 6.79, store: "ALDI", url: "https://www.aldi.be/fr/product/lanieres-de-boeuf-pour-wok-facon-orientale-3007532.html" } },
+      { id: "e2", store: "COLRUYT", name: "Pesto Rosso à la tomate (Promo Xtra)", baseQty: 190, unit: "g (1 pot)", unitLabel: "pot (190 g)", maxUnits: 1, unitPrice: 2.19, cat: "Sauce Santé", basePrice: 2.19, scaleWithMeals: false, url: "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/21?offer=0d877920-9d1a-4de5-abf0-00414bcca0cd" },
+      { id: "e3", store: "CARREFOUR MARKET", name: "Tortillas Blé & Salsa Old El Paso (Promo 1+1 GRATUIT)", baseQty: 650, unit: "g (2 paquets = 16 wraps)", unitLabel: "lot 1+1 (2 paquets)", maxUnits: 1, unitPrice: 4.42, cat: "Féculents 25%", basePrice: 4.42, scaleWithMeals: false, url: "https://www.myshopi.com/nl/carrefour-market-folder/0a6d7aa0-9c5c-4f86-802f-bd735470db39/17?offer=509e5023-7e97-4a9e-bbdd-89d44d77a30d" },
+      { id: "e4", store: "ALDI", name: "Mousseline / Compote de pommes (710 g — 0,69 €/pot)", baseQty: 1420, unit: "g (2 bocaux de 710 g à 0,69 €)", unitLabel: "bocal de 710 g (0,69 €/pc)", maxUnits: 2, unitPrice: 0.69, cat: "Fruits", basePrice: 1.38, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/mousseline-de-pommes-4105.html" },
+      { id: "e5", store: "DELHAIZE", name: "Pain multicéréales Bio (Promo -25%)", baseQty: 600, unit: "g (1 grand pain tranché)", unitLabel: "grand pain tranché (600 g)", maxUnits: 1, unitPrice: 2.39, cat: "Féculents 25%", basePrice: 2.39, scaleWithMeals: false, url: "https://www.myshopi.com/nl/delhaize-folder/f9afbd45-ef98-4b6f-b93a-8abea09a8012/46?offer=3164a090-db6d-4a2b-b5ff-7505a78e0da5" },
+      { id: "e6", store: "ALDI", name: "Lamelles de filet de poulet frais (1 kg)", baseQty: 1000, unit: "g (1 barquette de 1 kg)", unitLabel: "barquette (1 kg)", maxUnits: 1, unitPrice: 8.99, cat: "Protéines 25%", basePrice: 8.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/lamelles-de-poulet-3003149.html", smallVariant: { name: "Aiguillettes de filet de poulet frais (500 g)", qtyText: "1 barquette (500 g — prix exact Aldi)", price: 5.79, store: "ALDI", url: "https://www.aldi.be/fr/product/aiguillettes-de-poulet-0288.html" } },
+      { id: "e7", store: "ALDI", name: "Filets de cabillaud (4 × 100 g)", baseQty: 400, unit: "g (1 paquet de 4 filets)", unitLabel: "paquet de 4 filets (400 g)", maxUnits: 1, unitPrice: 6.49, cat: "Protéines 25%", basePrice: 6.49, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/cabillaud-3015779.html" },
+      { id: "e8", store: "ALDI", name: "Thon au naturel en boîte (150 g — 1,25 €/boîte)", baseQty: 450, unit: "g (3 boîtes de 150 g à 1,25 €)", unitLabel: "boîte de 150 g (1,25 €/pc)", maxUnits: 3, unitPrice: 1.25, cat: "Protéines 25%", basePrice: 3.75, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/thon-au-naturel-3007721.html" },
+      { id: "e9", store: "ALDI", name: "Œufs de poules élevées au sol (12 pcs)", baseQty: 12, unit: "œufs (1 boîte de 12 pcs)", unitLabel: "boîte de 12 œufs", maxUnits: 1, unitPrice: 2.59, cat: "Protéines 25%", basePrice: 2.59, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/oeufs-de-poules-elevees-au-sol-3002728.html", smallVariant: { name: "Œufs de poules élevées au sol (6 pcs)", qtyText: "1 boîte de 6 œufs (prix exact Aldi)", price: 1.99, store: "ALDI", url: "https://www.aldi.be/fr/product/oeufs-de-poules-elevees-au-sol-3002727.html" } },
+      { id: "e10", store: "ALDI", name: "Milsani Skyr Nature 0 % MG (500 g — 1,39 €/pot)", baseQty: 1000, unit: "g (2 pots de 500 g à 1,39 €)", unitLabel: "pot de 500 g (1,39 €/pc)", maxUnits: 2, unitPrice: 1.39, cat: "Protéines 25%", basePrice: 2.78, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" },
+      { id: "e11", store: "ALDI", name: "Carottes belges fraîches (1 kg — 1,25 €/sachet)", baseQty: 2000, unit: "g (2 sachets de 1 kg à 1,25 €)", unitLabel: "sachet de 1 kg (1,25 €/pc)", maxUnits: 2, unitPrice: 1.25, cat: "Légumes 50%", basePrice: 2.50, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/carottes-3002376.html" },
+      { id: "e12", store: "ALDI", name: "Lanières de poivrons tricolores (600 g)", baseQty: 600, unit: "g (1 sachet de 600 g)", unitLabel: "sachet (600 g)", maxUnits: 1, unitPrice: 1.99, cat: "Légumes 50%", basePrice: 1.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/lanieres-de-poivron-6486.html" },
+      { id: "e13", store: "ALDI", name: "Carottes râpées / Crudités fraîches (400 g)", baseQty: 400, unit: "g (1 sachet de 400 g)", unitLabel: "sachet (400 g)", maxUnits: 1, unitPrice: 0.99, cat: "Légumes 50%", basePrice: 0.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/carottes-rapees-ou-chou-blanc-rape-0473.html" },
+      { id: "e14", store: "ALDI", name: "Haricots verts très fins (1 kg)", baseQty: 1000, unit: "g (1 sachet de 1 kg)", unitLabel: "sachet (1 kg)", maxUnits: 1, unitPrice: 1.65, cat: "Légumes 50%", basePrice: 1.65, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/haricots-verts-3002382.html" },
+      { id: "e15", store: "ALDI", name: "Brocoli en fleurettes (500 g — 1,00 €/sachet)", baseQty: 1000, unit: "g (2 sachets de 500 g à 1,00 €)", unitLabel: "sachet de 500 g (1,00 €/pc)", maxUnits: 2, unitPrice: 1.00, cat: "Légumes 50%", basePrice: 2.00, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/brocoli-6255.html" },
+      { id: "e16", store: "ALDI", name: "Champignons fins (250 g — 0,99 €/barquette)", baseQty: 500, unit: "g (2 barquettes de 250 g à 0,99 €)", unitLabel: "barquette de 250 g (0,99 €/pc)", maxUnits: 2, unitPrice: 0.99, cat: "Légumes 50%", basePrice: 1.98, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/champignons-fins-6260.html" },
+      { id: "e17", store: "ALDI", name: "Passata de tomates (1 kg)", baseQty: 1000, unit: "g (1 pack de 1 kg)", unitLabel: "pack (1 kg)", maxUnits: 1, unitPrice: 1.18, cat: "Légumes 50%", basePrice: 1.18, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/passata-de-tomates-3010209.html", smallVariant: { name: "Dés de tomates (400 g)", qtyText: "1 boîte de 400 g (prix exact Aldi)", price: 0.60, store: "ALDI", url: "https://www.aldi.be/fr/product/des-de-tomates-1897.html" } },
+      { id: "e18", store: "ALDI", name: "Épinards en branches (1 kg)", baseQty: 1000, unit: "g (1 sachet de 1 kg)", unitLabel: "sachet (1 kg)", maxUnits: 1, unitPrice: 1.09, cat: "Légumes 50%", basePrice: 1.09, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/epinards-en-branches-3002378.html" },
+      { id: "e19", store: "ALDI", name: "Salade gourmande croquante (150 g)", baseQty: 150, unit: "g (1 sachet de 150 g)", unitLabel: "sachet (150 g)", maxUnits: 1, unitPrice: 1.29, cat: "Légumes 50%", basePrice: 1.29, scaleWithMeals: false, url: "https://www.aldi.be/fr/product/salade-gourmande-2388.html" },
+      { id: "e20", store: "ALDI", name: "Pommes de terre belges (2,5 kg)", baseQty: 2500, unit: "g (1 filet de 2,5 kg)", unitLabel: "filet (2,5 kg)", maxUnits: 1, unitPrice: 2.47, cat: "Féculents 25%", basePrice: 2.47, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/pommes-de-terre-a-puree-2817.html", smallVariant: { name: "Petites pommes de terre (500 g)", qtyText: "1 sachet de 500 g (prix exact Aldi)", price: 0.90, store: "ALDI", url: "https://www.aldi.be/fr/product/petites-pommes-de-terre-cuites-6627.html" } },
+      { id: "e21", store: "ALDI", name: "Riz Basmati (1 kg)", baseQty: 1000, unit: "g (1 boîte de 1 kg)", unitLabel: "boîte (1 kg)", maxUnits: 1, unitPrice: 1.79, cat: "Féculents 25%", basePrice: 1.79, scaleWithMeals: false, url: "https://www.aldi.be/fr/product/riz-basmati-3011332.html" },
+      { id: "e22", store: "ALDI", name: "Penne Complet / Blé Dur (500 g)", baseQty: 500, unit: "g (1 paquet de 500 g)", unitLabel: "paquet (500 g)", maxUnits: 1, unitPrice: 0.99, cat: "Féculents 25%", basePrice: 0.99, scaleWithMeals: false, url: "https://www.aldi.be/fr/product/penne-complet-3010902.html" },
+      { id: "e23", store: "ALDI", name: "Pommes Boskoop belges (2 kg)", baseQty: 2000, unit: "g (1 sachet de 2 kg)", unitLabel: "sachet (2 kg)", maxUnits: 1, unitPrice: 2.09, cat: "Fruits", basePrice: 2.09, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/pommes-boskoop-6179.html" },
+      { id: "e24", store: "ALDI", name: "Bananes fraîches (1 kg)", baseQty: 1000, unit: "g (1 kg)", unitLabel: "régime (1 kg)", maxUnits: 1, unitPrice: 0.99, cat: "Fruits", basePrice: 0.99, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/bananes-8272.html" },
+      { id: "e25", store: "ALDI", name: "Poires Conférence belges (1 kg)", baseQty: 1000, unit: "g (1 kg)", unitLabel: "barquette (1 kg)", maxUnits: 1, unitPrice: 1.50, cat: "Fruits", basePrice: 1.50, scaleWithMeals: true, url: "https://www.aldi.be/fr/product/poires-conference-8144.html" }
     ];
 
     // =========================================================================
@@ -869,7 +887,7 @@
     const EXPRESS_KITS = [
       {
         id: "kit_poulet",
-        badge: "🔥 20 min • 100% Aldi",
+        badge: "20 min • 100% Aldi",
         title: "Kit 1 : Wok Poulet Citron-Skyr, Riz Basmati & Brocoli-Poivrons",
         prepTime: "20 min chrono",
         portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. à réchauffer demain)",
@@ -881,16 +899,16 @@
           "00:15 → 00:20 : Hors du feu, liez avec 3 c.à.s de Skyr 0% (le reste du pot de 500 g vous sert de dessert protéiné !)."
         ],
         items: [
-          { id: "ex_p1", store: "ALDI", cat: "🔵 Protéines 25%", name: "Aiguillettes de filet de poulet (500 g)", qty: "1 barquette de 500 g (Prix exact Aldi)", qty1Meal: "1 barquette de 500 g (Prix exact Aldi)", price: 5.79, price1Meal: 5.79, url: "https://www.aldi.be/fr/product/aiguillettes-de-poulet-0288.html" },
-          { id: "ex_p2", store: "ALDI", cat: "🟢 Légumes 50%", name: "Brocoli en fleurettes (500 g)", qty: "1 sachet de 500 g (Prix exact Aldi)", qty1Meal: "1 sachet de 500 g (Prix exact Aldi)", price: 1.00, price1Meal: 1.00, url: "https://www.aldi.be/fr/product/brocoli-6255.html" },
-          { id: "ex_p3", store: "ALDI", cat: "🟢 Légumes 50%", name: "Lanières de poivrons tricolores (600 g)", qty: "1 sachet de 600 g (Prix exact Aldi)", qty1Meal: "1 sachet de 600 g (Prix exact Aldi)", price: 1.99, price1Meal: 1.99, url: "https://www.aldi.be/fr/product/lanieres-de-poivron-6486.html" },
-          { id: "ex_p4", store: "ALDI", cat: "🟡 Féculents 25%", name: "Riz Basmati (Boîte de 1 kg)", qty: "1 boîte de 1 kg (Prix exact Aldi)", qty1Meal: "1 boîte de 1 kg (Prix exact Aldi)", price: 1.79, price1Meal: 1.79, url: "https://www.aldi.be/fr/product/riz-basmati-3011332.html" },
-          { id: "ex_p5", store: "ALDI", cat: "🔵 Sauce & Dessert", name: "Milsani Skyr Nature 0 % MG (500 g)", qty: "1 pot de 500 g (Prix exact Aldi)", qty1Meal: "1 pot de 500 g (Prix exact Aldi)", price: 1.39, price1Meal: 1.39, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" }
+          { id: "ex_p1", store: "ALDI", cat: "Protéines 25%", name: "Aiguillettes de filet de poulet (500 g)", qty: "1 barquette de 500 g (Prix exact Aldi)", qty1Meal: "1 barquette de 500 g (Prix exact Aldi)", price: 5.79, price1Meal: 5.79, url: "https://www.aldi.be/fr/product/aiguillettes-de-poulet-0288.html" },
+          { id: "ex_p2", store: "ALDI", cat: "Légumes 50%", name: "Brocoli en fleurettes (500 g)", qty: "1 sachet de 500 g (Prix exact Aldi)", qty1Meal: "1 sachet de 500 g (Prix exact Aldi)", price: 1.00, price1Meal: 1.00, url: "https://www.aldi.be/fr/product/brocoli-6255.html" },
+          { id: "ex_p3", store: "ALDI", cat: "Légumes 50%", name: "Lanières de poivrons tricolores (600 g)", qty: "1 sachet de 600 g (Prix exact Aldi)", qty1Meal: "1 sachet de 600 g (Prix exact Aldi)", price: 1.99, price1Meal: 1.99, url: "https://www.aldi.be/fr/product/lanieres-de-poivron-6486.html" },
+          { id: "ex_p4", store: "ALDI", cat: "Féculents 25%", name: "Riz Basmati (Boîte de 1 kg)", qty: "1 boîte de 1 kg (Prix exact Aldi)", qty1Meal: "1 boîte de 1 kg (Prix exact Aldi)", price: 1.79, price1Meal: 1.79, url: "https://www.aldi.be/fr/product/riz-basmati-3011332.html" },
+          { id: "ex_p5", store: "ALDI", cat: "Sauce & Dessert", name: "Milsani Skyr Nature 0 % MG (500 g)", qty: "1 pot de 500 g (Prix exact Aldi)", qty1Meal: "1 pot de 500 g (Prix exact Aldi)", price: 1.39, price1Meal: 1.39, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" }
         ]
       },
       {
         id: "kit_pates_thon",
-        badge: "⚡ 15 min • 6,17 € en caisse !",
+        badge: "15 min • 6,17 € en caisse",
         title: "Kit 2 : One-Pot Penne Complètes au Thon, Champignons, Épinards & Tomate",
         prepTime: "15 min chrono",
         portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. demain midi ou soir)",
@@ -902,16 +920,16 @@
           "00:12 → 00:15 : Ajoutez le thon au naturel égoutté (1,25 € la boîte) et les pâtes. Mélangez : c'est prêt !"
         ],
         items: [
-          { id: "ex_t1", store: "ALDI", cat: "🔵 Protéines 25%", name: "Thon au naturel (150 g — 1,25 €/boîte)", qty: "2 boîtes × 1,25 € (Prix exact Aldi)", qty1Meal: "1 boîte de 150 g (Prix exact Aldi)", price: 2.50, price1Meal: 1.25, url: "https://www.aldi.be/fr/product/thon-au-naturel-3007721.html" },
-          { id: "ex_t2", store: "ALDI", cat: "🟡 Féculents 25%", name: "Penne Complet / Blé Dur (500 g)", qty: "1 paquet de 500 g (Prix exact Aldi)", qty1Meal: "1 paquet de 500 g (Prix exact Aldi)", price: 0.99, price1Meal: 0.99, url: "https://www.aldi.be/fr/product/penne-complet-3010902.html" },
-          { id: "ex_t3", store: "ALDI", cat: "🟢 Légumes 50%", name: "Champignons fins (250 g)", qty: "1 barquette de 250 g (Prix exact Aldi)", qty1Meal: "1 barquette de 250 g (Prix exact Aldi)", price: 0.99, price1Meal: 0.99, url: "https://www.aldi.be/fr/product/champignons-fins-6260.html" },
-          { id: "ex_t4", store: "ALDI", cat: "🟢 Légumes 50%", name: "Épinards en branches (1 kg)", qty: "1 sachet de 1 kg (Prix exact Aldi)", qty1Meal: "1 sachet de 1 kg (Prix exact Aldi)", price: 1.09, price1Meal: 1.09, url: "https://www.aldi.be/fr/product/epinards-en-branches-3002378.html" },
-          { id: "ex_t5", store: "ALDI", cat: "🟢 Légumes 50%", name: "Dés de tomates (400 g)", qty: "1 boîte de 400 g (Prix exact Aldi)", qty1Meal: "1 boîte de 400 g (Prix exact Aldi)", price: 0.60, price1Meal: 0.60, url: "https://www.aldi.be/fr/product/des-de-tomates-1897.html" }
+          { id: "ex_t1", store: "ALDI", cat: "Protéines 25%", name: "Thon au naturel (150 g — 1,25 €/boîte)", qty: "2 boîtes × 1,25 € (Prix exact Aldi)", qty1Meal: "1 boîte de 150 g (Prix exact Aldi)", price: 2.50, price1Meal: 1.25, url: "https://www.aldi.be/fr/product/thon-au-naturel-3007721.html" },
+          { id: "ex_t2", store: "ALDI", cat: "Féculents 25%", name: "Penne Complet / Blé Dur (500 g)", qty: "1 paquet de 500 g (Prix exact Aldi)", qty1Meal: "1 paquet de 500 g (Prix exact Aldi)", price: 0.99, price1Meal: 0.99, url: "https://www.aldi.be/fr/product/penne-complet-3010902.html" },
+          { id: "ex_t3", store: "ALDI", cat: "Légumes 50%", name: "Champignons fins (250 g)", qty: "1 barquette de 250 g (Prix exact Aldi)", qty1Meal: "1 barquette de 250 g (Prix exact Aldi)", price: 0.99, price1Meal: 0.99, url: "https://www.aldi.be/fr/product/champignons-fins-6260.html" },
+          { id: "ex_t4", store: "ALDI", cat: "Légumes 50%", name: "Épinards en branches (1 kg)", qty: "1 sachet de 1 kg (Prix exact Aldi)", qty1Meal: "1 sachet de 1 kg (Prix exact Aldi)", price: 1.09, price1Meal: 1.09, url: "https://www.aldi.be/fr/product/epinards-en-branches-3002378.html" },
+          { id: "ex_t5", store: "ALDI", cat: "Légumes 50%", name: "Dés de tomates (400 g)", qty: "1 boîte de 400 g (Prix exact Aldi)", qty1Meal: "1 boîte de 400 g (Prix exact Aldi)", price: 0.60, price1Meal: 0.60, url: "https://www.aldi.be/fr/product/des-de-tomates-1897.html" }
         ]
       },
       {
         id: "kit_cabillaud",
-        badge: "🐟 20 min • Four Sans Effort",
+        badge: "20 min • Four Sans Effort",
         title: "Kit 3 : Papillote de Cabillaud, Haricots Verts & Petites Pommes de Terre",
         prepTime: "20 min chrono",
         portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. demain)",
@@ -923,15 +941,15 @@
           "00:18 → 00:20 : Dressez vos assiettes équilibrées 50% haricots verts / 25% pommes de terre / 25% cabillaud + sauce Skyr !"
         ],
         items: [
-          { id: "ex_c1", store: "ALDI", cat: "🔵 Protéines 25%", name: "Filets de cabillaud (4 × 100 g)", qty: "1 paquet de 4 filets (Prix exact Aldi)", qty1Meal: "1 paquet de 4 filets (Prix exact Aldi)", price: 6.49, price1Meal: 6.49, url: "https://www.aldi.be/fr/product/cabillaud-3015779.html" },
-          { id: "ex_c2", store: "ALDI", cat: "🟢 Légumes 50%", name: "Haricots verts très fins (1 kg)", qty: "1 sachet de 1 kg (Prix exact Aldi)", qty1Meal: "1 sachet de 1 kg (Prix exact Aldi)", price: 1.65, price1Meal: 1.65, url: "https://www.aldi.be/fr/product/haricots-verts-3002382.html" },
-          { id: "ex_c3", store: "ALDI", cat: "🟡 Féculents 25%", name: "Petites pommes de terre (500 g)", qty: "2 sachets × 0,90 € (Prix exact Aldi)", qty1Meal: "1 sachet de 500 g (Prix exact Aldi)", price: 1.80, price1Meal: 0.90, url: "https://www.aldi.be/fr/product/petites-pommes-de-terre-cuites-6627.html" },
-          { id: "ex_c4", store: "ALDI", cat: "🔵 Sauce & Dessert", name: "Milsani Skyr Nature 0 % MG (500 g)", qty: "1 pot de 500 g (Prix exact Aldi)", qty1Meal: "1 pot de 500 g (Prix exact Aldi)", price: 1.39, price1Meal: 1.39, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" }
+          { id: "ex_c1", store: "ALDI", cat: "Protéines 25%", name: "Filets de cabillaud (4 × 100 g)", qty: "1 paquet de 4 filets (Prix exact Aldi)", qty1Meal: "1 paquet de 4 filets (Prix exact Aldi)", price: 6.49, price1Meal: 6.49, url: "https://www.aldi.be/fr/product/cabillaud-3015779.html" },
+          { id: "ex_c2", store: "ALDI", cat: "Légumes 50%", name: "Haricots verts très fins (1 kg)", qty: "1 sachet de 1 kg (Prix exact Aldi)", qty1Meal: "1 sachet de 1 kg (Prix exact Aldi)", price: 1.65, price1Meal: 1.65, url: "https://www.aldi.be/fr/product/haricots-verts-3002382.html" },
+          { id: "ex_c3", store: "ALDI", cat: "Féculents 25%", name: "Petites pommes de terre (500 g)", qty: "2 sachets × 0,90 € (Prix exact Aldi)", qty1Meal: "1 sachet de 500 g (Prix exact Aldi)", price: 1.80, price1Meal: 0.90, url: "https://www.aldi.be/fr/product/petites-pommes-de-terre-cuites-6627.html" },
+          { id: "ex_c4", store: "ALDI", cat: "Sauce & Dessert", name: "Milsani Skyr Nature 0 % MG (500 g)", qty: "1 pot de 500 g (Prix exact Aldi)", qty1Meal: "1 pot de 500 g (Prix exact Aldi)", price: 1.39, price1Meal: 1.39, url: "https://www.aldi.be/fr/product/skyr-nature-2128.html" }
         ]
       },
       {
         id: "kit_boeuf",
-        badge: "🥩 20 min • 100% Aldi",
+        badge: "20 min • 100% Aldi",
         title: "Kit 4 : Poêlée Minute de Lanières de Bœuf, Champignons, Carottes & PDT",
         prepTime: "20 min chrono",
         portions: "4 grandes assiettes (2 pers. aujourd'hui + 2 pers. demain)",
@@ -943,11 +961,11 @@
           "00:16 → 00:20 : Remettez le bœuf dans la sauce et servez !"
         ],
         items: [
-          { id: "ex_b1", store: "ALDI", cat: "🔵 Protéines 25%", name: "Lanières de bœuf maigre pour wok (400 g)", qty: "1 barquette de 400 g (Prix exact Aldi)", qty1Meal: "1 barquette de 400 g (Prix exact Aldi)", price: 6.79, price1Meal: 6.79, url: "https://www.aldi.be/fr/product/lanieres-de-boeuf-pour-wok-facon-orientale-3007532.html" },
-          { id: "ex_b2", store: "ALDI", cat: "🟢 Légumes 50%", name: "Champignons fins (250 g)", qty: "1 barquette de 250 g (Prix exact Aldi)", qty1Meal: "1 barquette de 250 g (Prix exact Aldi)", price: 0.99, price1Meal: 0.99, url: "https://www.aldi.be/fr/product/champignons-fins-6260.html" },
-          { id: "ex_b3", store: "ALDI", cat: "🟢 Légumes 50%", name: "Carottes fraîches (1 kg)", qty: "1 sachet de 1 kg (Prix exact Aldi)", qty1Meal: "1 sachet de 1 kg (Prix exact Aldi)", price: 1.25, price1Meal: 1.25, url: "https://www.aldi.be/fr/product/carottes-3002376.html" },
-          { id: "ex_b4", store: "ALDI", cat: "🟢 Légumes 50%", name: "Dés de tomates (400 g)", qty: "1 boîte de 400 g (Prix exact Aldi)", qty1Meal: "1 boîte de 400 g (Prix exact Aldi)", price: 0.60, price1Meal: 0.60, url: "https://www.aldi.be/fr/product/des-de-tomates-1897.html" },
-          { id: "ex_b5", store: "ALDI", cat: "🟡 Féculents 25%", name: "Petites pommes de terre (500 g)", qty: "1 sachet de 500 g (Prix exact Aldi)", qty1Meal: "1 sachet de 500 g (Prix exact Aldi)", price: 0.90, price1Meal: 0.90, url: "https://www.aldi.be/fr/product/petites-pommes-de-terre-cuites-6627.html" }
+          { id: "ex_b1", store: "ALDI", cat: "Protéines 25%", name: "Lanières de bœuf maigre pour wok (400 g)", qty: "1 barquette de 400 g (Prix exact Aldi)", qty1Meal: "1 barquette de 400 g (Prix exact Aldi)", price: 6.79, price1Meal: 6.79, url: "https://www.aldi.be/fr/product/lanieres-de-boeuf-pour-wok-facon-orientale-3007532.html" },
+          { id: "ex_b2", store: "ALDI", cat: "Légumes 50%", name: "Champignons fins (250 g)", qty: "1 barquette de 250 g (Prix exact Aldi)", qty1Meal: "1 barquette de 250 g (Prix exact Aldi)", price: 0.99, price1Meal: 0.99, url: "https://www.aldi.be/fr/product/champignons-fins-6260.html" },
+          { id: "ex_b3", store: "ALDI", cat: "Légumes 50%", name: "Carottes fraîches (1 kg)", qty: "1 sachet de 1 kg (Prix exact Aldi)", qty1Meal: "1 sachet de 1 kg (Prix exact Aldi)", price: 1.25, price1Meal: 1.25, url: "https://www.aldi.be/fr/product/carottes-3002376.html" },
+          { id: "ex_b4", store: "ALDI", cat: "Légumes 50%", name: "Dés de tomates (400 g)", qty: "1 boîte de 400 g (Prix exact Aldi)", qty1Meal: "1 boîte de 400 g (Prix exact Aldi)", price: 0.60, price1Meal: 0.60, url: "https://www.aldi.be/fr/product/des-de-tomates-1897.html" },
+          { id: "ex_b5", store: "ALDI", cat: "Féculents 25%", name: "Petites pommes de terre (500 g)", qty: "1 sachet de 500 g (Prix exact Aldi)", qty1Meal: "1 sachet de 500 g (Prix exact Aldi)", price: 0.90, price1Meal: 0.90, url: "https://www.aldi.be/fr/product/petites-pommes-de-terre-cuites-6627.html" }
         ]
       }
     ];
@@ -1129,8 +1147,8 @@
       if (drawer && toggleBtn) {
         drawer.classList.toggle("hidden", !state.configOpen);
         toggleBtn.innerHTML = state.configOpen
-          ? "✕ Fermer les réglages ▴"
-          : "⚙️ Adapter jours & repas ▾";
+          ? `<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><span>Fermer les réglages</span>`
+          : `<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="21" y2="21"/><line x1="4" x2="20" y1="14" y2="14"/><line x1="4" x2="20" y1="7" y2="7"/><circle cx="9" cy="14" r="2"/><circle cx="15" cy="7" r="2"/><circle cx="12" cy="21" r="2"/></svg><span>Adapter jours & repas</span>`;
         toggleBtn.onclick = () => {
           state.configOpen = !state.configOpen;
           renderControls();
@@ -1219,11 +1237,11 @@
 
         document.getElementById("kpiEssentialTotal").textContent = formatEuro(remKit);
         document.getElementById("kpiRemaining").textContent = kitChecked > 0
-          ? `(-${formatEuro(kitChecked)} coché • ⚡ Express)`
-          : `sur ${formatEuro(kitTotal)} (⚡ ${kit.title.split(":")[0]})`;
+          ? `(-${formatEuro(kitChecked)} coché • Express)`
+          : `sur ${formatEuro(kitTotal)} (${kit.title.split(":")[0]})`;
         document.getElementById("budgetBar").style.width = `${pct}%`;
 
-        document.getElementById("kpiPlatesCount").textContent = `⚡ ${platesCount} assiettes Express (${formatEuro(kitTotal / platesCount)}/assiette)`;
+        document.getElementById("kpiPlatesCount").textContent = `${platesCount} assiettes Express (${formatEuro(kitTotal / platesCount)}/assiette)`;
         document.getElementById("kpiMealsSub").textContent = `${mealsCount} repas × 2 pers.`;
         document.getElementById("kpiProduceWeight").textContent = state.expressPortions === 2 ? "1,1 kg" : "2,2 kg";
 
@@ -1233,7 +1251,7 @@
         document.getElementById("checkedCartAmount").textContent = formatEuro(kitChecked);
         const totEl = document.getElementById("totalCartAmount");
         if (totEl) totEl.textContent = formatEuro(kitTotal);
-        document.getElementById("shopSubCount").textContent = `⚡ ${kit.title.split(":")[0]} (${platesCount} assiettes)`;
+        document.getElementById("shopSubCount").textContent = `${kit.title.split(":")[0]} (${platesCount} assiettes)`;
         return;
       }
 
@@ -1365,28 +1383,29 @@
               <span class="text-xs font-bold uppercase px-2.5 py-1 rounded-lg bg-[var(--background)] border border-[var(--border)]">${m.day}</span>
               <span class="text-xs font-bold uppercase px-2.5 py-1 rounded-lg ${badgeClass}">${m.slot}</span>
               <span class="text-xs font-bold px-2 py-0.5 rounded-lg bg-emerald-500/15 text-emerald-500">${formatEuro(mealCost)} p/ 2 pers. (${formatEuro(mealCost / 2)}/assiette)</span>
-              ${isSwapped ? '<span class="text-xs font-semibold px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-500">✨ Variante active</span>' : ''}
+              ${isSwapped ? '<span class="text-xs font-semibold px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-500">Variante active</span>' : ''}
             </div>
-            <button data-swap="${key}" class="swap-meal-btn touch-target-44 text-xs font-bold px-3 py-1.5 rounded-xl bg-[var(--background)] border border-[var(--border)] hover:border-emerald-500/60 transition">
-              🔄 Varier ce plat
+            <button data-swap="${key}" class="swap-meal-btn touch-target-44 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-[var(--background)] border border-[var(--border)] hover:border-emerald-500/60 transition">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+              <span>Varier ce plat</span>
             </button>
           </div>
           <h3 class="font-serif-editorial font-bold text-base sm:text-lg text-[var(--foreground)] mb-2.5">${data.title}</h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
             <div class="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
-              <span class="font-bold text-emerald-500">🟢 50% Légumes :</span>
+              <span class="font-bold text-emerald-500">• 50% Légumes :</span>
               <span class="text-[var(--foreground)] ml-1">${data.veg}</span>
             </div>
             <div class="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20">
-              <span class="font-bold text-amber-500">🟡 25% Féculents :</span>
+              <span class="font-bold text-amber-500">• 25% Féculents :</span>
               <span class="text-[var(--foreground)] ml-1">${data.carb}</span>
             </div>
             <div class="p-2.5 rounded-xl bg-blue-500/10 border border-blue-500/20">
-              <span class="font-bold text-blue-500">🔵 25% Protéines :</span>
+              <span class="font-bold text-blue-500">• 25% Protéines :</span>
               <span class="text-[var(--foreground)] ml-1">${data.prot}</span>
             </div>
             <div class="p-2.5 rounded-xl bg-orange-500/10 border border-orange-500/20">
-              <span class="font-bold text-orange-500">🟠 Fruit du repas :</span>
+              <span class="font-bold text-orange-500">• Fruit du repas :</span>
               <span class="text-[var(--foreground)] ml-1">${data.fruit}</span>
             </div>
           </div>
@@ -1413,7 +1432,7 @@
             ? "bg-emerald-600 text-white border-emerald-600"
             : "bg-[var(--background)] text-[var(--foreground)] border-[var(--border)]"
         }`;
-        hideBtn.textContent = state.hideChecked ? "👁️ Afficher cochés" : "👁️ Masquer cochés";
+        hideBtn.textContent = state.hideChecked ? "Afficher cochés" : "Masquer cochés";
         hideBtn.onclick = () => {
           state.hideChecked = !state.hideChecked;
           saveState();
@@ -1446,7 +1465,7 @@
       modeBanner.innerHTML = `
         <div class="text-xs">
           <span class="font-bold ${isExpressMode ? 'text-amber-500' : 'text-emerald-500'}">
-            ${isExpressMode ? `⚡ Panier synchronisé sur : ${activeKit.title}` : `🥗 Panier synchronisé sur votre Menu (${getActiveMealsCount()} repas sélectionnés)`}
+            ${isExpressMode ? `Panier synchronisé sur : ${activeKit.title}` : `Panier synchronisé sur votre Menu (${getActiveMealsCount()} repas sélectionnés)`}
           </span>
           <div class="text-[11px] text-[var(--muted-foreground)] mt-0.5">
             ${isExpressMode
@@ -1455,7 +1474,7 @@
           </div>
         </div>
         <button id="switchCartSourceBtn" class="touch-target-44 text-xs font-bold px-3 py-1.5 rounded-xl bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] transition">
-          ${isExpressMode ? "🔄 Voir Panier Menu" : "⚡ Voir Panier Express"}
+          ${isExpressMode ? "Voir Panier Menu" : "Voir Panier Express"}
         </button>
       `;
       container.appendChild(modeBanner);
@@ -1476,7 +1495,7 @@
           return {
             id: it.id,
             store: it.store,
-            cat: it.cat || "⚡ Kit Express",
+            cat: (it.cat || "Kit Express").replace(/^[^\wÀ-ÿ]+/, ""),
             name: it.name,
             qtyText: sc.qtyText,
             price: sc.price,
@@ -1492,7 +1511,7 @@
           rawList.push({
             id: it.id,
             store: sc.store || it.store,
-            cat: it.cat,
+            cat: (it.cat || "").replace(/^[^\wÀ-ÿ]+/, ""),
             name: sc.name || it.name,
             qtyText: sc.qtyText,
             price: sc.price,
@@ -1538,7 +1557,7 @@
       if (ordered.length === 0) {
         const emptyDiv = document.createElement("div");
         emptyDiv.className = "bg-[var(--card)] border border-[var(--border)] rounded-2xl p-5 text-center text-xs text-[var(--muted-foreground)]";
-        emptyDiv.textContent = "🎉 Aucun article à afficher pour ce filtre (ou tous vos articles sont déjà cochés dans le caddie !).";
+        emptyDiv.textContent = "Aucun article à afficher pour ce filtre (ou tous vos articles sont déjà cochés dans le caddie).";
         container.appendChild(emptyDiv);
         return;
       }
@@ -1571,7 +1590,7 @@
             <div class="min-w-0 flex-1">
               <div class="flex flex-wrap items-center gap-1.5 mb-1">
                 <span class="text-xs font-bold px-2 py-0.5 rounded-md bg-[var(--background)] border border-[var(--border)]">${it.store}</span>
-                <span class="text-xs font-semibold text-[var(--muted-foreground)]">${it.cat}</span>
+                <span class="text-xs font-semibold text-[var(--muted-foreground)]">• ${it.cat}</span>
               </div>
               <div class="font-bold text-sm text-[var(--foreground)] truncate ${it.checked ? 'line-through text-[var(--muted-foreground)]' : ''}">
                 ${it.name}
@@ -1579,7 +1598,8 @@
               <div class="flex flex-wrap items-center gap-3 mt-1">
                 <span class="text-xs text-[var(--muted-foreground)]">Qté : <strong class="text-[var(--foreground)]">${it.qtyText}</strong></span>
                 <a href="${it.url}" target="_blank" rel="noopener noreferrer" class="ext-offer-link inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 hover:underline">
-                  🔗 Voir l'offre ↗
+                  <span>Voir l'offre</span>
+                  <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
                 </a>
               </div>
             </div>
@@ -1657,7 +1677,8 @@
               ${ex.oldPrice ? `<span class="text-xs line-through text-[var(--muted-foreground)] ml-1.5">${formatEuro(ex.oldPrice)}</span>` : ""}
               <div class="mt-1">
                 <a href="${ex.url}" target="_blank" rel="noopener noreferrer" class="ext-offer-link inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 hover:underline">
-                  🔗 Voir l'offre ↗
+                  <span>Voir l'offre</span>
+                  <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
                 </a>
               </div>
             </div>
@@ -1712,7 +1733,7 @@
               ${formatTimer(tObj.remaining)}
             </span>
             <button data-timer="${st.id}" class="start-timer-btn px-3 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white hover:bg-emerald-500 transition">
-              ${tObj.running ? "⏸ Pause" : "▶ Minuteur"}
+              ${tObj.running ? "Pause" : "Minuteur"}
             </button>
           </div>
         `;
@@ -1850,7 +1871,8 @@
                 </div>
                 <div class="mt-1">
                   <a href="${it.url}" target="_blank" rel="noopener noreferrer" class="ext-offer-link inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 hover:underline">
-                    🔗 Voir l'offre ↗
+                    <span>Voir l'offre</span>
+                    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
                   </a>
                 </div>
               </div>
@@ -1877,40 +1899,40 @@
             <div class="ios-segmented grid grid-cols-2 gap-1 w-full sm:w-auto">
               <button id="expPortion2Btn" class="touch-target-44 px-3 py-1.5 rounded-xl text-xs font-bold transition ${
                 state.expressPortions === 2 ? 'bg-emerald-600 text-white shadow-xs' : 'text-[var(--foreground)]'
-              }">🍽️ 1 Repas (Ce soir • 2 pers.)</button>
+              }">1 Repas (Ce soir • 2 pers.)</button>
               <button id="expPortion4Btn" class="touch-target-44 px-3 py-1.5 rounded-xl text-xs font-bold transition ${
                 state.expressPortions !== 2 ? 'bg-emerald-600 text-white shadow-xs' : 'text-[var(--foreground)]'
-              }">🍱 2 Repas 48h (Auj. + Demain • 4 ass.)</button>
+              }">2 Repas 48h (Auj. + Demain • 4 ass.)</button>
             </div>
           </div>
 
           <div class="flex flex-wrap items-center justify-between gap-2">
             <h3 class="font-bold text-base text-[var(--foreground)]">${kit.title}</h3>
-            <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-500">⏱️ ${kit.prepTime} • ${formatEuro(totalKit)} (${formatEuro(totalKit / platesCount)} / assiette)</span>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-500">${kit.prepTime} • ${formatEuro(totalKit)} (${formatEuro(totalKit / platesCount)} / assiette)</span>
           </div>
 
           <div class="grid grid-cols-1 ${state.expressPortions === 2 ? '' : 'sm:grid-cols-2'} gap-2.5 text-xs">
             <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
-              <div class="font-bold text-emerald-500 mb-1">🍽️ Aujourd'hui (2 personnes) :</div>
+              <div class="font-bold text-emerald-500 mb-1">Aujourd'hui (2 personnes) :</div>
               <div class="text-[var(--foreground)]">${kit.todayMeal}</div>
             </div>
             ${state.expressPortions === 2 ? '' : `
             <div class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
-              <div class="font-bold text-amber-500 mb-1">🍱 Demain à réchauffer (2 personnes) :</div>
+              <div class="font-bold text-amber-500 mb-1">Demain à réchauffer (2 personnes) :</div>
               <div class="text-[var(--foreground)]">${kit.tomorrowReheat}</div>
             </div>`}
           </div>
 
           <div>
             <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-              <h4 class="font-bold text-sm">🛒 Mini-Liste de Courses Express (${kit.items.length} articles — synchronisée avec 🛒 Panier)</h4>
+              <h4 class="font-bold text-sm">Mini-Liste de Courses Express (${kit.items.length} articles — synchronisée avec Panier)</h4>
               <span class="text-xs text-emerald-500 font-semibold">✓ Synchronisé en haut & dans l'onglet Panier</span>
             </div>
             <div class="space-y-2">${itemsHtml}</div>
           </div>
 
           <div>
-            <h4 class="font-bold text-sm mb-2">👩‍🍳 Préparation Express en 3 étapes (${platesCount} assiettes)</h4>
+            <h4 class="font-bold text-sm mb-2">Préparation Express en 3 étapes (${platesCount} assiettes)</h4>
             <ul class="space-y-2">${stepsHtml}</ul>
           </div>
         </div>

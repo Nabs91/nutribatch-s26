@@ -1,5 +1,5 @@
 // Network-first Service Worker (v8 - Apple visionOS / iOS 18 Liquid Glassmorphism)
-const CACHE_NAME = "nutribatch-hig-v8";
+const CACHE_NAME = "nutribatch-hig-v9";
 self.addEventListener("install", e => self.skipWaiting());
 self.addEventListener("activate", e => {
   e.waitUntil(
