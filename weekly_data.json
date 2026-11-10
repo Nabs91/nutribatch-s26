@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-09T16:45:35.789755+00:00",
-  "weekLabel": "Semaine du 9 Nov. au 15 Nov. 2026",
+  "updatedAt": "2026-11-10T15:09:20.593605+00:00",
+  "weekLabel": "Semaine du 10 Nov. au 16 Nov. 2026",
   "essentialItems": [
     {
       "id": "e1",
@@ -22,7 +22,7 @@
         "store": "ALDI",
         "url": "https://www.aldi.be/fr/product/lanieres-de-boeuf-pour-wok-facon-orientale-3007532.html"
       },
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -38,7 +38,7 @@
       "basePrice": 2.19,
       "scaleWithMeals": false,
       "url": "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/21?offer=0d877920-9d1a-4de5-abf0-00414bcca0cd",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -54,7 +54,7 @@
       "basePrice": 4.42,
       "scaleWithMeals": false,
       "url": "https://www.myshopi.com/nl/carrefour-market-folder/0a6d7aa0-9c5c-4f86-802f-bd735470db39/17?offer=509e5023-7e97-4a9e-bbdd-89d44d77a30d",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -70,7 +70,7 @@
       "basePrice": 1.38,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/mousseline-de-pommes-4105.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -86,7 +86,7 @@
       "basePrice": 2.39,
       "scaleWithMeals": false,
       "url": "https://www.myshopi.com/nl/delhaize-folder/f9afbd45-ef98-4b6f-b93a-8abea09a8012/46?offer=3164a090-db6d-4a2b-b5ff-7505a78e0da5",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -109,7 +109,7 @@
         "store": "ALDI",
         "url": "https://www.aldi.be/fr/product/aiguillettes-de-poulet-0288.html"
       },
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -125,7 +125,7 @@
       "basePrice": 6.49,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/cabillaud-3015779.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -141,7 +141,7 @@
       "basePrice": 3.75,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/thon-au-naturel-3007721.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -164,7 +164,7 @@
         "store": "ALDI",
         "url": "https://www.aldi.be/fr/product/oeufs-de-poules-elevees-au-sol-3002727.html"
       },
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -180,7 +180,7 @@
       "basePrice": 2.78,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/skyr-nature-2128.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -196,7 +196,7 @@
       "basePrice": 2.5,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/carottes-3002376.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -212,7 +212,7 @@
       "basePrice": 1.99,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/lanieres-de-poivron-6486.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -228,7 +228,7 @@
       "basePrice": 0.99,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/carottes-rapees-ou-chou-blanc-rape-0473.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -244,7 +244,7 @@
       "basePrice": 1.65,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/haricots-verts-3002382.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -260,7 +260,7 @@
       "basePrice": 1.98,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/brocoli-6255.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -276,7 +276,7 @@
       "basePrice": 1.98,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/champignons-fins-6260.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -299,7 +299,7 @@
         "store": "ALDI",
         "url": "https://www.aldi.be/fr/product/des-de-tomates-1897.html"
       },
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -315,7 +315,7 @@
       "basePrice": 1.09,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/epinards-en-branches-3002378.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -331,7 +331,7 @@
       "basePrice": 1.29,
       "scaleWithMeals": false,
       "url": "https://www.aldi.be/fr/product/salade-gourmande-2388.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -354,7 +354,7 @@
         "store": "ALDI",
         "url": "https://www.aldi.be/fr/product/petites-pommes-de-terre-cuites-6627.html"
       },
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -370,7 +370,7 @@
       "basePrice": 1.79,
       "scaleWithMeals": false,
       "url": "https://www.aldi.be/fr/product/riz-basmati-3011332.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -386,7 +386,7 @@
       "basePrice": 0.99,
       "scaleWithMeals": false,
       "url": "https://www.aldi.be/fr/product/penne-complet-3010902.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -402,7 +402,7 @@
       "basePrice": 2.09,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/pommes-boskoop-6179.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -418,7 +418,7 @@
       "basePrice": 0.99,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/bananes-8272.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     },
     {
@@ -434,7 +434,7 @@
       "basePrice": 1.5,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/poires-conference-8144.html",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-14"
     }
   ],
@@ -449,7 +449,7 @@
       "oldPrice": 6.98,
       "desc": "Sélection de figurines en chocolat et spéculoos.",
       "url": "https://www.myshopi.com/nl/carrefour-market-folder/0a6d7aa0-9c5c-4f86-802f-bd735470db39/16?offer=d5b02a5d-44e9-4a25-b4eb-ab7c999031f1",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-10"
     },
     {
@@ -462,7 +462,7 @@
       "oldPrice": null,
       "desc": "Grand format familial de biscuits croquants.",
       "url": "https://www.myshopi.com/fr/aldi-folder/07b1b88c-475b-40fe-82d7-70c163745a7c/26?offer=3516ccfc-12bb-4781-85de-0fe596d14f75",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-10"
     },
     {
@@ -475,7 +475,7 @@
       "oldPrice": null,
       "desc": "Chocolat au lait belge certifié.",
       "url": "https://www.myshopi.com/fr/aldi-folder/07b1b88c-475b-40fe-82d7-70c163745a7c/25?offer=fba8a992-ffbf-4bf4-a8de-e9f5192b57b2",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-10"
     },
     {
@@ -488,7 +488,7 @@
       "oldPrice": null,
       "desc": "Douceurs en chocolat blanc fondant.",
       "url": "https://www.myshopi.com/fr/aldi-folder/07b1b88c-475b-40fe-82d7-70c163745a7c/25?offer=c7b9c9dd-8867-4859-b1d7-abd4cd06b2c4",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-10"
     },
     {
@@ -501,7 +501,7 @@
       "oldPrice": null,
       "desc": "Grande tarte frangipane aux amandes à partager.",
       "url": "https://www.myshopi.com/fr/aldi-folder/07b1b88c-475b-40fe-82d7-70c163745a7c/31?offer=6d9fd89c-176d-4242-8d51-e773082555ed",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-10"
     },
     {
@@ -514,7 +514,7 @@
       "oldPrice": 1.79,
       "desc": "Idéal en encas fruité ou smoothie post-sport.",
       "url": "https://www.myshopi.com/fr/aldi-folder/17cebc52-738a-4060-b53f-791e39e0de51/31?offer=3c1b48e0-b28a-41ef-a135-82b532fcf936",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-10"
     },
     {
@@ -527,7 +527,7 @@
       "oldPrice": 5.16,
       "desc": "Boisson lactée cacaotée gourmande.",
       "url": "https://www.myshopi.com/fr/aldi-folder/17cebc52-738a-4060-b53f-791e39e0de51/30?offer=8bcb4d7c-4bca-42e9-8a5f-099fa13c2e8b",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-10"
     },
     {
@@ -540,7 +540,7 @@
       "oldPrice": 9.59,
       "desc": "Lot de céréales pour le petit-déjeuner ou encas.",
       "url": "https://www.myshopi.com/fr/delhaize-folder/37fa7a0d-015c-4b46-80b7-0cf2d5614f40/48?offer=afc91759-57f1-4b95-9913-3e05b715899e",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-10"
     },
     {
@@ -553,7 +553,7 @@
       "oldPrice": 5.95,
       "desc": "Sauce tomate belge ultra-parfumée prête à servir.",
       "url": "https://www.myshopi.com/nl/delhaize-folder/f9afbd45-ef98-4b6f-b93a-8abea09a8012/49?offer=6e2b3006-9495-44d8-ba75-eea3326b0d4f",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-10"
     },
     {
@@ -566,7 +566,7 @@
       "oldPrice": 89.95,
       "desc": "Économie massive de 53,97 € sur la lessive.",
       "url": "https://www.myshopi.com/fr/delhaize-folder/37fa7a0d-015c-4b46-80b7-0cf2d5614f40/43?offer=c102f73c-bd41-4bdd-9439-a92c78f68a6a",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-10"
     },
     {
@@ -579,7 +579,7 @@
       "oldPrice": 64.95,
       "desc": "Pack XXL de tablettes lave-vaisselle à -60%.",
       "url": "https://www.myshopi.com/nl/delhaize-folder/f9afbd45-ef98-4b6f-b93a-8abea09a8012/44?offer=7a19c4d5-89b1-4330-bcb2-2ca04f39417d",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-10"
     },
     {
@@ -592,7 +592,7 @@
       "oldPrice": 11.96,
       "desc": "Dégraissant ultra-efficace en 1+1 gratuit.",
       "url": "https://www.myshopi.com/fr/delhaize-folder/37fa7a0d-015c-4b46-80b7-0cf2d5614f40/45?offer=18a5330e-325f-47e8-9124-0cbe30278e53",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-10"
     },
     {
@@ -605,9 +605,9 @@
       "oldPrice": 11.9,
       "desc": "Idéal pour un petit budget entretien.",
       "url": "https://www.myshopi.com/fr/carrefour-market-folder/72f124dd-3644-4696-8b68-04cd9233877c/20?offer=1dd54552-8333-4b35-a7a3-c3b85f28fbd4",
-      "lastVerified": "2026-11-09",
+      "lastVerified": "2026-11-10",
       "validUntil": "2026-11-10"
     }
   ],
-  "lastDailyCheck": "09/11/2026"
+  "lastDailyCheck": "10/11/2026"
 }
