@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-14T13:44:50.013588+00:00",
-  "weekLabel": "Semaine du 14 Nov. au 20 Nov. 2026",
+  "updatedAt": "2026-11-15T14:14:09.982606+00:00",
+  "weekLabel": "Semaine du 15 Nov. au 21 Nov. 2026",
   "essentialItems": [
     {
       "id": "e1",
-      "store": "COLRUYT",
+      "store": "ALDI",
       "name": "Bœuf maigre à mijoter belge (Promo Prix Rouge)",
       "baseQty": 700,
       "unit": "g (1 barquette)",
@@ -14,7 +14,7 @@
       "cat": "Protéines 25%",
       "basePrice": 8.95,
       "scaleWithMeals": true,
-      "url": "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/19?offer=201c1f58-0755-4242-99b9-edfea16779fd",
+      "url": "https://www.aldi.be/fr/product/poivrons-rouges-9180.html",
       "smallVariant": {
         "name": "Lanières de bœuf maigre pour wok (400 g)",
         "qtyText": "1 barquette (400 g — prix exact Aldi)",
@@ -22,40 +22,24 @@
         "store": "ALDI",
         "url": "https://www.aldi.be/fr/product/lanieres-de-boeuf-pour-wok-facon-orientale-3007532.html"
       },
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e2",
-      "store": "COLRUYT",
+      "store": "ALDI",
       "name": "Pesto Rosso à la tomate (Promo Xtra)",
       "baseQty": 190,
       "unit": "g (1 pot)",
       "unitLabel": "pot (190 g)",
       "maxUnits": 1,
-      "unitPrice": 2.19,
+      "unitPrice": 2.49,
       "cat": "Sauce Santé",
-      "basePrice": 2.19,
+      "basePrice": 2.49,
       "scaleWithMeals": false,
-      "url": "https://www.myshopi.com/nl/colruyt-folder/2aa16bfd-fcbf-4e3c-b56c-0bf1c98008f7/21?offer=0d877920-9d1a-4de5-abf0-00414bcca0cd",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
-    },
-    {
-      "id": "e3",
-      "store": "CARREFOUR MARKET",
-      "name": "Tortillas Blé & Salsa Old El Paso (Promo 1+1 GRATUIT)",
-      "baseQty": 650,
-      "unit": "g (2 paquets = 16 wraps)",
-      "unitLabel": "lot 1+1 (2 paquets)",
-      "maxUnits": 1,
-      "unitPrice": 4.42,
-      "cat": "Féculents 25%",
-      "basePrice": 4.42,
-      "scaleWithMeals": false,
-      "url": "https://www.myshopi.com/nl/carrefour-market-folder/0a6d7aa0-9c5c-4f86-802f-bd735470db39/17?offer=509e5023-7e97-4a9e-bbdd-89d44d77a30d",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/tomates-mi-sechees-8619.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e4",
@@ -69,25 +53,25 @@
       "cat": "Fruits",
       "basePrice": 1.38,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/mousseline-de-pommes-4105.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/pommes-golden-delicious-9171.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e5",
-      "store": "DELHAIZE",
+      "store": "ALDI",
       "name": "Pain multicéréales Bio (Promo -25%)",
       "baseQty": 600,
       "unit": "g (1 grand pain tranché)",
       "unitLabel": "grand pain tranché (600 g)",
       "maxUnits": 1,
-      "unitPrice": 2.39,
+      "unitPrice": 1.99,
       "cat": "Féculents 25%",
-      "basePrice": 2.39,
+      "basePrice": 1.99,
       "scaleWithMeals": false,
-      "url": "https://www.myshopi.com/nl/delhaize-folder/f9afbd45-ef98-4b6f-b93a-8abea09a8012/46?offer=3164a090-db6d-4a2b-b5ff-7505a78e0da5",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/pain-gris-tigre-9668.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e6",
@@ -97,11 +81,11 @@
       "unit": "g (1 barquette de 1 kg)",
       "unitLabel": "barquette (1 kg)",
       "maxUnits": 1,
-      "unitPrice": 8.99,
+      "unitPrice": 4.79,
       "cat": "Protéines 25%",
-      "basePrice": 8.99,
+      "basePrice": 4.79,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/lamelles-de-poulet-3003149.html",
+      "url": "https://www.aldi.be/fr/product/chipolata-de-poulet-2-pcs-9569.html",
       "smallVariant": {
         "name": "Aiguillettes de filet de poulet frais (500 g)",
         "qtyText": "1 barquette (500 g — prix exact Aldi)",
@@ -109,8 +93,8 @@
         "store": "ALDI",
         "url": "https://www.aldi.be/fr/product/aiguillettes-de-poulet-0288.html"
       },
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e7",
@@ -120,13 +104,13 @@
       "unit": "g (1 paquet de 4 filets)",
       "unitLabel": "paquet de 4 filets (400 g)",
       "maxUnits": 1,
-      "unitPrice": 6.49,
+      "unitPrice": 3.19,
       "cat": "Protéines 25%",
-      "basePrice": 6.49,
+      "basePrice": 3.19,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/cabillaud-3015779.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/filets-de-truite-fumee-6685.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e8",
@@ -136,13 +120,13 @@
       "unit": "g (3 boîtes de 150 g à 1,25 €)",
       "unitLabel": "boîte de 150 g (1,25 €/pc)",
       "maxUnits": 3,
-      "unitPrice": 1.25,
+      "unitPrice": 1.99,
       "cat": "Protéines 25%",
-      "basePrice": 3.75,
+      "basePrice": 5.97,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/thon-au-naturel-3007721.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/salade-au-thon-8947.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e9",
@@ -152,11 +136,11 @@
       "unit": "œufs (1 boîte de 12 pcs)",
       "unitLabel": "boîte de 12 œufs",
       "maxUnits": 1,
-      "unitPrice": 2.59,
+      "unitPrice": 3.49,
       "cat": "Protéines 25%",
-      "basePrice": 2.59,
+      "basePrice": 3.49,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/oeufs-de-poules-elevees-au-sol-3002728.html",
+      "url": "https://www.aldi.be/fr/product/oeufs-de-poules-elevees-au-sol-3011902.html",
       "smallVariant": {
         "name": "Œufs de poules élevées au sol (6 pcs)",
         "qtyText": "1 boîte de 6 œufs (prix exact Aldi)",
@@ -164,8 +148,8 @@
         "store": "ALDI",
         "url": "https://www.aldi.be/fr/product/oeufs-de-poules-elevees-au-sol-3002727.html"
       },
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e10",
@@ -175,13 +159,13 @@
       "unit": "g (2 pots de 500 g à 1,39 €)",
       "unitLabel": "pot de 500 g (1,39 €/pc)",
       "maxUnits": 2,
-      "unitPrice": 1.39,
+      "unitPrice": 0.89,
       "cat": "Protéines 25%",
-      "basePrice": 2.78,
+      "basePrice": 1.78,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/skyr-nature-2128.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/frites-sticks-naturel-6447.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e11",
@@ -195,9 +179,9 @@
       "cat": "Légumes 50%",
       "basePrice": 2.5,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/carottes-3002376.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/carottes-8275.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e12",
@@ -211,9 +195,9 @@
       "cat": "Légumes 50%",
       "basePrice": 1.99,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/lanieres-de-poivron-6486.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/poivrons-rouges-9180.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e13",
@@ -227,9 +211,9 @@
       "cat": "Légumes 50%",
       "basePrice": 0.99,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/carottes-rapees-ou-chou-blanc-rape-0473.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/carottes-8275.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e14",
@@ -239,13 +223,13 @@
       "unit": "g (1 sachet de 1 kg)",
       "unitLabel": "sachet (1 kg)",
       "maxUnits": 1,
-      "unitPrice": 1.65,
+      "unitPrice": 0.99,
       "cat": "Légumes 50%",
-      "basePrice": 1.65,
+      "basePrice": 0.99,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/haricots-verts-3002382.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/champignons-fins-6260.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e15",
@@ -260,8 +244,8 @@
       "basePrice": 1.98,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/brocoli-6255.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e16",
@@ -271,13 +255,13 @@
       "unit": "g (2 barquettes de 250 g à 0,99 €)",
       "unitLabel": "barquette de 250 g (0,99 €/pc)",
       "maxUnits": 2,
-      "unitPrice": 0.99,
+      "unitPrice": 2.99,
       "cat": "Légumes 50%",
-      "basePrice": 1.98,
+      "basePrice": 5.98,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/champignons-fins-6260.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/melange-de-champignons-coupes-8593.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e17",
@@ -287,11 +271,11 @@
       "unit": "g (1 pack de 1 kg)",
       "unitLabel": "pack (1 kg)",
       "maxUnits": 1,
-      "unitPrice": 1.18,
+      "unitPrice": 2.49,
       "cat": "Légumes 50%",
-      "basePrice": 1.18,
+      "basePrice": 2.49,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/passata-de-tomates-3010209.html",
+      "url": "https://www.aldi.be/fr/product/tomates-mi-sechees-8619.html",
       "smallVariant": {
         "name": "Dés de tomates (400 g)",
         "qtyText": "1 boîte de 400 g (prix exact Aldi)",
@@ -299,8 +283,8 @@
         "store": "ALDI",
         "url": "https://www.aldi.be/fr/product/des-de-tomates-1897.html"
       },
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e18",
@@ -315,8 +299,8 @@
       "basePrice": 1.09,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/epinards-en-branches-3002378.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e19",
@@ -326,13 +310,13 @@
       "unit": "g (1 sachet de 150 g)",
       "unitLabel": "sachet (150 g)",
       "maxUnits": 1,
-      "unitPrice": 1.29,
+      "unitPrice": 1.99,
       "cat": "Légumes 50%",
-      "basePrice": 1.29,
+      "basePrice": 1.99,
       "scaleWithMeals": false,
-      "url": "https://www.aldi.be/fr/product/salade-gourmande-2388.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/salade-au-thon-8947.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e20",
@@ -346,7 +330,7 @@
       "cat": "Féculents 25%",
       "basePrice": 2.47,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/pommes-de-terre-a-puree-2817.html",
+      "url": "https://www.aldi.be/fr/product/pommes-golden-delicious-9171.html",
       "smallVariant": {
         "name": "Petites pommes de terre (500 g)",
         "qtyText": "1 sachet de 500 g (prix exact Aldi)",
@@ -354,8 +338,8 @@
         "store": "ALDI",
         "url": "https://www.aldi.be/fr/product/petites-pommes-de-terre-cuites-6627.html"
       },
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e21",
@@ -370,8 +354,8 @@
       "basePrice": 1.79,
       "scaleWithMeals": false,
       "url": "https://www.aldi.be/fr/product/riz-basmati-3011332.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e22",
@@ -381,13 +365,13 @@
       "unit": "g (1 paquet de 500 g)",
       "unitLabel": "paquet (500 g)",
       "maxUnits": 1,
-      "unitPrice": 0.99,
+      "unitPrice": 2.99,
       "cat": "Féculents 25%",
-      "basePrice": 0.99,
+      "basePrice": 2.99,
       "scaleWithMeals": false,
-      "url": "https://www.aldi.be/fr/product/penne-complet-3010902.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/plat-complet-5339.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e23",
@@ -401,9 +385,9 @@
       "cat": "Fruits",
       "basePrice": 2.09,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/pommes-boskoop-6179.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/pommes-golden-delicious-9171.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e24",
@@ -417,9 +401,9 @@
       "cat": "Fruits",
       "basePrice": 0.99,
       "scaleWithMeals": true,
-      "url": "https://www.aldi.be/fr/product/bananes-8272.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "url": "https://www.aldi.be/fr/product/bananes-bio-fairtrade-9214.html",
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     },
     {
       "id": "e25",
@@ -434,10 +418,10 @@
       "basePrice": 1.5,
       "scaleWithMeals": true,
       "url": "https://www.aldi.be/fr/product/poires-conference-8144.html",
-      "lastVerified": "2026-11-14",
-      "validUntil": "2026-11-14"
+      "lastVerified": "2026-11-15",
+      "validUntil": "2026-11-21"
     }
   ],
   "extraPromos": [],
-  "lastDailyCheck": "14/11/2026"
+  "lastDailyCheck": "15/11/2026"
 }
